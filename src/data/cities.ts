@@ -1,0 +1,20 @@
+export const cities = [
+  { slug: 'bandung', name: 'Bandung', address: 'Jl. Dr. Djunjunan No. 34 Pasteur Bandung' },
+  { slug: 'bekasi', name: 'Bekasi', address: 'Jl. Raya Bekasi KM 25 No. 10' },
+  { slug: 'denpasar', name: 'Denpasar', address: 'Jl. Imam Bonjol, Gg. 100 No. 100pi Banjar Samping Buni, Desa Pemecutan Kelod Denpasar Barat' },
+  { slug: 'depok', name: 'Depok', address: 'Jl. Raya Sawangan 34, Mampang, Kec. Pancoran Mas, Kota Depok, Jawa Barat 16433' },
+  { slug: 'jakarta', name: 'Jakarta', address: 'Jl. Raya Lenteng Agung 38 Jakarta Selatan' },
+  { slug: 'lampung', name: 'Lampung', address: 'Jl. ZA. Pagar Alam No. 45, Bandar Lampung' },
+  { slug: 'makassar', name: 'Makassar', address: 'Jl. Andi Pangeran Pettarani, Bua Kana, Kec. Rappocini, Kota Makassar, Sulawesi Selatan' },
+  { slug: 'medan', name: 'Medan', address: 'Jl. Gatot Subroto No. 78, Medan' },
+  { slug: 'palembang', name: 'Palembang', address: 'Perum Surya Akbar, Blok C, Jl. Bersama No.11, Talang Jambe, Kec. Sukarami, Kota Palembang, Sumatera Selatan 30961' },
+  { slug: 'semarang', name: 'Semarang', address: 'Jl. Ratu Ratih IV No 30 Tlogosari, Semarang' },
+  { slug: 'surabaya', name: 'Surabaya', address: 'Jl. Bangkingan Gadung No. 168, Lakarsantri Surabaya' },
+  { slug: 'sidoarjo', name: 'Sidoarjo', address: 'Jl. Bangkingan Gadung No. 168, Lakarsantri Surabaya' },
+  { slug: 'gresik', name: 'Gresik', address: 'Jl. Bangkingan Gadung No. 168, Lakarsantri Surabaya' },
+  { slug: 'mojokerto', name: 'Mojokerto', address: 'Jl. Bangkingan Gadung No. 168, Lakarsantri Surabaya' },
+  { slug: 'malang', name: 'Malang', address: 'Jl. Bangkingan Gadung No. 168, Lakarsantri Surabaya' },
+  { slug: 'solo', name: 'Solo', address: 'Jl. Bangkingan Gadung No. 168, Lakarsantri Surabaya' },
+  { slug: 'yogyakarta', name: 'Yogyakarta', address: 'Jl. Bangkingan Gadung No. 168, Lakarsantri Surabaya' },
+  { slug: 'pontianak', name: 'Pontianak', address: 'Jl. Bangkingan Gadung No. 168, Lakarsantri Surabaya' }
+];

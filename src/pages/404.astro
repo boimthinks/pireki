@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 - Halaman Tidak Ditemukan">
+  <div class="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
+    <h1 class="text-6xl font-bold text-[#c9a84c] mb-4">404</h1>
+    <p class="text-xl text-white mb-8">Maaf, halaman yang Anda cari tidak ditemukan.</p>
+    <p class="text-sm text-gray-400">Anda akan dialihkan ke halaman utama dalam 3 detik...</p>
+    <a href="/" class="mt-6 px-6 py-2 bg-[#c9a84c] text-black font-semibold rounded hover:bg-yellow-600 transition">
+      Kembali ke Beranda Sekarang
+    </a>
+  </div>
+</Layout>
+
+<script is:inline>
+  setTimeout(() => {
+    window.location.href = '/';
+  }, 3000);
+</script>

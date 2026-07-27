@@ -1,0 +1,335 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import InsightCard from '../components/InsightCard.astro';
+import ProyekCard from '../components/ProyekCard.astro';
+import TipePartisiCard from '../components/TipePartisiCard.astro';
+import RuanganCard from '../components/RuanganCard.astro';
+import Schema from '../components/Schema.astro';
+import { getApiData } from '../lib/api';
+
+const tipeEntries = await getCollection('tipe');
+const ruanganEntries = await getCollection('ruangan');
+const insights = await getCollection('insights');
+const { proyek } = await getApiData();
+
+const stats = [
+  { label: 'Berdiri Sejak', value: '2008' },
+  { label: 'Proyek Terpasang', value: '1.200+' },
+  { label: 'Kota Layanan', value: '34' },
+];
+---
+
+<Layout 
+  title="Partisi Geser Kedap Suara untuk Ruang Rapat & Ballroom - PIREKI" 
+  description="Partisi Geser Kedap Suara untuk Ruang Rapat Ballroom, Solusi Partisi Ruangan Fleksibel dan Profesional Pemasangan Cepat, Kualitas Terjamin."
+  image="/img/Blue-Sky-Lounge.webp"
+>
+  <Schema type="WebSite" />
+  <Schema type="Organization" />
+  <main>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent z-10"></div>
+        <img src="/img/Blue-Sky-Lounge.webp" alt="Blue Sky Lounge Bandara Sultan Hasanuddin Makassar" class="w-full h-full object-cover opacity-80">
+      </div>
+      
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
+        <div class="max-w-xl md:max-w-2xl lg:w-1/2 hero-stagger">
+          <div class="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-[#c9a84c]/30 bg-[#c9a84c]/10 backdrop-blur-sm">
+            <span class="w-2 h-2 rounded-full bg-[#c9a84c] animate-pulse"></span>
+            <span class="text-[#c9a84c] text-xs font-medium tracking-widest uppercase">Produsen Sejak 2008</span>
+          </div>
+          <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] mb-8">
+            <span class="text-white">Solusi</span><br>
+            <span class="text-gold-gradient">Partisi Geser</span><br>
+            <span class="text-white/90 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light">Kedap Suara</span>
+          </h1>
+          <p class="text-white/70 text-lg lg:text-xl leading-relaxed mb-12">
+            Produsen spesialis <span class="text-white/90 font-medium text-sm md:text-base">Movable Wall</span> dan Penyekat Ruangan untuk Ballroom Hotel, Ruang Rapat Kantor, dan Kampus.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="https://wa.me/6282376737701" target="_blank" class="px-10 py-5 bg-[#c9a84c] text-black font-bold rounded-xl hover:scale-105 transition-transform shadow-xl shadow-[#c9a84c]/20">
+              Konsultasikan Sekarang
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-black border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8" data-reveal-container>
+        {stats.map(stat => (
+          <div class="reveal-fade text-center">
+            <div class="text-4xl lg:text-5xl font-display font-bold text-gold-gradient mb-2">{stat.value}</div>
+            <div class="text-white/60 uppercase tracking-wider text-sm">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="py-24 bg-[#0a0a0a]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+          <h2 class="text-3xl md:text-5xl font-display font-bold mb-6">Kenapa Partisi Geser Penting untuk Ruang Modern?</h2>
+          <p class="text-white/60 text-base leading-relaxed">
+            Di era ruang kerja dan hunian serba dinamis seperti sekarang, kebutuhan untuk memiliki tata ruang yang fleksibel sangatlah penting. Banyak orang menghadapi masalah keterbatasan ruang, kebutuhan privasi mendadak, hingga keinginan untuk tampilan interior yang selalu up-to-date. Berikut beberapa alasan utama mengapa partisi geser adalah solusi esensial untuk ruang modern:
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-reveal-container>
+          {[
+            {
+              title: 'Fleksibilitas Ruang Maksimal',
+              desc: 'Dengan partisi geser, satu ruangan bisa berfungsi untuk berbagai kebutuhan hanya dalam hitungan detik. Ruang meeting, ruang belajar, hingga area makan bisa diubah-ubah tanpa harus melakukan renovasi permanen.',
+              icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13h16M13 4v16" /></svg>`
+            },
+            {
+              title: 'Privasi On-Demand',
+              desc: 'Partisi geser memberi solusi praktis saat dibutuhkan privasi lebih, baik di kantor maupun rumah. Ketika tidak digunakan, partisi bisa digeser atau dilipat sehingga ruang kembali lapang.',
+              icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>`
+            },
+            {
+              title: 'Efisiensi Biaya & Waktu',
+              desc: 'Instalasi partisi jauh lebih hemat dibandingkan membangun tembok permanen. Selain itu, Anda tidak perlu renovasi besar-besaran jika ingin mengubah layout ruangan.',
+              icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`
+            },
+            {
+              title: 'Desain Modern & Estetis',
+              desc: 'Partisi kini hadir dengan berbagai pilihan desain dan material, memberikan sentuhan modern yang mempercantik interior sekaligus mempertahankan fungsionalitas.',
+              icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.143-7.714L1 12l6.857-2.143L11 3z" /></svg>`
+            },
+            {
+              title: 'Solusi untuk Ruang Sempit',
+              desc: 'Di kantor, kafe, sekolah, hingga hunian dengan ruang terbatas, partisi geser mempermudah memaksimalkan setiap sudut ruangan tanpa terasa sesak.',
+              icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>`
+            },
+            {
+              title: 'Meningkatkan Produktivitas',
+              desc: 'Ruangan yang bisa diatur ulang sesuai aktivitas harian akan meningkatkan kenyamanan dan produktivitas para penggunanya.',
+              icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>`
+            }
+          ].map(item => (
+            <div class="reveal p-8 bg-white/5 rounded-2xl border border-white/10 hover:border-[#c9a84c]/30 transition-all group">
+              <div class="w-12 h-12 rounded-xl bg-[#c9a84c]/10 flex items-center justify-center text-[#c9a84c] mb-6 group-hover:bg-[#c9a84c] group-hover:text-black transition-all duration-300" set:html={item.icon}>
+              </div>
+              <h3 class="text-xl font-bold mb-4">{item.title}</h3>
+              <p class="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-24 bg-black">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div class="max-w-2xl reveal">
+            <h2 class="text-3xl md:text-5xl font-display font-bold mb-6">Pilihan Tipe Partisi</h2>
+            <p class="text-white/60 text-base leading-relaxed">
+              Kami menyediakan berbagai pilihan tipe partisi geser dengan spesifikasi yang dapat disesuaikan untuk memenuhi kebutuhan fungsional dan estetika ruangan Anda.
+            </p>
+          </div>
+          <a href="/tipe" class="text-[#c9a84c] font-bold flex items-center gap-2 hover:gap-3 transition-all">
+            Lihat Semua Tipe
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-reveal-container>
+          {tipeEntries.slice(0, 6).map((entry) => (
+            <TipePartisiCard 
+              title={entry.data.title}
+              description={entry.data.description}
+              image={entry.data.featured_image}
+              slug={entry.data.slug}
+              price={entry.data.price}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Aplikasi Ruangan Section -->
+    <section class="py-24 bg-[#0a0a0a]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div class="max-w-2xl reveal">
+            <h2 class="text-3xl md:text-5xl font-display font-bold mb-6">Aplikasi Ruangan</h2>
+            <p class="text-white/60 text-base leading-relaxed">
+              Partisi geser Pireki dapat diaplikasikan pada berbagai jenis ruangan untuk memaksimalkan fleksibilitas dan fungsi tanpa mengorbankan estetika.
+            </p>
+          </div>
+          <a href="/ruangan" class="text-[#c9a84c] font-bold flex items-center gap-2 hover:gap-3 transition-all">
+            Lihat Semua Aplikasi
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-reveal-container>
+          {ruanganEntries.slice(0, 6).map((entry) => (
+            <RuanganCard 
+              title={entry.data.title}
+              description={entry.data.description}
+              image={entry.data.featured_image}
+              slug={entry.id}
+              judul_seo_h1={entry.data.judul_seo_h1}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-black relative overflow-hidden">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#c9a84c]/5 blur-[120px] rounded-full pointer-events-none"></div>
+      
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div class="max-w-2xl reveal">
+            <h2 class="text-3xl md:text-5xl font-display font-bold mb-6">Ulasan Pelanggan</h2>
+            <p class="text-white/60 text-base leading-relaxed">
+              Kepercayaan Anda adalah prioritas kami. Berikut adalah pengalaman mereka yang telah menggunakan solusi partisi geser dari Pireki Asia.
+            </p>
+          </div>
+          
+          <div class="flex gap-4">
+            <button id="prev-testi" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#c9a84c] hover:text-black hover:border-[#c9a84c] transition-all cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button id="next-testi" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#c9a84c] hover:text-black hover:border-[#c9a84c] transition-all cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="testi-container" class="flex gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8 -mx-4 px-4">
+          {[
+            {
+              name: 'Adi Nugroho',
+              role: 'Karyawan Rumah Sakit',
+              content: 'Produk-partisi geser CV. Pireki Asia membantu kami mendapatkan dua ruangan yang dapat disesuaikan dalam waktu yang cepat. Sangat puas!'
+            },
+            {
+              name: 'Eko Wibowo',
+              role: 'Karyawan Kantor',
+              content: 'Samowa Persection membantu kami mengorganisir ruang rapat dan memaksimalkan produktivitas. Bagus sekali!'
+            },
+            {
+              name: 'Yulia Purnama',
+              role: 'Penanggung Jawab Sekolah',
+              content: 'Samowa Lipat membantu kami mengubah aula sekolah menjadi beberapa ruangan dengan mudah. Fleksibilitas yang luar biasa!'
+            },
+            {
+              name: 'Hendro Pratama',
+              role: 'Pemilik Gudang',
+              content: 'Produk dari CV. Pireki Asia sangat efisien. Samowa Persection membantu kami memaksimalkan penyimpanan di gudang kami.'
+            },
+            {
+              name: 'Lia Wijaya',
+              role: 'Penanggung Jawab Kantor',
+              content: 'Sorepa Prima sangat praktis. Membantu kami mengatur ruang rapat dan ruang pertemuan dengan sangat mudah. Terimakasih, CV. Pireki Asia!'
+            },
+            {
+              name: 'Budi Santoso',
+              role: 'Pemilik Hotel',
+              content: 'Sorepa Pro luar biasa! Menghemat ruang tanpa mengorbankan privasi. Tamu kami senang dengan fitur peredaman suara serta desainnya.'
+            }
+          ].map(item => (
+            <div class="min-w-full md:min-w-[400px] snap-center p-10 rounded-3xl bg-white/5 border border-white/10 hover:border-[#c9a84c]/30 transition-all flex flex-col h-full relative group">
+              <div class="text-[#c9a84c] mb-6 opacity-40 group-hover:opacity-100 transition-opacity">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21L14.017 18C14.017 16.8954 14.9125 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C15.4647 8 15.017 8.44772 15.017 9V12C15.017 12.5523 14.5693 13 14.017 13H12.017V9C12.017 6.79086 13.8079 5 16.017 5H19.017V3H16.017C12.7033 3 10.017 5.68629 10.017 9V15C10.017 18.3137 12.7033 21 16.017 21H14.017ZM4.01705 21L4.01705 18C4.01705 16.8954 4.91248 16 6.01705 16H9.01705C9.56933 16 10.017 15.5523 10.017 15V9C10.017 8.44772 9.56933 8 9.01705 8H6.01705C5.46477 8 5.01705 8.44772 5.01705 9V12C5.01705 12.5523 4.56933 13 4.01705 13H2.01705V9C2.01705 6.79086 3.80791 5 6.01705 5H9.01705V3H6.01705C2.70334 3 0.0170547 5.68629 0.0170547 9V15C0.0170547 18.3137 2.70334 21 6.01705 21H4.01705Z" />
+                </svg>
+              </div>
+              <p class="text-white/80 text-sm leading-relaxed mb-8 flex-grow">
+                "{item.content}"
+              </p>
+              <div>
+                <h4 class="text-[#c9a84c] font-bold text-lg mb-1">{item.name}</h4>
+                <p class="text-white/40 text-xs uppercase tracking-widest">{item.role}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const container = document.getElementById('testi-container');
+      const prevBtn = document.getElementById('prev-testi');
+      const nextBtn = document.getElementById('next-testi');
+
+      if (container && prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+          container.scrollBy({ left: -400, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+          container.scrollBy({ left: 400, behavior: 'smooth' });
+        });
+      }
+    </script>
+
+    <style>
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+
+    <!-- Recent Projects -->
+    <section class="py-24 bg-black">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl md:text-5xl font-display font-bold mb-6 reveal">Proyek Pemasangan Terbaru</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 my-8 gap-8" data-reveal-container>
+          {[...proyek].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 6).map(p => (
+            <ProyekCard 
+              title={p.title} 
+              description={p.pengantar} 
+              image={p.image_url} 
+              slug={p.slug}
+              kategori={p.kategori}
+              location={(p as any).location || 'Indonesia'}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section class="py-24 bg-[#0a0a0a]">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl md:text-5xl font-display font-bold mb-6 reveal">Insights</h2>
+        <p class="text-white/60 text-base leading-relaxed reveal">
+          Temukan berbagai artikel informatif seputar partisi geser, tips desain interior, dan panduan praktis untuk menciptakan ruangan yang fungsional dan estetis.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 my-8 gap-8" data-reveal-container>
+          {insights.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 9).map(entry => (
+            <InsightCard
+              image={entry.data.image_url}
+              slug={entry.data.slug}
+              kategori={entry.data.kategori}
+              judul_seo={entry.data.judul_seo}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

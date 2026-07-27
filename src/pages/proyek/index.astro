@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProyekCard from '../../components/ProyekCard.astro';
+import { getApiData } from '../../lib/api';
+
+const { proyek } = await getApiData();
+const sortedProyek = [...proyek].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+// Get unique categories
+const categories = ['Semua', ...new Set(proyek.map(p => p.kategori).filter(Boolean))];
+---
+
+<Layout 
+  title="Proyek Terbaru - PIREKI"
+  description="Lihat kumpulan proyek pemasangan partisi geser, pintu lipat, dan movable wall terbaru dari Pireki di seluruh Indonesia."
+  image={sortedProyek[0]?.image_url}
+>
+  <main class="py-20 bg-black text-white">
+    <div class="max-w-7xl mx-auto px-6 my-10">
+      <h1 class="text-4xl font-bold mb-12">Proyek Terbaru</h1>
+
+      {/* Filter Buttons */}
+      <div class="flex flex-wrap gap-3 mb-12" id="filter-container">
+        {categories.map((cat, index) => (
+          <button 
+            data-category={cat} 
+            class={`px-6 py-2 rounded-full border border-white/10 text-sm font-medium transition-all ${index === 0 ? 'bg-[#c9a84c] text-black border-[#c9a84c]' : 'hover:border-[#c9a84c]/50 text-white/70'}`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="proyek-grid">
+        {sortedProyek.map(p => (
+          <div class="proyek-item" data-category={p.kategori}>
+            <ProyekCard 
+              title={p.title} 
+              description={p.pengantar} 
+              image={p.image_url} 
+              slug={p.slug}
+              kategori={p.kategori}
+              location={p.location || 'Indonesia'}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const buttons = document.querySelectorAll('#filter-container button');
+  const items = document.querySelectorAll('.proyek-item');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Update UI buttons
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-[#c9a84c]', 'text-black', 'border-[#c9a84c]');
+        btn.classList.add('text-white/70');
+      });
+      button.classList.remove('text-white/70');
+      button.classList.add('bg-[#c9a84c]', 'text-black', 'border-[#c9a84c]');
+
+      const filter = button.getAttribute('data-category');
+
+      items.forEach(item => {
+        const itemCat = item.getAttribute('data-category');
+        if (filter === 'Semua' || itemCat === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

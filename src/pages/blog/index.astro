@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getApiData } from '../../lib/api';
+
+const { blog } = await getApiData();
+const sortedBlog = [...blog].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+// Get unique categories
+const categories = ['Semua', ...new Set(blog.map(b => b.kategori).filter(Boolean))];
+---
+
+<Layout 
+  title="Blog & Informasi - PIREKI" 
+  description="Dapatkan informasi terbaru, tips desain, dan panduan praktis seputar partisi geser, penyekat ruangan, dan movable wall dari tim ahli Pireki."
+  image={sortedBlog[0]?.image_url}
+>
+  <main class="py-20 bg-black text-white">
+    <div class="max-w-7xl mx-auto px-6 my-10">
+      <h1 class="text-4xl font-bold mb-6">Blog & Informasi</h1>
+      <p class="text-lg text-white/70 mb-12">Partisi geser yang ditawarkan oleh Pireki Asia tidak hanya menyediakan solusi penyekat ruangan berkualitas tinggi, tetapi juga memberikan fleksibilitas untuk diterapkan pada berbagai tipe ruangan. Dengan desain yang canggih dan bahan berkualitas, partisi geser Pireki Asia cocok untuk memenuhi kebutuhan beragam ruangan. Terus pantau blog kami untuk informasi terbaru, tips desain, dan panduan praktis seputar partisi geser. Bersama Pireki Asia, mari ciptakan ruangan yang berfungsi maksimal dengan sentuhan estetika yang tak terlupakan!</p>
+      
+      {/* Filter Buttons */}
+      <div class="flex flex-wrap gap-3 mb-12" id="filter-container">
+        {categories.map((cat, index) => (
+          <button 
+            data-category={cat} 
+            class={`px-6 py-2 rounded-full border border-white/10 text-sm font-medium transition-all ${index === 0 ? 'bg-[#c9a84c] text-black border-[#c9a84c]' : 'hover:border-[#c9a84c]/50 text-white/70'}`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="blog-grid">
+        {sortedBlog.map(post => (
+          <div class="blog-item" data-category={post.kategori}>
+            <BlogCard 
+              title={post.title} 
+              description={post.pengantar} 
+              image={post.image_url} 
+              slug={post.slug}
+              kategori={post.kategori}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const buttons = document.querySelectorAll('#filter-container button');
+  const items = document.querySelectorAll('.blog-item');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Update UI buttons
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-[#c9a84c]', 'text-black', 'border-[#c9a84c]');
+        btn.classList.add('text-white/70');
+      });
+      button.classList.remove('text-white/70');
+      button.classList.add('bg-[#c9a84c]', 'text-black', 'border-[#c9a84c]');
+
+      const filter = button.getAttribute('data-category');
+
+      items.forEach(item => {
+        const itemCat = item.getAttribute('data-category');
+        if (filter === 'Semua' || itemCat === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

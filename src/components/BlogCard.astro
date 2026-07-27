@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  slug: string;
+  kategori: string;
+  basePath?: string;
+}
+
+const { title, description, image, slug, kategori, basePath = '/blog' } = Astro.props;
+---
+
+<a href={`${basePath}/${slug}`} class="reveal group block bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-[#c9a84c]/50 transition-all duration-300">
+  <div class="h-48 overflow-hidden relative">
+    <img src={image} alt={title} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" />
+    <div class="absolute top-4 left-4 bg-[#c9a84c] text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
+      {kategori}
+    </div>
+  </div>
+  <div class="p-6">
+    <h3 class="text-lg font-bold text-white mb-2 group-hover:text-[#c9a84c] transition-colors">{title}</h3>
+    <p class="text-sm text-white/60 line-clamp-2">{description}</p>
+    <div class="mt-4 flex items-center gap-2 text-[#c9a84c] font-bold text-xs uppercase tracking-widest group-hover:gap-3 transition-all">
+      <span>Baca Selengkapnya</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      </svg>
+    </div>
+  </div>
+</a>

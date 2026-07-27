@@ -1,0 +1,26 @@
+{
+  "name": "pireki",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "npm run build && node deploy.mjs",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^7.1.4",
+    "basic-ftp": "^6.0.1",
+    "dotenv": "^17.4.2",
+    "marked": "^18.0.3",
+    "tailwindcss": "^4.3.0"
+  },
+  "devDependencies": {
+    "@astrojs/sitemap": "^3.7.3"
+  }
+}

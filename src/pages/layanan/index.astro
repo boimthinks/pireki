@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import LayananCard from '../../components/LayananCard.astro';
+import CTA from '../../components/CTA.astro';
+
+const layananEntries = await getCollection('layanan');
+---
+
+<Layout 
+  title="Layanan Kami - PIREKI" 
+  description="Solusi lengkap penyekat ruangan dari PIREKI. Mulai dari pemasangan baru, perawatan berkala, hingga konsultasi desain gratis."
+  image={layananEntries[0]?.data.featured_image}
+>
+  <PageHero 
+    title='Layanan Profesional <span class="text-[#c9a84c]">Pireki Asia</span>'
+    description="Kami tidak hanya menjual produk, kami memberikan solusi jangka panjang untuk manajemen ruang Anda. Dukungan penuh dari tahap perencanaan hingga pemeliharaan pasca-instalasi."
+    badge="Solusi Terpadu"
+  />
+
+  <section class="py-24 bg-[#050505]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {layananEntries.map((entry) => (
+          <LayananCard 
+            title={entry.data.title}
+            description={entry.data.description}
+            image={entry.data.featured_image}
+            slug={entry.id}
+            badge={entry.data.badge}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+</Layout>

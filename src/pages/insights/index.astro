@@ -1,0 +1,75 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import InsightCard from '../../components/InsightCard.astro';
+
+const insightsEntries = await getCollection('insights');
+const sortedInsights = [...insightsEntries].sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+const categories = ['Semua', ...new Set(insightsEntries.map(i => i.data.kategori).filter(Boolean))];
+---
+
+<Layout 
+  title="Insights Partisi Geser & Lipat Pireki. Wawasan Akustik & Solusi Partisi Ruangan PIREKI" 
+  description="Wawasan dan panduan terbaru seputar partisi geser, akustik ruangan, dan solusi penyekat ruang dari tim ahli Pireki."
+  image={sortedInsights[0]?.data.image_url}
+>
+  <main class="py-20 bg-black text-white">
+    <div class="max-w-7xl mx-auto px-6 my-10">
+      <h1 class="text-4xl font-bold mb-6">Insights</h1>
+      <p class="text-lg text-white/70 mb-12">Wawasan dan panduan terbaru seputar partisi geser, partisi lipat, dan akustik ruangan, serta solusi penyekat ruang dari tim ahli Pireki.</p>
+      
+      {/* Filter Buttons */}
+      <div class="flex flex-wrap gap-3 mb-12" id="filter-container">
+        {categories.map((cat, index) => (
+          <button 
+            data-category={cat} 
+            class={`px-6 py-2 rounded-full border border-white/10 text-sm font-medium transition-all ${index === 0 ? 'bg-[#c9a84c] text-black border-[#c9a84c]' : 'hover:border-[#c9a84c]/50 text-white/70'}`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="insights-grid">
+        {sortedInsights.map(insight => (
+          <div class="insight-item" data-category={insight.data.kategori}>
+            <InsightCard 
+              judul_seo={insight.data.judul_seo}
+              image={insight.data.image_url} 
+              slug={insight.data.slug}
+              kategori={insight.data.kategori}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('#filter-container button');
+  const items = document.querySelectorAll<HTMLElement>('.insight-item');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-[#c9a84c]', 'text-black', 'border-[#c9a84c]');
+        btn.classList.add('text-white/70');
+      });
+      button.classList.remove('text-white/70');
+      button.classList.add('bg-[#c9a84c]', 'text-black', 'border-[#c9a84c]');
+
+      const filter = button.getAttribute('data-category');
+
+      items.forEach(item => {
+        const itemCat = item.getAttribute('data-category');
+        if (filter === 'Semua' || itemCat === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

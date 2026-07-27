@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  slug: string;
+  judul_seo_h1: string;
+}
+
+const { title, description, image, slug, judul_seo_h1 } = Astro.props;
+---
+
+<div class="reveal group relative block overflow-hidden rounded-2xl bg-white/5 border border-white/10 hover:border-[#c9a84c]/50 transition-all duration-300">
+  <a href={`/ruangan/${slug}`} class="block aspect-[4/3] overflow-hidden">
+    <img 
+      src={image} 
+      alt={title} 
+      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+  </a>
+  
+  <div class="p-6 relative">
+    <a href={`/ruangan/${slug}`} class="block group/title">
+      <h3 class="text-2xl font-bold text-white mb-1 group-hover/title:text-[#c9a84c] transition-colors">
+        {title}
+      </h3>
+    </a>
+    <p class="text-white/60 text-sm line-clamp-2 mb-4">
+      {description}
+    </p>
+  </div>
+</div>

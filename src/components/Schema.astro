@@ -1,0 +1,166 @@
+---
+interface Props {
+  type: 'Product' | 'Article' | 'Organization' | 'Breadcrumb' | 'WebSite' | 'ImageObject' | 'LocalBusiness' | 'FAQPage';
+  data?: any;
+}
+
+const { type, data } = Astro.props;
+
+let schema;
+
+switch (type) {
+  case 'Product':
+    schema = {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": data.title,
+      "image": data.featured_image,
+      "description": data.description,
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "IDR",
+        "price": data.price,
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": data.ratingValue || "4.8",
+        "reviewCount": data.reviewCount || "127",
+        "bestRating": "5"
+      }
+    };
+    break;
+
+  case 'Article':
+    schema = {
+      "@context": "https://schema.org/",
+      "@type": "Article",
+      "headline": data.title,
+      "image": data.image_url,
+      "datePublished": data.date,
+      "description": data.pengantar,
+      "author": {
+        "@type": "Organization",
+        "name": "CV. Pireki Asia",
+        "url": "https://pireki.id",
+        "logo": "https://pireki.id/favicon.svg"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "CV. Pireki Asia",
+        "logo": "https://pireki.id/favicon.svg"
+      }
+    };
+    break;
+
+  case 'Breadcrumb':
+    schema = {
+      "@context": "https://schema.org/",
+      "@type": "BreadcrumbList",
+      "itemListElement": data.map((item: any, index: number) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": `https://pireki.id${item.url}`
+      }))
+    };
+    break;
+
+  case 'WebSite':
+    schema = {
+      "@context": "https://schema.org/",
+      "@type": "WebSite",
+      "name": "CV. Pireki Asia",
+      "url": "https://pireki.id",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://pireki.id/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    };
+    break;
+
+  case 'ImageObject':
+    schema = {
+      "@context": "https://schema.org/",
+      "@type": "ImageObject",
+      "contentUrl": data.contentUrl,
+      "creditText": data.creditText || "CV. Pireki Asia",
+      "copyrightNotice": data.copyrightNotice || "Hak cipta CV. Pireki Asia",
+      "creator": {
+        "@type": "Organization",
+        "name": "CV. Pireki Asia"
+      },
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "CV. Pireki Asia"
+      },
+      "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "acquireLicensePage": "https://wa.me/6282376737701"
+    };
+    break;
+
+  case 'LocalBusiness':
+    schema = {
+      "@context": "https://schema.org/",
+      "@type": "LocalBusiness",
+      "name": `CV. Pireki Asia ${data.city.name}`,
+      "image": "https://pireki.id/favicon.svg",
+      "url": `https://pireki.id/kontak/${data.city.slug}`,
+      "telephone": "0823-7673-7701",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": data.city.address,
+        "addressLocality": data.city.name,
+        "addressCountry": "ID"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "CV. Pireki Asia",
+        "url": "https://pireki.id",
+        "logo": "https://pireki.id/favicon.svg"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": data.city.name
+      }
+    };
+    break;
+
+  case 'FAQPage':
+    schema = {
+      "@context": "https://schema.org/",
+      "@type": "FAQPage",
+      "mainEntity": (data || []).map((item: any) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer
+        }
+      }))
+    };
+    break;
+
+  case 'Organization':
+  default:
+    schema = {
+      "@context": "https://schema.org/",
+      "@type": "Organization",
+      "name": "CV. Pireki Asia",
+      "url": "https://pireki.id",
+      "logo": "https://pireki.id/favicon.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "0823-7673-7701",
+        "contactType": "customer service"
+      }
+    };
+    break;
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

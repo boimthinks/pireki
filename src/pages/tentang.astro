@@ -1,0 +1,306 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTA from '../components/CTA.astro';
+import Schema from '../components/Schema.astro';
+import TipePartisiCard from '../components/TipePartisiCard.astro';
+import { getCollection } from 'astro:content';
+
+const tipeEntries = await getCollection('tipe');
+---
+
+<Layout title="Tentang PIREKI - CV Pireki Asia" description="CV Pireki Asia adalah produsen partisi ruangan geser dan lipat sejak 2008. Berbasis di Surabaya, melayani 1.200+ proyek di 34 kota di seluruh Indonesia.">
+  <Schema type="Breadcrumb" data={[
+    { name: 'Beranda', url: '/' },
+    { name: 'Tentang', url: '/tentang' }
+  ]} />
+  <Schema type="WebSite" />
+  <Schema type="Organization" />
+
+  <main class="bg-black text-white">
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-24 border-b border-white/5 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-[#c9a84c]/5 to-transparent pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="max-w-4xl">
+          <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-[#c9a84c]/30 bg-[#c9a84c]/10 backdrop-blur-sm">
+            <span class="text-[#c9a84c] text-xs font-bold tracking-widest uppercase">Tentang Kami</span>
+          </div>
+          <h1 class="text-4xl md:text-7xl font-bold mb-8 leading-tight">
+            Kami adalah <span class="text-gold-gradient">Produsen Partisi</span> No. 1 di Indonesia
+          </h1>
+          <p class="text-lg md:text-xl text-white/70 leading-relaxed max-w-3xl">
+            Berdiri sejak 2008, CV Pireki Asia adalah produsen langsung dinding partisi ruangan geser dan lipat 
+            yang telah dipercaya oleh berbagai institusi dari Aceh hingga Papua. Semua produk 100% buatan Indonesia.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekilas Perusahaan -->
+    <section class="py-24 border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full border border-[#c9a84c]/30 bg-[#c9a84c]/10 backdrop-blur-sm">
+            <span class="text-[#c9a84c] text-xs font-bold tracking-widest uppercase">CV Pireki Asia</span>
+          </div>
+          <h2 class="text-3xl md:text-5xl font-bold mb-8 leading-tight">
+            Solusi untuk <span class="text-gold-gradient">Memaksimalkan Fungsi Ruangan</span>
+          </h2>
+          <div class="space-y-5 text-white/70 leading-relaxed">
+            <p>
+              CV Pireki Asia adalah perusahaan spesialis penyekat ruangan, pintu lipat, dan partisi geser yang 
+              berlokasi di Surabaya, Jawa Timur. Kami memproduksi sendiri semua produk partisi — bukan reseller, 
+              bukan distributor. Setiap produk yang keluar dari workshop kami melewati proses fabrikasi yang 
+              ketat dengan material pilihan.
+            </p>
+            <p>
+              Dengan pengalaman sejak 2008, kami telah menyelesaikan lebih dari 1.000 proyek di berbagai sektor: 
+              hotel, perkantoran, universitas, sekolah, rumah sakit, bank, hingga proyek strategis nasional 
+              seperti Hunian POLRI & BIN di Ibu Kota Nusantara.
+            </p>
+            <p>
+              Kami tidak hanya menjual produk — kami memberikan solusi. Dari konsultasi desain, survei lokasi, 
+              fabrikasi, pemasangan, hingga layanan purna jual dan maintenance berkala.
+            </p>
+          </div>
+        </div>
+
+        <!-- Company Stats -->
+        <div class="grid grid-cols-2 gap-6">
+          {[
+            { value: '2008', label: 'Berdiri Sejak' },
+            { value: '1.200+', label: 'Proyek Terpasang' },
+            { value: '6', label: 'Tipe Produk' },
+            { value: '34', label: 'Kota Seluruh Indonesia' },
+          ].map(stat => (
+            <div class="bg-white/5 border border-white/10 rounded-3xl p-8 text-center transform transition-transform hover:scale-105">
+              <div class="text-4xl md:text-5xl font-bold text-[#c9a84c] mb-2">{stat.value}</div>
+              <div class="text-sm text-white/50">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Perjalanan Kami -->
+    <section class="py-24 border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-[#c9a84c]/30 bg-[#c9a84c]/10 backdrop-blur-sm">
+            <span class="text-[#c9a84c] text-xs font-bold tracking-widest uppercase">Perjalanan Kami</span>
+          </div>
+          <h2 class="text-3xl md:text-5xl font-bold leading-tight">
+            Dari <span class="text-gold-gradient">2008</span> Hingga Kini
+          </h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto relative">
+          <div class="absolute left-6 top-0 bottom-0 w-px bg-white/10"></div>
+          {[
+            { year: '2008', title: 'Awal Mula', desc: 'CV Pireki Asia memulai perjalanan di industri penyekat ruangan dan pintu lipat di Surabaya.' },
+            { year: '2011', title: 'Produksi Sendiri', desc: 'Mulai memproduksi partisi secara in-house di workshop sendiri. Bukan lagi sekadar aplikator.' },
+            { year: '2020', title: 'Penguatan Legalitas', desc: 'Akta pendirian No. 218 oleh Notaris Herman Soesilo. NIB, NPWP, dan Merek PIREKI terdaftar resmi.' },
+            { year: '2024-2025', title: 'Ekspansi Proyek Nasional', desc: 'Menangani proyek strategis: Hunian POLRI & BIN IKN, Pertamina Hulu Rokan, PT Antam, dan proyek di 20+ kota dari Sumatera hingga Papua.' },
+            { year: 'Sekarang', title: '1.200+ Proyek & Terus Bertambah', desc: 'Melayani klien dari hotel bintang 5, BUMN, universitas, hingga rumah pribadi. Enam tipe produk siap memenuhi kebutuhan ruang Anda.' },
+          ].map((item, i) => (
+            <div class="relative pl-16 pb-16 last:pb-0">
+              <div class="absolute left-3 top-1 w-6 h-6 rounded-full bg-[#c9a84c] border-4 border-black shadow-[0_0_0_2px_#c9a84c]"></div>
+              <span class="text-[#c9a84c] text-sm font-bold tracking-wider">{item.year}</span>
+              <h3 class="text-xl font-bold mt-2 mb-3">{item.title}</h3>
+              <p class="text-white/60 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Legalitas Perusahaan -->
+    <section class="py-24 border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-[#c9a84c]/30 bg-[#c9a84c]/10 backdrop-blur-sm">
+            <span class="text-[#c9a84c] text-xs font-bold tracking-widest uppercase">Legalitas</span>
+          </div>
+          <h2 class="text-3xl md:text-5xl font-bold leading-tight">
+            Perusahaan <span class="text-gold-gradient">Terdaftar & Resmi</span>
+          </h2>
+          <p class="text-white/60 mt-6 max-w-2xl mx-auto">
+            CV Pireki Asia adalah badan usaha yang sah secara hukum. Setiap dokumen legalitas dapat ditunjukkan 
+            kepada klien sebagai bentuk komitmen kami terhadap transparansi dan profesionalisme.
+          </p>
+        </div>
+
+        <!-- Dokumen Legalitas -->
+        <div class="grid grid-cols-1 gap-6 max-w-4xl mx-auto mb-16">
+          <div class="bg-white/5 border border-white/10 rounded-3xl p-6 flex flex-col sm:flex-row items-center gap-6 transform transition-transform hover:scale-[1.02]">
+            <div class="w-28 h-28 shrink-0 rounded-2xl overflow-hidden border border-white/10 bg-black/50 flex items-center justify-center">
+              <img src="/img/Akta_Pendirian.png" alt="Akta Pendirian CV Pireki Asia Nomor 218" class="w-20 h-20 object-contain" loading="lazy" />
+            </div>
+            <div class="flex-1 text-center sm:text-left">
+              <h3 class="font-bold text-lg mb-1"><span class="text-[#c9a84c]">Akta Pendirian</span></h3>
+              <p class="text-white/50 text-sm leading-relaxed">Nomor 218, 18 Agustus 2020 — Notaris Herman Soesilo, S.H., M.Kn.
+                <br />
+                Dokumen legal utama yang menandai berdirinya CV Pireki Asia secara sah di hadapan hukum.</p>
+            </div>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 rounded-3xl p-6 flex flex-col sm:flex-row items-center gap-6 transform transition-transform hover:scale-[1.02]">
+            <div class="w-28 h-28 shrink-0 rounded-2xl overflow-hidden border border-white/10 bg-black/50 flex items-center justify-center">
+              <img src="/img/NIB.png" alt="NIB CV Pireki Asia 0220009462709" class="w-20 h-20 object-contain" loading="lazy" />
+            </div>
+            <div class="flex-1 text-center sm:text-left">
+              <h3 class="font-bold text-lg mb-1"><span class="text-[#c9a84c]">Nomor Induk Berusaha</span></h3>
+              <p class="text-white/50 text-sm leading-relaxed">NIB 0220009462709 — KBLI 16621 (Industri Barang Dengan Kayu).
+                <br />Terdaftar di sistem OSS RBA, menandakan CV Pireki Asia diakui sebagai badan usaha legal oleh Pemerintah Indonesia.</p>
+            </div>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 rounded-3xl p-6 flex flex-col sm:flex-row items-center gap-6 transform transition-transform hover:scale-[1.02]">
+            <div class="w-28 h-28 shrink-0 rounded-2xl overflow-hidden border border-white/10 bg-black/50 flex items-center justify-center">
+              <img src="/img/NPWP.png" alt="NPWP CV Pireki Asia 71.293.989.1-604.000" class="w-20 h-20 object-contain" loading="lazy" />
+            </div>
+            <div class="flex-1 text-center sm:text-left">
+              <h3 class="font-bold text-lg mb-1"><span class="text-[#c9a84c]">NPWP</span></h3>
+              <p class="text-white/50 text-sm leading-relaxed">Nomor 71.293.989.1-604.000.<br />Terdaftar sebagai Wajib Pajak Badan Usaha, siap memenuhi kewajiban perpajakan negara dan menerbitkan faktur pajak resmi untuk setiap transaksi.</p>
+            </div>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 rounded-3xl p-6 flex flex-col sm:flex-row items-center gap-6 transform transition-transform hover:scale-[1.02]">
+            <div class="w-28 h-28 shrink-0 rounded-2xl overflow-hidden border border-white/10 bg-black/50 flex items-center justify-center">
+              <img src="/img/Merek_Terdaftar.png" alt="Sertifikat Merek PIREKI IDM000746833" class="w-20 h-20 object-contain" loading="lazy" />
+            </div>
+            <div class="flex-1 text-center sm:text-left">
+              <h3 class="font-bold text-lg mb-1"><span class="text-[#c9a84c]">Merek Terdaftar</span></h3>
+              <p class="text-white/50 text-sm leading-relaxed">PIREKI — Pendaftaran No. IDM000746833. Terdaftar di Direktorat Jenderal Kekayaan Intelektual (DJKI) Kementerian Hukum & HAM RI. Merek eksklusif yang tidak dapat digunakan pihak lain.</p>
+            </div>
+          </div>
+
+          <div class="bg-white/5 border border-white/10 rounded-3xl p-6 flex flex-col sm:flex-row items-center gap-6 transform transition-transform hover:scale-[1.02]">
+            <div class="w-28 h-28 shrink-0 rounded-2xl overflow-hidden border border-white/10 bg-black/50 flex items-center justify-center">
+              <img src="/img/TKDN.png" alt="Sertifikat TKDN CV Pireki Asia" class="w-20 h-20 object-contain" loading="lazy" />
+            </div>
+            <div class="flex-1 text-center sm:text-left">
+              <h3 class="font-bold text-lg mb-1"><span class="text-[#c9a84c]">Sertifikat TKDN</span></h3>
+              <p class="text-white/50 text-sm leading-relaxed">Tingkat Komponen Dalam Negeri — CV. Pireki Asia. Sertifikat pengakuan atas persentase kandungan lokal pada produk partisi buatan Indonesia. Syarat wajib untuk tender proyek BUMN dan pengadaan pemerintah.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabel Ringkasan Legalitas -->
+        <div class="max-w-3xl mx-auto bg-white/5 border border-white/10 rounded-3xl p-8">
+          <h3 class="text-xl font-bold mb-8 text-center">Ringkasan Legalitas</h3>
+          <table class="w-full text-left">
+            <tbody class="divide-y divide-white/10">
+              {[
+                { dokumen: 'Akta Pendirian', detail: 'Nomor 218, 18 Agustus 2020 — Notaris Herman Soesilo' },
+                { dokumen: 'NIB', detail: '0220009462709 — KBLI 16621' },
+                { dokumen: 'NPWP', detail: '71.293.989.1-604.000' },
+                { dokumen: 'Merek Terdaftar', detail: 'PIREKI — IDM000746833' },
+                { dokumen: 'TKDN', detail: 'Atas nama CV. Pireki Asia' },
+              ].map(item => (
+                <tr class="hover:bg-white/5 transition-colors">
+                  <td class="py-4 pr-8 font-semibold text-white">{item.dokumen}</td>
+                  <td class="py-4 text-white/60">{item.detail}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Produk & Layanan -->
+    <section class="py-24 border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-[#c9a84c]/30 bg-[#c9a84c]/10 backdrop-blur-sm">
+            <span class="text-[#c9a84c] text-xs font-bold tracking-widest uppercase">Produk & Layanan</span>
+          </div>
+          <h2 class="text-3xl md:text-5xl font-bold leading-tight">
+            Enam Tipe Produk, <span class="text-gold-gradient">Satu Tujuan</span>
+          </h2>
+          <p class="text-white/60 mt-6">Setiap produk dirancang untuk kebutuhan ruang yang berbeda — dari ballroom hotel hingga rumah tinggal.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
+          {tipeEntries.map(entry => (
+            <TipePartisiCard
+              title={entry.data.title}
+              description={entry.data.description}
+              image={entry.data.featured_image}
+              slug={entry.data.slug}
+              price={entry.data.price}
+            />
+          ))}
+        </div>
+
+        <div class="text-center">
+          <a href="/tipe" class="inline-block px-8 py-4 bg-[#c9a84c] text-black font-bold rounded-xl hover:scale-105 transition-transform">
+            Lihat Semua Produk
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Klien Terkemuka -->
+    <section class="py-24 border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-[#c9a84c]/30 bg-[#c9a84c]/10 backdrop-blur-sm">
+            <span class="text-[#c9a84c] text-xs font-bold tracking-widest uppercase">Portofolio</span>
+          </div>
+          <h2 class="text-3xl md:text-5xl font-bold leading-tight">
+            Klien & Proyek <span class="text-gold-gradient">Terkemuka</span>
+          </h2>
+          <p class="text-white/60 mt-6">Lebih dari 1.000 proyek telah kami selesaikan di berbagai sektor — dari Aceh hingga Papua.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {[
+            { name: 'Petrokimia Gresik', sector: 'BUMN', desc: 'Kantor pusat menggunakan SOREPA untuk ruang pertemuan premium.' },
+            { name: 'Pertamina Hulu Rokan', sector: 'Energi', desc: '2 proyek terpisah di Pekanbaru dan Rumbai menggunakan partisi geser.' },
+            { name: 'Hunian POLRI & BIN IKN', sector: 'Proyek Nasional', desc: 'Pemasangan Sorepa di 7 tower hunian aparat negara di IKN.' },
+            { name: 'Bank BNI Makassar', sector: 'Perbankan', desc: 'Partisi Sorepa Stacking untuk optimalisasi ruang di Indonesia timur.' },
+            { name: 'PT Antam UBPN', sector: 'Tambang', desc: 'Partisi peredam suara di kantor unit bisnis nikel Sulawesi Tenggara.' },
+            { name: 'Bandara Sultan Hasanuddin', sector: 'Infrastruktur', desc: 'Blue Sky Lounge — ruang tunggu premium bandara utama Indonesia timur.' },
+            { name: 'The Rich Jogja Hotel', sector: 'Perhotelan', desc: 'Ballroom fleksibel dengan Sorepa Stacking 2 Roda di Yogyakarta.' },
+            { name: 'FUGO Hotel Samarinda', sector: 'Perhotelan', desc: 'Ballroom setinggi 7,6 meter dengan partisi Sorepa Stacking.' },
+            { name: 'Institut Teknologi Del', sector: 'Pendidikan', desc: 'Kampus di tepi Danau Toba menggunakan Sorepa untuk ruang multifungsi.' },
+          ].map(klien => (
+            <div class="bg-white/5 border border-white/10 rounded-3xl p-6 transform transition-transform hover:scale-105">
+              <div class="inline-block px-3 py-1 rounded-full bg-[#c9a84c]/10 border border-[#c9a84c]/30 text-[#c9a84c] text-xs font-bold tracking-wider mb-4">
+                {klien.sector}
+              </div>
+              <h3 class="font-bold mb-2">{klien.name}</h3>
+              <p class="text-white/50 text-sm leading-relaxed">{klien.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Area Layanan -->
+    <section class="py-24 border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-[#c9a84c]/30 bg-[#c9a84c]/10 backdrop-blur-sm">
+          <span class="text-[#c9a84c] text-xs font-bold tracking-widest uppercase">Jangkauan</span>
+        </div>
+        <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-8">
+          Melayani <span class="text-gold-gradient">Seluruh Indonesia</span>
+        </h2>
+        <p class="text-white/60 max-w-2xl mx-auto mb-12">
+          Tim teknisi kami siap melakukan survei lokasi dan pengawasan pemasangan di kota-kota berikut:
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+          {['Surabaya', 'Sidoarjo', 'Gresik', 'Mojokerto', 'Pasuruan', 'Malang', 'Jember', 'Kediri', 'Semarang', 'Yogyakarta', 'Bandung', 'Jakarta', 'Bekasi', 'Tangerang', 'Lampung', 'Medan', 'Padang', 'Pekanbaru', 'Jambi', 'Palembang', 'Bengkulu', 'Batam', 'Pontianak', 'Samarinda', 'Banjarmasin', 'Makassar', 'Kendari', 'Jayapura', 'Bali'].map(kota => (
+            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-white/70 hover:text-[#c9a84c] hover:border-[#c9a84c]/30 transition-colors">
+              {kota}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTA title="Bersama PIREKI, Maksimalkan Fungsi Ruangan Anda" />
+  </main>
+</Layout>

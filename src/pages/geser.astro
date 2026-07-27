@@ -1,0 +1,416 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Schema from '../components/Schema.astro';
+import CTA from '../components/CTA.astro';
+
+const faqData = [
+  {
+    question: "Apa perbedaan Sorepa Pro dengan Sorepa biasa?",
+    answer: "Sorepa Pro adalah varian premium dengan peredaman suara hingga 60 dB, menggunakan jack mekanik penuh di setiap panel, serta sistem sliding tanpa rel bawah untuk tampilan yang lebih bersih dan elegan. Sorepa biasa tetap memiliki peredaman suara yang baik namun dengan spesifikasi standar yang lebih terjangkau."
+  },
+  {
+    question: "Apakah partisi geser bisa dipasang di lantai yang tidak rata?",
+    answer: "Ya, partisi geser Pireki dirancang dengan sistem rel atas yang fleksibel sehingga dapat menyesuaikan dengan kondisi lantai yang tidak rata sempurna. Tim teknis kami akan melakukan survey lokasi terlebih dahulu untuk memastikan pemasangan yang optimal."
+  },
+  {
+    question: "Berapa lama proses pemasangan partisi geser?",
+    answer: "Waktu pemasangan bervariasi tergantung luas area dan kompleksitas proyek. Untuk ruangan berukuran standar (50-100 m²), pemasangan biasanya selesai dalam 3-7 hari kerja oleh tim teknisi berpengalaman kami."
+  },
+  {
+    question: "Apakah partisi geser Pireki bisa meredam suara dengan baik?",
+    answer: "Tergantung tipe yang dipilih. Sorepa Pro dan Sorepa Prima mampu meredam suara hingga 60 dB, cocok untuk ballroom hotel dan ruang meeting. Sorepa standar juga memiliki peredaman yang baik dengan rockwool 60kg/m³, sementara Samowa Persection menggunakan glasswool 30kg/m³ untuk peredaman medium."
+  },
+  {
+    question: "Apakah partisi geser memerlukan perawatan khusus?",
+    answer: "Perawatan partisi geser relatif mudah. Cukup bersihkan rel secara berkala dari debu, lumasi roda geser setahun sekali, dan periksa kondisi rubber seal. Pireki juga menyediakan layanan pemeliharaan berkala untuk memastikan partisi tetap berfungsi optimal."
+  },
+  {
+    question: "Berapa garansi untuk partisi geser Pireki?",
+    answer: "Pireki memberikan garansi produk yang meliputi perbaikan dan penggantian komponen. Detail garansi akan dijelaskan saat konsultasi dan tercantum dalam kontrak kerja. Kami juga menyediakan layanan purna jual dan pemeliharaan berkala."
+  }
+];
+
+const portfolioProjects = [
+  { institution: "PT Petrokimia Gresik", location: "Gresik, Jawa Timur", product: "Sorepa", highlight: "BUMN pupuk terbesar — partisi geser premium untuk kantor pusat dengan isolasi suara optimal." },
+  { institution: "The Rich Jogja Hotel", location: "Sleman, Yogyakarta", product: "Sorepa Stacking", highlight: "Ballroom hotel bintang 5; partisi geser dengan sistem stacking 2 roda untuk fleksibilitas ruang maksimal." },
+  { institution: "FUGO Hotel Samarinda", location: "Samarinda, Kalimantan Timur", product: "Sorepa Stacking", highlight: "Ballroom serbaguna dengan partisi geser setinggi 7,6 meter — salah satu proyek tertinggi yang pernah kami kerjakan." },
+  { institution: "UIN Sumatera Utara (UINSU)", location: "Medan, Sumatera Utara", product: "Sorepa", highlight: "Aula kampus dipecah menjadi beberapa ruang tanpa gangguan kebocoran suara antar ruangan." },
+  { institution: "PT Pertamina Hulu Rokan", location: "Pekanbaru & Rumbai, Riau", product: "Sorepa", highlight: "Perusahaan energi nasional; 2 proyek terpisah untuk ruang rapat dan kolaborasi yang adaptif." },
+  { institution: "Blue Sky Lounge — Bandara Sultan Hasanuddin", location: "Makassar, Sulawesi Selatan", product: "Sorepa", highlight: "Ruang tunggu premium bandara; meningkatkan pengalaman penumpang di gerbang Indonesia timur." },
+  { institution: "Bank BNI Makassar", location: "Makassar, Sulawesi Selatan", product: "Sorepa Prima", highlight: "Kantor cabang BUMN; ruang besar disulap menjadi beberapa area pelatihan dan diskusi tim." },
+  { institution: "Hunian POLRI & BIN IKN", location: "Ibu Kota Nusantara", product: "Sorepa", highlight: "Proyek strategis nasional; pemasangan di 7 tower hunian untuk optimalisasi ruang dan privasi." },
+];
+---
+
+<Layout
+  title="Partisi Geser Pireki Solusi Penyekat Ruangan Fleksibel"
+  description="Partisi geser Pireki: solusi penyekat ruangan multifungsi dengan sistem sliding tanpa rel bawah. Tersedia Sorepa Pro, Sorepa Prima, Sorepa, dan Samowa Persection. Konsultasi gratis."
+  image="/img/Blue-Sky-Lounge.webp"
+>
+  <Schema type="Breadcrumb" data={[
+    { name: "Beranda", url: "/" },
+    { name: "Partisi Geser", url: "/geser" }
+  ]} />
+
+  <Schema type="Product" data={{
+    title: "Partisi Geser Pireki",
+    featured_image: "https://pireki.id/img/Blue-Sky-Lounge.webp",
+    description: "Solusi penyekat ruangan fleksibel dengan sistem geser tanpa rel bawah. Tersedia dalam 4 tipe: Sorepa Pro, Sorepa Prima, Sorepa, dan Samowa Persection.",
+    price: "0",
+    ratingValue: "4.8",
+    reviewCount: "127"
+  }} />
+
+  <Schema type="WebSite" />
+  <Schema type="Organization" />
+
+  {/* Hero */}
+  <section class="relative py-24 md:py-32 overflow-hidden border-b border-white/5">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-[#c9a84c]/10 via-transparent to-transparent"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-[#c9a84c]/5 via-transparent to-transparent"></div>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnD4ZJUCc6ImCDtFC5bS2kuhf-KUtcSgkOUp3ib95pZO2tuD2YRYDwWZf1rlqfvTH55FPA7rzP0QPKtYdXaB7pXOYfgwkeY_60zzr5qa11_H4ohLWb4fAM99IYE2ZkMRf5lsorwPYzIIRqu9iKW46LvhiMfOE3y-Ikr6J5HHGYm-ToekX0e24JnVE04MCH/s800/dinding_partisi_pireki_tipe_sorepa_stacking_st_100.jpg" alt="Partisi Geser Sorepa" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-6 relative">
+      <div class="max-w-4xl hero-stagger">
+        <div class="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-[#c9a84c]/30 bg-[#c9a84c]/10 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-[#c9a84c] animate-pulse"></span>
+          <span class="text-[#c9a84c] text-xs font-medium tracking-widest uppercase">Partisi Geser</span>
+        </div>
+        <h1 class="text-4xl md:text-7xl font-bold mb-8 text-white leading-[1.1]">
+          Partisi Geser untuk Ruangan <span class="text-[#c9a84c]">Fleksibel & Fungsional</span>
+        </h1>
+        <p class="text-lg md:text-xl text-white/70 leading-relaxed mb-10 max-w-3xl">
+          Butuh ruangan yang bisa berubah fungsi kapan saja? Partisi geser Pireki adalah jawabannya. 
+          Dengan sistem sliding tanpa rel bawah, ruangan Anda bisa bertransformasi dari aula besar 
+          menjadi beberapa ruang meeting dalam hitungan menit — tanpa renovasi, tanpa debu, tanpa ribut.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="https://wa.me/6282376737701" target="_blank" class="px-8 py-4 bg-[#c9a84c] text-black font-bold rounded-xl hover:scale-105 transition-transform flex items-center gap-2">
+            <span>Konsultasi Gratis</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="#produk" class="px-8 py-4 bg-white/5 text-white font-bold rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+            Lihat Produk
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Stats */}
+  <section class="py-16 bg-[#050505] border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div class="reveal p-8 rounded-2xl bg-white/5 border border-white/10">
+          <div class="text-3xl md:text-4xl font-bold text-[#c9a84c] mb-2">Sejak 2008</div>
+          <div class="text-white/60">Pengalaman di industri penyekat ruangan</div>
+        </div>
+        <div class="reveal p-8 rounded-2xl bg-white/5 border border-white/10">
+          <div class="text-3xl md:text-4xl font-bold text-[#c9a84c] mb-2">1.200+ Proyek</div>
+          <div class="text-white/60">Terpasang di seluruh Indonesia</div>
+        </div>
+        <div class="reveal p-8 rounded-2xl bg-white/5 border border-white/10">
+          <div class="text-3xl md:text-4xl font-bold text-[#c9a84c] mb-2">34 Kota</div>
+          <div class="text-white/60">Jangkauan layanan dari Aceh hingga Papua</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Apa Itu Partisi Geser */}
+  <section class="py-24 bg-black">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="reveal">
+          <span class="text-[#c9a84c] text-xs font-medium tracking-widest uppercase mb-4 block">Apa Itu Partisi Geser?</span>
+          <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            Solusi <span class="text-[#c9a84c]">Penyekat Ruangan</span> Tanpa Renovasi
+          </h2>
+          <p class="text-white/60 leading-relaxed mb-4">
+            Partisi geser adalah sistem dinding movable yang dapat digeser (sliding) untuk membagi atau 
+            menggabungkan ruangan sesuai kebutuhan. Berbeda dengan dinding permanen yang butuh biaya besar 
+            dan waktu lama, partisi geser bisa dioperasikan dalam hitungan detik.
+          </p>
+          <p class="text-white/60 leading-relaxed mb-4">
+            Produk partisi geser Pireki menggunakan sistem rel dan roda di bagian atas (tanpa rel bawah) 
+            sehingga tampilan lantai tetap rapi dan bersih. Tersedia dalam berbagai tipe dengan tingkat 
+            peredaman suara yang berbeda — dari standar hingga premium 60 dB.
+          </p>
+          <p class="text-white/60 leading-relaxed">
+            Semua produk 100% buatan Indonesia, diproduksi langsung di workshop kami di Surabaya dan Gresik. 
+            Lewat pengalaman menangani berbagai macam proyek pemasangan partisi sejak 2008, kami memahami 
+            kebutuhan ruangan di berbagai sektor — dari hotel, kantor, universitas, hingga rumah sakit.
+          </p>
+        </div>
+        <div class="reveal grid grid-cols-2 gap-4">
+          <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+            <div class="text-2xl mb-2">🎯</div>
+            <h3 class="text-white font-bold mb-1">Fleksibel</h3>
+            <p class="text-white/60 text-sm">Ubah konfigurasi ruangan kapan saja tanpa bongkar pasang</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+            <div class="text-2xl mb-2">💰</div>
+            <h3 class="text-white font-bold mb-1">Hemat Biaya</h3>
+            <p class="text-white/60 text-sm">Hingga 60% lebih murah dibanding dinding permanen</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+            <div class="text-2xl mb-2">🔇</div>
+            <h3 class="text-white font-bold mb-1">Peredaman Suara</h3>
+            <p class="text-white/60 text-sm">Hingga 60 dB dengan sistem jack mekanik + rockwool</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+            <div class="text-2xl mb-2">⚡</div>
+            <h3 class="text-white font-bold mb-1">Cepat Pasang</h3>
+            <p class="text-white/60 text-sm">Pemasangan 3-7 hari oleh teknisi berpengalaman</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Produk Partisi Geser */}
+  <section id="produk" class="py-24 bg-[#050505]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span class="text-[#c9a84c] text-xs font-medium tracking-widest uppercase mb-4 block">Produk Partisi Geser</span>
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Pilih Tipe yang Tepat untuk Kebutuhan Anda</h2>
+        <p class="text-white/60 leading-relaxed">
+          Pireki menawarkan 4 tipe partisi geser dengan spesifikasi yang berbeda — dari premium 
+          dengan peredaman suara tinggi hingga mid-range yang ekonomis. Setiap produk bisa disesuaikan 
+          ukuran, desain, dan finishing sesuai kebutuhan proyek Anda.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <a href="/tipe/sorepa-pro" class="block reveal p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-[#c9a84c]/50 transition-all group">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <span class="text-xs font-bold text-[#c9a84c] tracking-widest uppercase">Premium</span>
+              <h3 class="text-2xl font-bold text-white mt-1">Sorepa Pro</h3>
+            </div>
+            <span class="text-3xl">🏆</span>
+          </div>
+          <p class="text-white/60 text-sm mb-4">Produk unggulan dengan peredaman suara tertinggi. Sistem sliding tanpa rel bawah untuk tampilan minimalis mewah.</p>
+          <ul class="space-y-2 text-sm text-white/70 mb-6">
+            <li class="flex items-start gap-2">
+              <span class="text-[#c9a84c] mt-0.5">✓</span>
+              <span>Peredaman suara hingga <strong class="text-white">60 dB</strong></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#c9a84c] mt-0.5">✓</span>
+              <span>Jack mekanik penuh — pencengkram atas & bawah</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#c9a84c] mt-0.5">✓</span>
+              <span>Tanpa rel bawah — lantai tetap rapi & elegan</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#c9a84c] mt-0.5">✓</span>
+              <span>Frame hollow 5x5 + rockwool 60kg/m³</span>
+            </li>
+          </ul>
+          <p class="text-xs text-white/50 mb-4"><strong class="text-white/70">Cocok untuk:</strong> Ballroom hotel, ruang meeting korporat, studio, ruang konferensi, aula besar</p>
+        </a>
+
+        <a href="/tipe/sorepa-prima" class="block reveal p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-[#c9a84c]/50 transition-all group">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <span class="text-xs font-bold text-[#c9a84c] tracking-widest uppercase">Premium</span>
+              <h3 class="text-2xl font-bold text-white mt-1">Sorepa Prima</h3>
+            </div>
+            <span class="text-3xl">🥇</span>
+          </div>
+          <p class="text-white/60 text-sm mb-4">Varian premium dengan sistem persection — setiap daun pintu dapat digeser individual. Dilengkapi box penyimpanan samping.</p>
+          <ul class="space-y-2 text-sm text-white/70 mb-6">
+            <li class="flex items-start gap-2">
+              <span class="text-[#c9a84c] mt-0.5">✓</span>
+              <span>Peredaman suara hingga <strong class="text-white">60 dB</strong></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#c9a84c] mt-0.5">✓</span>
+              <span>Sistem persection — operasi individual per panel</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#c9a84c] mt-0.5">✓</span>
+              <span>Box penyimpanan samping untuk tampilan rapi</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#c9a84c] mt-0.5">✓</span>
+              <span>Panel 12 mm + heavy 8 cm</span>
+            </li>
+          </ul>
+          <p class="text-xs text-white/50 mb-4"><strong class="text-white/70">Cocok untuk:</strong> Ballroom hotel, ruang kampus, restoran, gedung serbaguna</p>
+        </a>
+
+        <a href="/tipe/sorepa" class="block reveal p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-[#c9a84c]/50 transition-all group">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <span class="text-xs font-bold text-white/50 tracking-widest uppercase">Standar</span>
+              <h3 class="text-2xl font-bold text-white mt-1">Sorepa</h3>
+            </div>
+            <span class="text-3xl">🥈</span>
+          </div>
+          <p class="text-white/60 text-sm mb-4">Tipe standar yang paling banyak digunakan di berbagai proyek. Keseimbangan sempurna antara kualitas dan harga.</p>
+          <ul class="space-y-2 text-sm text-white/70 mb-6">
+            <li class="flex items-start gap-2">
+              <span class="text-[#c9a84c] mt-0.5">✓</span>
+              <span>Peredaman suara baik dengan rockwool 60kg/m³</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#c9a84c] mt-0.5">✓</span>
+              <span>Sistem sliding dengan rel dan roda atas</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#c9a84c] mt-0.5">✓</span>
+              <span>Frame hollow 5x5 + multiplek/MDF 12 mm</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#c9a84c] mt-0.5">✓</span>
+              <span>Finishing cotton sheet — berbagai pilihan warna</span>
+            </li>
+          </ul>
+          <p class="text-xs text-white/50 mb-4"><strong class="text-white/70">Cocok untuk:</strong> Kantor, sekolah, universitas, rumah sakit, bank, hotel</p>
+        </a>
+
+        <a href="/tipe/samowa-persection" class="block reveal p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-[#c9a84c]/50 transition-all group">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <span class="text-xs font-bold text-white/50 tracking-widest uppercase">Mid-Range</span>
+              <h3 class="text-2xl font-bold text-white mt-1">Samowa Persection</h3>
+            </div>
+            <span class="text-3xl">🥉</span>
+          </div>
+          <p class="text-white/60 text-sm mb-4">Hybrid antara keanggunan Sorepa dan kepraktisan Samowa. Harga lebih terjangkau dengan desain geser tetap elegan.</p>
+          <ul class="space-y-2 text-sm text-white/70 mb-6">
+            <li class="flex items-start gap-2">
+              <span class="text-[#c9a84c] mt-0.5">✓</span>
+              <span>Peredaman suara dengan glasswool 30kg/m³</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#c9a84c] mt-0.5">✓</span>
+              <span>Sistem geser per-section dengan jack mekanik di panel terakhir</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#c9a84c] mt-0.5">✓</span>
+              <span>Panel 9 mm + aluminium profil anodize natural</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#c9a84c] mt-0.5">✓</span>
+              <span>Mekanisme grendel + pengunci panel terakhir</span>
+            </li>
+          </ul>
+          <p class="text-xs text-white/50 mb-4"><strong class="text-white/70">Cocok untuk:</strong> Kantor, sekolah, ballroom, area yang butuh kesan profesional dengan budget optimal</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* Portfolio */}
+  <section class="py-24 bg-black">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span class="text-[#c9a84c] text-xs font-medium tracking-widest uppercase mb-4 block">Portofolio</span>
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Dipercaya oleh <span class="text-[#c9a84c]">100+ Institusi</span></h2>
+        <p class="text-white/60 leading-relaxed">
+          Dari BUMN, hotel bintang 5, universitas negeri, hingga proyek strategis nasional — 
+          partisi geser Pireki sudah terpasang di berbagai sektor dan wilayah di Indonesia.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {portfolioProjects.map((project) => (
+          <div class="reveal p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#c9a84c]/30 transition-all">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-bold text-[#c9a84c]">{project.product}</span>
+            </div>
+            <h3 class="text-white font-bold mb-1 text-sm leading-tight">{project.institution}</h3>
+            <p class="text-white/40 text-xs mb-3">{project.location}</p>
+            <p class="text-white/60 text-xs leading-relaxed">{project.highlight}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-12 reveal">
+        <p class="text-white/50 text-sm mb-6">
+          ...dan masih banyak lagi proyek di berbagai kota: dari Aceh hingga Papua, dari hotel hingga rumah sakit.
+        </p>
+        <a href="https://wa.me/6282376737701" target="_blank" class="inline-flex px-8 py-4 bg-[#c9a84c] text-black font-bold rounded-xl hover:scale-105 transition-transform">
+          Konsultasikan Proyek Anda
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* FAQ */}
+  <section class="py-24 bg-[#050505]">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span class="text-[#c9a84c] text-xs font-medium tracking-widest uppercase mb-4 block">FAQ</span>
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Pertanyaan Umum Seputar <span class="text-[#c9a84c]">Partisi Geser</span></h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqData.map((faq, index) => (
+          <div class="faq-item reveal rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+            <button class="faq-question w-full flex items-center justify-between p-6 text-left text-white font-bold text-base md:text-lg hover:bg-white/[0.02] transition-colors" aria-expanded="false">
+              <span>{faq.question}</span>
+              <svg class="faq-icon w-5 h-5 text-[#c9a84c] flex-shrink-0 ml-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <div class="px-6 pb-6 text-white/70 leading-relaxed text-sm">
+                {faq.answer}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Schema type="FAQPage" data={faqData} />
+
+  {/* CTA */}
+  <section class="pb-24 bg-[#050505]">
+    <CTA
+      title="Siap Memaksimalkan Fungsi Ruangan Anda?"
+      description="Tim ahli Pireki siap membantu Anda memilih tipe partisi geser yang tepat untuk proyek Anda. Konsultasi gratis — tanpa biaya, tanpa komitmen."
+    />
+  </section>
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.faq-item').forEach((item) => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      const icon = item.querySelector('.faq-icon');
+      if (!(question instanceof HTMLElement) || !(answer instanceof HTMLElement) || !(icon instanceof HTMLElement)) return;
+      question.addEventListener('click', () => {
+        const isOpen = question.getAttribute('aria-expanded') === 'true';
+        document.querySelectorAll('.faq-item').forEach((otherItem) => {
+          if (otherItem === item) return;
+          const oq = otherItem.querySelector('.faq-question');
+          const oa = otherItem.querySelector('.faq-answer');
+          const oi = otherItem.querySelector('.faq-icon');
+          if (oq instanceof HTMLElement && oa instanceof HTMLElement && oi instanceof HTMLElement) {
+            oq.setAttribute('aria-expanded', 'false');
+            oa.style.maxHeight = '0';
+            oi.style.transform = 'rotate(0deg)';
+          }
+        });
+        question.setAttribute('aria-expanded', String(!isOpen));
+        if (isOpen) {
+          answer.style.maxHeight = '0';
+          icon.style.transform = 'rotate(0deg)';
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + 32 + 'px';
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  });
+</script>

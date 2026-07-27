@@ -1,0 +1,411 @@
+# Daftar Proyek Nyata Pemasangan Partisi oleh CV Pireki Asia
+# Format YAML — mudah dibaca AI Agent, ringkas, terstruktur.
+# Gunakan data ini sebagai referensi portofolio saat menulis artikel.
+
+proyek:
+  # === UNIVERSITAS / PENDIDIKAN TINGGI ===
+  - nama: "Partisi Sorepa Pireki UINSU Medan"
+    kategori: Universitas
+    institusi: "Universitas Islam Negeri Sumatera Utara (UINSU)"
+    lokasi: "Medan, Sumatera Utara"
+    produk: "Sorepa Redam"
+    highlight: "Implementasi penyekat ruangan di institusi pendidikan tinggi; aula besar dipecah menjadi beberapa ruang tanpa gangguan kebocoran suara."
+
+  - nama: "Partisi Sorepa UIN Syekh Wasil"
+    kategori: Universitas
+    institusi: "UIN Syekh Wasil"
+    lokasi: "Kediri, Jawa Timur"
+    produk: "Sorepa"
+    highlight: "Transformasi ruang pendidikan dinamis dengan sistem geser; mengakomodasi seminar besar hingga kelas paralel."
+
+  - nama: "FK UMI Makassar"
+    kategori: Universitas
+    institusi: "Fakultas Kedokteran Universitas Muslim Indonesia"
+    lokasi: "Makassar, Sulawesi Selatan"
+    produk: "Sorepa"
+    highlight: "Ruang kelas konvensional diubah menjadi area multifungsi untuk kegiatan akademik dan non-akademik di fakultas kedokteran."
+
+  - nama: "ITS PKU Surakarta"
+    kategori: Universitas
+    institusi: "Institut Teknologi Sains dan Kesehatan PKU Muhammadiyah Surakarta"
+    lokasi: "Surakarta, Jawa Tengah"
+    produk: "Partisi Geser"
+    highlight: "Biro Mahasiswa & Alumni — ruang fleksibel untuk konsultasi individu, rapat kecil, bimbingan kelompok, hingga acara alumni."
+
+  - nama: "Institut Teknologi Del"
+    kategori: Universitas
+    institusi: "Institut Teknologi Del (IT Del)"
+    lokasi: "Toba, Sumatera Utara"
+    produk: "Sorepa"
+    highlight: "Proyek di tepi Danau Toba; partisi kedap suara untuk ruang multifungsi di kampus."
+
+  - nama: "Universitas Airlangga Surabaya"
+    kategori: Universitas
+    institusi: "Universitas Airlangga (Unair)"
+    lokasi: "Surabaya, Jawa Timur"
+    produk: "Samowa Lipat"
+    highlight: "Proyek Januari 2015 — aula besar disulap jadi beberapa ruang kuliah dan training dalam hitungan menit."
+
+  # === HOTEL ===
+  - nama: "Ayola Signature Ocarina Batam"
+    kategori: Hotel
+    institusi: "Ayola Signature Ocarina"
+    lokasi: "Batam, Kepulauan Riau"
+    produk: "Sorepa Pro"
+    highlight: "Investasi strategis perhotelan; meeting room dan ballroom dapat berubah bentuk seketika untuk maksimalkan revenue."
+
+  - nama: "The Rich Jogja Hotel"
+    kategori: Hotel
+    institusi: "The Rich Jogja Hotel"
+    lokasi: "Sleman, Yogyakarta"
+    produk: "Sorepa Stacking 2 Roda"
+    highlight: "Ballroom flexibel; partisi geser dengan isolasi akustik superior untuk properti komersial di Yogyakarta."
+
+  - nama: "Hotel Furaya Pekanbaru"
+    kategori: Hotel
+    institusi: "Hotel Furaya"
+    lokasi: "Pekanbaru, Riau"
+    produk: "Partisi Geser"
+    highlight: "Area tunggal bertransformasi cepat mengakomodasi konferensi korporat hingga perayaan pernikahan."
+
+  - nama: "YELLO Hotel Jambi"
+    kategori: Hotel
+    institusi: "YELLO Hotel Jambi"
+    lokasi: "Jambi"
+    produk: "Sorepa Pro"
+    highlight: "Hotel urban-kreatif; ruang multifungsi untuk rapat kecil, workshop, hingga acara besar."
+
+  - nama: "OPA Hotel Palembang"
+    kategori: Hotel
+    institusi: "OPA Hotel"
+    lokasi: "Palembang, Sumatera Selatan"
+    produk: "Sorepa"
+    highlight: "Hotel lifestyle premium; partisi untuk meeting room serta area bisnis dan korporat."
+
+  - nama: "FUGO Hotel Samarinda"
+    kategori: Hotel
+    institusi: "FUGO Hotel"
+    lokasi: "Samarinda, Kalimantan Timur"
+    produk: "Sorepa Stacking 2 Roda (tinggi 7,6m)"
+    highlight: "Ballroom serbaguna; partisi tinggi 7,6 meter untuk konferensi bisnis hingga pesta pernikahan."
+
+  - nama: "Front One Hotel Jayapura"
+    kategori: Hotel
+    institusi: "Front One Hotel"
+    lokasi: "Jayapura, Papua"
+    produk: "Sorepa"
+    highlight: "Ruang rapat multifungsi elegan dan efisien; serah terima 21 April 2025."
+
+  # === SEKOLAH ===
+  - nama: "Partisi Sorepa di Mentawai"
+    kategori: Sekolah
+    institusi: "MTsN 1 Kepulauan Mentawai"
+    lokasi: "Mentawai, Sumatera Barat"
+    produk: "Sorepa"
+    highlight: "Sekolah di wilayah kepulauan dengan luas bangunan terbatas; satu ruangan besar ditransformasi menjadi beberapa unit kelas mandiri."
+
+  - nama: "SD SMP Al Irsyad Banyuwangi"
+    kategori: Sekolah
+    institusi: "SD SMP Al Irsyad"
+    lokasi: "Banyuwangi, Jawa Timur"
+    produk: "Samowa Persection"
+    highlight: "Institusi pendidikan swasta unggulan; optimalisasi ruang belajar multifungsi dengan partisi geser."
+
+  - nama: "New Zealand School Jakarta"
+    kategori: Sekolah
+    institusi: "New Zealand School Jakarta (NZ School)"
+    lokasi: "Jakarta Selatan, DKI Jakarta"
+    produk: "Samowa Lipat"
+    highlight: "Sekolah internasional; partisi lipat fungsional untuk ruang kelas modern. Proyek 25 April 2025."
+
+  - nama: "SMP IT ALAMY Subang"
+    kategori: Sekolah
+    institusi: "SMP IT ALAMY Subang"
+    lokasi: "Subang, Jawa Barat"
+    produk: "Sorepa"
+    highlight: "Lingkungan pendidikan modern dinamis; partisi geser untuk kegiatan belajar adaptif. Proyek 16 April 2025."
+
+  - nama: "Sekolah Ciputra Surabaya"
+    kategori: Sekolah
+    institusi: "Sekolah Ciputra"
+    lokasi: "Surabaya, Jawa Timur"
+    produk: "Sorepa"
+    highlight: "Lingkungan pendidikan; partisi geser menciptakan ruang adaptif yang mendukung pembelajaran efektif dan suasana tenang."
+
+  - nama: "Royal Islamic School Palembang"
+    kategori: Sekolah
+    institusi: "Royal Islamic School"
+    lokasi: "Palembang, Sumatera Selatan"
+    produk: "Sorepa (5 unit)"
+    highlight: "Sekolah elit TK-SD; pemasangan 5 unit partisi untuk memaksimalkan fungsi ruang belajar. Proyek 8 Juli 2020."
+
+  # === KANTOR / PERKANTORAN ===
+  - nama: "Dinas Perumahan Surabaya"
+    kategori: Kantor
+    institusi: "Dinas Perumahan Permukiman Cipta Karya dan Tata Ruang Surabaya"
+    lokasi: "Surabaya, Jawa Timur"
+    produk: "Partisi Geser"
+    highlight: "Instansi publik; satu ruangan besar diubah menjadi ruang rapat, pelatihan, area tunggu dalam hitungan menit."
+
+  - nama: "Partisi LAN Samarinda"
+    kategori: Kantor
+    institusi: "Puslatbang KDOD LAN Samarinda"
+    lokasi: "Samarinda, Kalimantan Timur"
+    produk: "Sorepa Stacking"
+    highlight: "Instansi pemerintah; aula besar ditransformasi menjadi beberapa ruang diskusi privat untuk pelatihan."
+
+  - nama: "Petrokimia Gresik"
+    kategori: Kantor
+    institusi: "PT Petrokimia Gresik"
+    lokasi: "Gresik, Jawa Timur"
+    produk: "SOREPA"
+    highlight: "Kantor BUMN; dinding geser premium mengubah ruang pertemuan tunggal menjadi area multifungsi dengan isolasi suara optimal."
+
+  - nama: "PT. Pelangi Elasindo"
+    kategori: Kantor
+    institusi: "PT. Pelangi Elasindo"
+    lokasi: "-"
+    produk: "Sorepa"
+    highlight: "Perusahaan manufaktur; ruang statis diubah menjadi area multifungsi untuk rapat, pelatihan, dan kolaborasi."
+
+  - nama: "Tanimas"
+    kategori: Kantor
+    institusi: "Tanimas — Grand Jati Junction"
+    lokasi: "-"
+    produk: "Partisi Geser Tanpa Finishing"
+    highlight: "Partisi geser tanpa finishing untuk arsitek dan kontraktor yang menginginkan keleluasaan sentuhan estetika akhir."
+
+  - nama: "Balai Desa Masangan Wetan"
+    kategori: Kantor
+    institusi: "Balai Desa Masangan Wetan"
+    lokasi: "Sidoarjo, Jawa Timur"
+    produk: "Nice Partition"
+    highlight: "Bangunan publik balai desa; ruang besar dipecah untuk berbagai kegiatan simultan menggunakan partisi ekonomis."
+
+  - nama: "Pertamina Hulu Rokan Pekanbaru"
+    kategori: Kantor
+    institusi: "PT Pertamina Hulu Rokan"
+    lokasi: "Pekanbaru, Riau"
+    produk: "Partisi Geser"
+    highlight: "Perusahaan energi; ruang rapat dan kolaborasi yang bertransformasi untuk berbagai kebutuhan — dari rapat direksi hingga pelatihan skala besar."
+
+  - nama: "Ameno Aesthetic Clinic Kendari"
+    kategori: Kantor
+    institusi: "Ameno Aesthetic Clinic"
+    lokasi: "Kendari, Sulawesi Tenggara"
+    produk: "Sorepa"
+    highlight: "Klinik estetika; satu ruangan menjadi area multifungsi untuk perawatan pasien, kolaborasi tim, dan pelatihan staf."
+
+  - nama: "Hunian POLRI dan BIN IKN"
+    kategori: Kantor
+    institusi: "Rusun Polri dan BIN IKN"
+    lokasi: "Ibu Kota Nusantara (IKN), Kalimantan Timur"
+    produk: "Sorepa"
+    highlight: "Proyek IKN; pemasangan penyekat ruangan di 7 tower hunian (4 tower POLRI + 3 tower BIN) untuk optimalisasi ruang dan privasi."
+
+  - nama: "Yayasan Bintang Timur Pusat, Banten"
+    kategori: Kantor
+    institusi: "Yayasan Bintang Timur Pusat"
+    lokasi: "Tangerang, Banten"
+    produk: "Partisi"
+    highlight: "Institusi pendidikan; optimalisasi ruang adaptif dan multifungsi."
+
+  - nama: "Perusahaan Rokok Sukun Kudus"
+    kategori: Kantor
+    institusi: "Perusahaan Rokok Sukun"
+    lokasi: "Kudus, Jawa Tengah"
+    produk: "Sorepa"
+    highlight: "Produsen rokok ternama; ruang kerja fungsional dan modern di lingkungan industri manufaktur."
+
+  - nama: "PT. Gema Teknik Perkasa Bekasi"
+    kategori: Kantor
+    institusi: "PT. Gema Teknik Perkasa"
+    lokasi: "Bekasi, Jawa Barat"
+    produk: "Sorepa (rel aluminium 1 roda)"
+    highlight: "Perusahaan refractory dan material tahan api; ruang multifungsi untuk rapat teknis, pelatihan, dan pertemuan antar divisi."
+
+  - nama: "PT. Fertilizer Inti Technology Jawa Timur"
+    kategori: Kantor
+    institusi: "PT. Fertilizer Inti Technology"
+    lokasi: "Gresik, Jawa Timur"
+    produk: "Sorepa Pro 2 Roda"
+    highlight: "Kantor pusat; serah terima kunci 7 Mei 2025. Kolaborasi tim teknis Pireki untuk sistem partisi geser berkualitas tinggi."
+
+  - nama: "PT. Pertamina Hulu Rokan Rumbai"
+    kategori: Kantor
+    institusi: "PT. Pertamina Hulu Rokan"
+    lokasi: "Pekanbaru, Riau"
+    produk: "Sorepa"
+    highlight: "Proyek 26 April 2025; sektor energi nasional, peningkatan fleksibilitas dan efisiensi ruang kerja di lingkungan perkantoran modern."
+
+  - nama: "Menara Syariah Jakarta Utara"
+    kategori: Kantor
+    institusi: "Menara Syariah"
+    lokasi: "Jakarta Utara, DKI Jakarta"
+    produk: "Sorepa"
+    highlight: "Gedung bergengsi di kawasan Pantai Indah Kapuk; solusi ruang multifungsi fleksibel. Proyek 12 Maret 2025."
+
+  - nama: "Yayasan Perkantas Jawa Timur"
+    kategori: Kantor
+    institusi: "Yayasan Perkantas Jawa Timur"
+    lokasi: "Surabaya, Jawa Timur"
+    produk: "Sorepa"
+    highlight: "Pusat pembinaan siswa dan mahasiswa Kristen; partisi peredam suara untuk ruang belajar kondusif. Proyek 10 Maret 2025."
+
+  - nama: "PT Antam Sulawesi Tenggara"
+    kategori: Kantor
+    institusi: "PT Antam Tbk. UBPN Sulawesi Tenggara"
+    lokasi: "Kolaka, Sulawesi Tenggara"
+    produk: "Sorepa"
+    highlight: "Perusahaan tambang dan logam; ruang kerja tenang dan rapi di lingkungan industri. Proyek 6 Maret 2025."
+
+  - nama: "Ocean Dynasty Bali"
+    kategori: Kantor
+    institusi: "Ocean Dynasty Resto"
+    lokasi: "Kuta, Bali"
+    produk: "Sorepa"
+    highlight: "Restoran seafood; partisi peredam suara untuk pengalaman makan lebih privat dan santai. Proyek 6 Maret 2025."
+
+  - nama: "PT. Wakijan Sumatera Utara"
+    kategori: Kantor
+    institusi: "PT. Wakijan"
+    lokasi: "Medan, Sumatera Utara"
+    produk: "Sorepa Stacking"
+    highlight: "Ruang multifungsi untuk pertemuan berskala besar. Proyek 19 Februari 2025."
+
+  # === RUMAH SAKIT ===
+  - nama: "RSJ Grhasia Yogyakarta"
+    kategori: Rumah Sakit
+    institusi: "RSJ Grhasia"
+    lokasi: "Yogyakarta, DIY"
+    produk: "Sorepa"
+    highlight: "Fasilitas kesehatan mental; privasi, keamanan, dan fleksibilitas tata ruang dengan standar akustik tinggi."
+
+  - nama: "RS. Telogorejo Semarang"
+    kategori: Rumah Sakit
+    institusi: "RS. Telogorejo (Semarang Medical Center)"
+    lokasi: "Semarang, Jawa Tengah"
+    produk: "Sorepa"
+    highlight: "Fasilitas kesehatan modern; solusi ruang cepat, berkualitas, fungsional. Final 12 Maret 2025."
+
+  # === INDUSTRI / MANUFAKTUR ===
+  - nama: "RAPP Pangkalan Kerinci"
+    kategori: Industri
+    institusi: "PT Riau Andalan Pulp and Paper (RAPP)"
+    lokasi: "Pangkalan Kerinci, Riau"
+    produk: "Sorepa"
+    highlight: "Perusahaan pulp & paper; ruang pelatihan dan rapat berskala besar yang beradaptasi cepat di lingkungan industri padat modal."
+
+  # === BANK / KEUANGAN ===
+  - nama: "Bank Eka Lampung"
+    kategori: Bank
+    institusi: "Bank Eka"
+    lokasi: "Lampung"
+    produk: "Sorepa"
+    highlight: "Proyek berulang — instalasi pertama 2017, instalasi ulang 7 tahun kemudian. Bukti kepercayaan dan kualitas produk."
+
+  - nama: "Mandiri Tunas Finance Jakarta"
+    kategori: Bank
+    institusi: "Mandiri Tunas Finance"
+    lokasi: "Jakarta, DKI Jakarta"
+    produk: "Partisi Geser"
+    highlight: "Perusahaan pembiayaan; ruang kantor adaptif untuk rapat, area kerja individu, dan ruang kolaboratif."
+
+  - nama: "BNI Makassar"
+    kategori: Bank
+    institusi: "Bank BNI Makassar"
+    lokasi: "Makassar, Sulawesi Selatan"
+    produk: "Sorepa Prima"
+    highlight: "Kantor cabang; ruang besar disulap jadi beberapa ruang kecil untuk pelatihan dan diskusi tim."
+
+  # === LOUNGE / BANDARA ===
+  - nama: "Blue Sky Lounge Makassar"
+    kategori: Lounge
+    institusi: "Blue Sky Lounge — Bandara Sultan Hasanuddin"
+    lokasi: "Makassar, Sulawesi Selatan"
+    produk: "Sorepa"
+    highlight: "Ruang tunggu bandara premium; peningkatan kenyamanan dan pengalaman penumpang di gerbang Indonesia timur."
+
+# === RINGKASAN UNTUK REFERENSI CEPAT ===
+ringkasan:
+  total_proyek: 46
+  total_terpasang: "1.000+ proyek di seluruh Indonesia"
+  tahun_berdiri: 2008
+  tahun_produksi_sendiri: 2011
+
+  kategori:
+    - nama: Universitas
+      jumlah: 6
+      produk_umum: "Sorepa, Samowa Lipat"
+    - nama: Hotel
+      jumlah: 8
+      produk_umum: "Sorepa Pro, Sorepa Stacking"
+    - nama: Sekolah
+      jumlah: 6
+      produk_umum: "Sorepa, Samowa Persection, Samowa Lipat"
+    - nama: Kantor
+      jumlah: 19
+      produk_umum: "Sorepa, Nice Partition, Partisi Geser"
+    - nama: Rumah Sakit
+      jumlah: 2
+      produk_umum: "Sorepa"
+    - nama: Industri
+      jumlah: 1
+      produk_umum: "Sorepa"
+    - nama: Bank
+      jumlah: 3
+      produk_umum: "Sorepa, Sorepa Stacking, Partisi Geser"
+    - nama: Lounge
+      jumlah: 1
+      produk_umum: "Sorepa"
+
+  sebaran_lokasi:
+    sumatera:
+      - "Medan, Sumatera Utara"
+      - "Mentawai, Sumatera Barat"
+      - "Pekanbaru, Riau"
+      - "Pangkalan Kerinci, Riau"
+      - "Batam, Kepulauan Riau"
+      - "Jambi"
+      - "Palembang, Sumatera Selatan"
+      - "Lampung"
+    jawa:
+      - "Surabaya, Jawa Timur"
+      - "Gresik, Jawa Timur"
+      - "Sidoarjo, Jawa Timur"
+      - "Banyuwangi, Jawa Timur"
+      - "Kediri, Jawa Timur"
+      - "Surakarta, Jawa Tengah"
+      - "Semarang, Jawa Tengah"
+      - "Kudus, Jawa Tengah"
+      - "Sleman, Yogyakarta"
+      - "Yogyakarta, DIY"
+      - "Tangerang, Banten"
+      - "Jakarta Selatan, DKI Jakarta"
+      - "Jakarta Utara, DKI Jakarta"
+      - "Bekasi, Jawa Barat"
+      - "Subang, Jawa Barat"
+    kalimantan:
+      - "Samarinda, Kalimantan Timur"
+      - "IKN, Kalimantan Timur"
+    sulawesi:
+      - "Makassar, Sulawesi Selatan"
+      - "Kendari, Sulawesi Tenggara"
+      - "Kolaka, Sulawesi Tenggara"
+    bali_nusra:
+      - "Kuta, Bali"
+    papua:
+      - "Jayapura, Papua"
+
+  klien_terkemuka:
+    - "PT Pertamina Hulu Rokan"
+    - "PT Petrokimia Gresik (BUMN)"
+    - "PT RAPP (Riau Andalan Pulp and Paper)"
+    - "PT Antam Tbk"
+    - "Bank BNI"
+    - "Mandiri Tunas Finance"
+    - "Bank Eka (proyek berulang)"
+    - "Universitas Airlangga"
+    - "Institut Teknologi Del"
+    - "Hunian POLRI & BIN IKN"
+    - "Bandara Internasional Sultan Hasanuddin Makassar"

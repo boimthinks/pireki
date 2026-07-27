@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import RuanganCard from '../../components/RuanganCard.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const ruanganEntries = await getCollection('ruangan');
+---
+
+<Layout 
+  title="Aplikasi Ruangan Partisi Geser & Lipat – Partisi Geser" 
+  description="Temukan berbagai aplikasi partisi geser dan pintu lipat dari Pireki Asia. Solusi sekat ruangan profesional untuk Ballroom, Kantor, Sekolah, dan Rumah Sakit."
+  image={ruanganEntries[0]?.data.featured_image}
+>
+  <PageHero 
+    title='Aplikasi <span class="text-[#c9a84c]">Partisi Geser</span>'
+    description="Partisi geser yang ditawarkan oleh Pireki Asia tidak hanya menyediakan solusi penyekat ruangan berkualitas tinggi, tetapi juga memberikan fleksibilitas untuk diterapkan pada berbagai tipe ruangan. Dengan desain yang canggih dan bahan berkualitas, partisi geser Pireki Asia cocok untuk memenuhi kebutuhan beragam ruangan. Berikut adalah beberapa contoh ruangan di mana partisi geser ini dapat diaplikasikan."
+    badge="Solusi Penyekat Ruang"
+  />
+
+  {/* Card View Section */}
+  <section class="py-24 bg-[#050505]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {ruanganEntries.map((entry) => (
+          <RuanganCard 
+            title={entry.data.title}
+            description={entry.data.description}
+            image={entry.data.featured_image}
+            slug={entry.id}
+            judul_seo_h1={entry.data.judul_seo_h1}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

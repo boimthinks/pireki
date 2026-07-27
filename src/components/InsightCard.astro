@@ -1,0 +1,22 @@
+---
+interface Props {
+  judul_seo: string;
+  image: string;
+  slug: string;
+  kategori: string;
+}
+
+const { judul_seo, image, slug, kategori } = Astro.props;
+---
+
+<a href={`/insights/${slug}`} class="reveal group block bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-[#c9a84c]/50 transition-all duration-300">
+  <div class="h-48 overflow-hidden relative">
+    <img src={image} alt={judul_seo} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" />
+    <div class="absolute top-4 left-4 bg-[#c9a84c] text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
+      {kategori}
+    </div>
+  </div>
+  <div class="p-6">
+    <h3 class="text-base text-white/70 group-hover:text-[#c9a84c] transition-colors">{judul_seo}</h3>
+  </div>
+</a>

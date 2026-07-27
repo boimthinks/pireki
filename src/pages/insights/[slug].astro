@@ -1,0 +1,174 @@
+---
+import { getCollection } from 'astro:content';
+import { marked } from 'marked';
+import { applyInternalLinks } from '../../lib/utils';
+import Layout from '../../layouts/Layout.astro';
+import InsightCard from '../../components/InsightCard.astro';
+import Schema from '../../components/Schema.astro';
+import CTA from '../../components/CTA.astro';
+import FeaturedTipe from '../../components/FeaturedTipe.astro';
+import AboutAuthor from '../../components/AboutAuthor.astro';
+
+export async function getStaticPaths() {
+  const insightsEntries = await getCollection('insights');
+  return insightsEntries.map(entry => ({
+    params: { slug: entry.data.slug },
+    props: { entry, allEntries: insightsEntries },
+  }));
+}
+
+const { entry, allEntries } = Astro.props;
+
+const usedLinks = new Set<string>();
+const body = entry.body ?? '';
+const processedBody = applyInternalLinks(body, usedLinks);
+
+// Extract headings for Table of Contents
+interface TocItem {
+  id: string;
+  text: string;
+  level: number;
+}
+
+const tocItems: TocItem[] = [];
+const headingRegex = /^(#{2,4})\s+(.+)$/gm;
+let headingMatch;
+while ((headingMatch = headingRegex.exec(processedBody)) !== null) {
+  const level = headingMatch[1].length;
+  const text = headingMatch[2].trim();
+  const id = text.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-');
+  tocItems.push({ id, text, level });
+}
+
+let contentHtml = await marked.parse(processedBody);
+// Add IDs to rendered HTML headings for anchor linking
+if (tocItems.length > 0) {
+  let hi = 0;
+  contentHtml = contentHtml.replace(/<h([234])\b([^>]*)>([\s\S]*?)<\/h\1>/gi, (match: string, level: string, attrs: string, text: string) => {
+    const item = tocItems[hi] || { id: `section-${hi}` };
+    hi++;
+    if (attrs.includes('id=')) return match;
+    return `<h${level} id="${item.id}"${attrs}>${text}</h${level}>`;
+  });
+}
+
+const relatedPosts = allEntries
+  .filter(e => e.data.kategori === entry.data.kategori && e.data.slug !== entry.data.slug)
+  .slice(0, 6);
+---
+
+<Layout title={`${entry.data.judul_seo} - PIREKI`} description={entry.data.pengantar} image={entry.data.image_url}>
+  <Schema type="Article" data={{
+    title: entry.data.title,
+    image_url: entry.data.image_url,
+    date: entry.data.date,
+    pengantar: entry.data.pengantar,
+  }} />
+  <Schema type="Breadcrumb" data={[
+    { name: 'Beranda', url: '/' },
+    { name: 'Insights', url: '/insights' },
+    { name: entry.data.kategori, url: `/insights?cat=${entry.data.kategori}` },
+    { name: entry.data.title, url: `/insights/${entry.data.slug}` }
+  ]} />
+  <Schema type="WebSite" />
+  <Schema type="Organization" />
+  <main class="py-20 bg-black text-white">
+    <article class="max-w-7xl mx-auto px-6 my-10">
+      {/* Breadcrumb */}
+      <nav class="flex flex-wrap items-center gap-2 text-xs md:text-sm text-white/40 mb-12 overflow-hidden">
+        <a href="/" class="hover:text-[#c9a84c] transition-colors whitespace-nowrap">Beranda</a>
+        <span class="flex-shrink-0">/</span>
+        <a href="/insights" class="hover:text-[#c9a84c] transition-colors whitespace-nowrap">Insights</a>
+        <span class="flex-shrink-0">/</span>
+        <span class="text-white/40 whitespace-nowrap">{entry.data.kategori}</span>
+        <span class="flex-shrink-0">/</span>
+        <span class="text-[#c9a84c] font-medium truncate max-w-[150px] md:max-w-none">{entry.data.title}</span>
+      </nav>
+      
+      {/* SEO Title & Image */}
+      <header class="max-w-4xl mx-auto text-center mb-16">
+        <h1 class="text-3xl md:text-3xl font-bold mb-8 text-white">{entry.data.judul_seo}</h1>
+        <div class="aspect-video rounded-3xl overflow-hidden mb-12 border border-white/10 shadow-2xl">
+          <img src={entry.data.image_url} alt={entry.data.title} class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+        </div>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div class="lg:col-span-8">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#c9a84c]/30 bg-[#c9a84c]/10 backdrop-blur-sm">
+              <span class="text-[#c9a84c] text-xs font-bold tracking-widest uppercase">{entry.data.kategori}</span>
+            </div>
+            <span class="text-white/40 text-sm">{entry.data.date.substring(0, 10)}</span>
+          </div>
+          <h2 class="text-2xl md:text-2xl font-bold mb-8 text-white leading-[1.1]">
+            {entry.data.title}
+          </h2>
+          <div class="text-base text-white/60 leading-relaxed mb-10 italic border-l-1 border-[#c9a84c] pl-6 py-2 prose-gold" set:html={entry.data.pengantar} />
+          
+          <CTA />
+          
+          <h2 class="text-2xl font-bold text-[#c9a84c] mt-16 mb-8">Pilihan Partisi Terbaik</h2>
+          <FeaturedTipe />
+
+          <div class="prose-content prose-gold mt-16" set:html={contentHtml} />
+
+          <div class="mt-16 p-10 rounded-3xl bg-white/5 border border-white/10 relative overflow-hidden group">
+            <h3 class="text-2xl font-bold mb-6 text-white flex items-center gap-3">
+              <span class="text-[#c9a84c]">#</span> Kesimpulan
+            </h3>
+            <div class="text-white/70 text-base leading-relaxed prose-gold" set:html={entry.data.kesimpulan} />
+          </div>
+
+          <AboutAuthor />
+
+          {relatedPosts.length > 0 && (
+            <section class="mt-20">
+              <h3 class="text-2xl font-bold text-white mb-10">Artikel Terkait</h3>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {relatedPosts.map(rp => (
+                  <InsightCard 
+                    judul_seo={rp.data.judul_seo}
+                    image={rp.data.image_url} 
+                    slug={rp.data.slug} 
+                    kategori={rp.data.kategori}
+                  />
+                ))}
+              </div>
+            </section>
+          )}
+        </div>
+
+        {/* Sidebar */}
+        <div class="lg:col-span-4">
+          <div class="sticky top-28 space-y-8">
+            {tocItems.length > 0 && (
+              <div class="bg-white/5 p-6 rounded-3xl border border-white/10">
+                <h3 class="text-xs text-white/60 uppercase tracking-widest mb-4">Daftar Isi</h3>
+                <nav class="space-y-2">
+                  {tocItems.filter(i => i.level === 2).map(item => (
+                    <a
+                      href={`#${item.id}`}
+                      class="block text-sm text-white/80 font-medium transition-colors hover:text-[#c9a84c]"
+                    >
+                      {item.text}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+            )}
+            <div class="bg-[#c9a84c] p-8 rounded-3xl text-black shadow-xl">
+              <h3 class="text-2xl font-bold mb-4">Butuh Solusi Partisi?</h3>
+              <p class="text-black/80 text-sm mb-8 leading-relaxed">
+                Konsultasikan kebutuhan partisi ruangan Anda dengan tim ahli kami secara gratis.
+              </p>
+              <a href="https://wa.me/6282376737701" target="_blank" class="flex items-center justify-center gap-3 w-full py-4 bg-black text-white font-bold rounded-2xl hover:bg-zinc-900 transition-colors">
+                Hubungi WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>

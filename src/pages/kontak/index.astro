@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { cities } from '../../data/cities';
+import CTA from '../../components/CTA.astro';
+
+// Sort cities alphabetically for better UX
+const sortedCities = [...cities].sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<Layout title="Kontak Kami - PIREKI" description="Hubungi Pireki Asia untuk konsultasi pemasangan partisi geser. Kami hadir di berbagai kota di Indonesia untuk melayani kebutuhan penyekat ruangan Anda.">
+  <main class="py-20 bg-black text-white min-h-screen">
+    <div class="max-w-7xl mx-auto px-6 my-10">
+      <header class="mb-16 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Pilih Lokasi Layanan</h1>
+        <p class="text-lg text-white/70 max-w-2xl mx-auto">
+          Pireki Asia hadir untuk melayani pemasangan partisi geser di berbagai kota besar di Indonesia. Pilih kota terdekat dengan lokasi Anda.
+        </p>
+      </header>
+
+      <section class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        {sortedCities.map(city => (
+          <a 
+            href={`/kontak/${city.slug}`} 
+            class="p-4 bg-white/5 border border-white/10 rounded-xl text-center hover:bg-[#c9a84c] hover:text-black transition-all font-medium"
+          >
+            {city.name}
+          </a>
+        ))}
+      </section>
+
+      <div class="mt-20">
+        <CTA title="Belum Menemukan Kota Anda?" description="Jika kota Anda belum tercantum dalam daftar di atas, jangan ragu untuk menghubungi tim kami secara langsung melalui WhatsApp untuk mendiskusikan jangkauan proyek di lokasi Anda." />
+      </div>
+    </div>
+  </main>
+</Layout>

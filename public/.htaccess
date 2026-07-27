@@ -1,0 +1,12 @@
+# Mengarahkan error 404 ke halaman 404.html kustom
+ErrorDocument 404 /404.html
+
+# Blokir crawler AI dan content harvester (403 Forbidden)
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} (CCBot|Bytespider|DataForSeoBot|Diffbot|Omgilibot|AwarioSmartBot|Magpie-Crawler|DotBot|SeekrBot|AI2Bot|PiplBot|Imagesift|Amazonbot|meta-externalagent|FacebookBot) [NC]
+RewriteRule .* - [F,L]
+
+# Opsional: Memastikan URL tanpa ekstensi berfungsi dengan baik jika hosting mendukung
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.html [NC,L]

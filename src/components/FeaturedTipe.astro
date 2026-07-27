@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import TipePartisiCard from './TipePartisiCard.astro';
+
+const allTipe = await getCollection('tipe');
+const featuredTipe = allTipe.filter(t => t.data.title.includes('Sorepa Pro') || t.data.title.includes('Samowa Lipat'));
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+  {featuredTipe.slice(0, 2).map((tipe) => (
+    <TipePartisiCard 
+      title={tipe.data.title}
+      description={tipe.data.description}
+      image={tipe.data.featured_image}
+      slug={tipe.data.slug}
+      price={tipe.data.price}
+    />
+  ))}
+</div>

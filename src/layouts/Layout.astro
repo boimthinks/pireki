@@ -1,0 +1,55 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppBubble from '../components/WhatsAppBubble.astro';
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+	image?: string;
+}
+
+const { title, description, image } = Astro.props;
+---
+
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+	<head>
+		<BaseHead title={title} description={description} image={image} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+	</head>
+	<body class="bg-black text-white antialiased flex flex-col min-h-screen selection:bg-[#c9a84c] selection:text-black">
+		<Navbar />
+		<main class="flex-grow">
+			<slot />
+		</main>
+		<Footer />
+		
+		<WhatsAppBubble />
+	</body>
+</html>
+
+<script>
+	import '../scripts/reveal.js';
+</script>
+
+<style is:global>
+	:root {
+		--brand-primary: #0056b3;
+		--brand-secondary: #00a859;
+	}
+
+	header {
+		transition: background-color 500ms cubic-bezier(0.25, 0.1, 0.25, 1),
+					backdrop-filter 500ms cubic-bezier(0.25, 0.1, 0.25, 1);
+	}
+
+	header.scrolled {
+		background-color: rgba(0, 0, 0, 0.95);
+		backdrop-filter: blur(16px);
+	}
+</style>

@@ -1,0 +1,182 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import TipePartisiCard from '../../components/TipePartisiCard.astro';
+import CTA from '../../components/CTA.astro';
+
+const tipeEntries = await getCollection('tipe');
+const categories = ['Semua', 'Geser', 'Lipat'];
+const geserEntries = tipeEntries.filter(e => e.data.sistem === 'geser');
+const lipatEntries = tipeEntries.filter(e => e.data.sistem === 'lipat');
+---
+
+<Layout 
+  title="Tipe Partisi Geser & Lipat Pireki. Solusi Penyekat Ruangan" 
+  description="Pireki memiliki 2 jenis partisi berdasarkan mekanismenya: Partisi Geser (sliding) dan Partisi Lipat (folding). Tersedia 6 tipe produk dengan spesifikasi yang dapat disesuaikan."
+  image={tipeEntries[0]?.data.featured_image}
+>
+  {/* Hero */}
+  <section class="relative py-24 mt-24 overflow-hidden border-b border-white/5">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-[#c9a84c]/10 via-transparent to-transparent"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-[#c9a84c]/5 via-transparent to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-6 relative">
+      <div class="max-w-4xl mx-auto text-center hero-stagger">
+        <div class="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-[#c9a84c]/30 bg-[#c9a84c]/10 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-[#c9a84c] animate-pulse"></span>
+          <span class="text-[#c9a84c] text-xs font-medium tracking-widest uppercase">Koleksi Produk</span>
+        </div>
+        <h1 class="text-4xl md:text-7xl font-bold mb-6 text-white leading-[1.1]">
+          Dua Sistem Partisi Dengan Satu Solusi
+        </h1>
+        <p class="text-lg md:text-xl text-white/60 leading-relaxed mb-12 max-w-2xl mx-auto">
+          Pireki menghadirkan dua sistem partisi utama, <strong class="text-white">Geser</strong> dan <strong class="text-white">Lipat</strong>, masing-masing dengan keunggulan spesifik untuk menjawab kebutuhan penyekat ruangan Anda.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* Jelajahi Sistem Partisi */}
+  <section class="pb-24 bg-black">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <span class="text-[#c9a84c] text-xs font-medium tracking-widest uppercase mb-4 block">Jelajahi Sistem</span>
+        <h2 class="text-3xl md:text-5xl font-bold text-white">Pilih Sistem Partisi yang Tepat</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <a href="/geser" class="reveal group relative overflow-hidden rounded-2xl h-[28rem] block">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnD4ZJUCc6ImCDtFC5bS2kuhf-KUtcSgkOUp3ib95pZO2tuD2YRYDwWZf1rlqfvTH55FPA7rzP0QPKtYdXaB7pXOYfgwkeY_60zzr5qa11_H4ohLWb4fAM99IYE2ZkMRf5lsorwPYzIIRqu9iKW46LvhiMfOE3y-Ikr6J5HHGYm-ToekX0e24JnVE04MCH/s800/dinding_partisi_pireki_tipe_sorepa_stacking_st_100.jpg" alt="Partisi Geser" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20"></div>
+          <div class="absolute inset-0 p-8 md:p-10 flex flex-col justify-end">
+            <span class="text-xs font-bold uppercase text-[#c9a84c] tracking-[0.2em]">Sistem Geser</span>
+            <h3 class="text-3xl md:text-4xl font-bold text-white mt-3 mb-3">Partisi Geser</h3>
+            <p class="text-white/60 text-sm leading-relaxed max-w-md mb-5">
+              Menggunakan sistem sliding dengan rel dan roda di bagian atas — tanpa rel bawah untuk tampilan lantai yang rapi. 
+              Tersedia dengan peredaman suara hingga 60 dB.
+            </p>
+            <ul class="space-y-2 mb-6">
+              {geserEntries.map(e => (
+                <li class="text-white/80 text-sm flex items-center gap-2">
+                  <span class="w-1 h-1 rounded-full bg-[#c9a84c]"></span>
+                  {e.data.title}
+                </li>
+              ))}
+            </ul>
+            <span class="inline-flex items-center gap-2 text-sm font-bold text-[#c9a84c] group/link">
+              Lihat Detail Produk Geser
+              <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
+          </div>
+        </a>
+
+        <a href="/lipat" class="reveal group relative overflow-hidden rounded-2xl h-[28rem] block">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgSlK4hZJ4NHJ4VqNQxYk43sO2rasIEiuStYRkwfBR65oZ3MbS02NIRx54-f_LcAhzPVCCGJqwfvrZtfK6aVxF5kVtjEAtQxM6tiASuAXMnpPHrUvwC-FTNlD_XtKI8H_Fn1L5i3iuAqBlVJZ5csJx-GrwGDJDC0XiFQuv_wAeHXOv8UYpYqDRmXtqDcH_K/s800/samowa_lipat.jpg" alt="Partisi Lipat" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20"></div>
+          <div class="absolute inset-0 p-8 md:p-10 flex flex-col justify-end">
+            <span class="text-xs font-bold uppercase text-blue-400 tracking-[0.2em]">Sistem Lipat</span>
+            <h3 class="text-3xl md:text-4xl font-bold text-white mt-3 mb-3">Partisi Lipat</h3>
+            <p class="text-white/60 text-sm leading-relaxed max-w-md mb-5">
+              Menggunakan sistem folding dengan engsel kupu-kupu — panel terlipat rapi di sisi ruangan saat tidak digunakan. 
+              Solusi ekonomis tanpa mengorbankan estetika.
+            </p>
+            <ul class="space-y-2 mb-6">
+              {lipatEntries.map(e => (
+                <li class="text-white/80 text-sm flex items-center gap-2">
+                  <span class="w-1 h-1 rounded-full bg-blue-400"></span>
+                  {e.data.title}
+                </li>
+              ))}
+            </ul>
+            <span class="inline-flex items-center gap-2 text-sm font-bold text-blue-400 group/link">
+              Lihat Detail Produk Lipat
+              <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
+          </div>
+        </a>
+      </div>
+
+      
+    </div>
+  </section>
+
+  {/* Product Filter & Grid */}
+  <section class="py-24 bg-[#050505]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Jelajahi Semua Produk</h2>
+        <p class="text-white/50">Filter berdasarkan sistem untuk menemukan produk yang sesuai</p>
+      </div>
+
+      <div class="flex flex-wrap gap-3 mb-12 justify-center" id="filter-container">
+        {categories.map((cat, index) => (
+          <button 
+            data-category={cat}
+            class={`px-6 py-2.5 rounded-full border text-sm font-medium transition-all ${
+              index === 0 
+                ? 'bg-[#c9a84c] text-black border-[#c9a84c]' 
+                : 'border-white/10 hover:border-[#c9a84c]/50 text-white/70 hover:text-white'
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="tipe-grid">
+        {tipeEntries.map((entry) => (
+          <div class="tipe-item text-lg" data-sistem={entry.data.sistem || ''}>
+            <TipePartisiCard 
+              title={entry.data.title}
+              description={entry.data.description}
+              image={entry.data.featured_image}
+              slug={entry.data.slug}
+              price={entry.data.price}
+              sistem={entry.data.sistem}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-24 bg-[#050505]">
+    <CTA
+      title="Butuh Rekomendasi Sistem Partisi?"
+      description="Tim ahli Pireki siap membantu Anda memilih sistem partisi yang tepat — geser atau lipat — sesuai kebutuhan ruangan dan anggaran proyek Anda."
+    />
+  </section>
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('#filter-container button');
+    const items = document.querySelectorAll('.tipe-item');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(btn => {
+          btn.classList.remove('bg-[#c9a84c]', 'text-black', 'border-[#c9a84c]');
+          btn.classList.add('text-white/70');
+        });
+        button.classList.remove('text-white/70');
+        button.classList.add('bg-[#c9a84c]', 'text-black', 'border-[#c9a84c]');
+
+        const filter = button.getAttribute('data-category')?.toLowerCase();
+
+        items.forEach(item => {
+          if (!(item instanceof HTMLElement)) return;
+          const sistem = item.getAttribute('data-sistem')?.toLowerCase();
+          if (filter === 'semua' || sistem === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>

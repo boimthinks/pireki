@@ -1,0 +1,46 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Solusi Cepat Penyekatan Ruangan",
+  description = "Pekerjaan proyek penyekat ruangan jadi makin cepat, menggunakan Dinding Partisi Geser dari Pireki. Anda dapat membagi ruangan dengan mudah dan cepat, sesuai dengan kebutuhan proyek Anda. Dapatkan penawaran harga menarik dari Kami."
+} = Astro.props;
+---
+
+<section class="py-0 px-0 reveal">
+  <div class="max-w-7xl mx-auto">
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-900 to-black border border-white/10 p-8 md:p-16 text-center">
+      {/* Background Decorative Element */}
+      <div class="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-[#c9a84c]/10 blur-[100px] rounded-full"></div>
+      <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-64 h-64 bg-[#c9a84c]/5 blur-[100px] rounded-full"></div>
+
+      <div class="relative z-10 max-w-2xl mx-auto">
+        <h2 class="text-2xl md:text-2xl font-bold text-white mb-6 leading-tight">
+          {title}
+        </h2>
+        <p class="text-white/60 text-base md:text-base leading-relaxed mb-10">
+          {description}
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-2">
+          <a 
+            href="https://wa.me/6282376737701" 
+            target="_blank"
+            class="px-3 py-3 bg-[#c9a84c] text-black font-bold rounded-xl hover:scale-105 transition-transform shadow-lg shadow-[#c9a84c]/20"
+          >
+            Konsultasi Gratis
+          </a>
+          <a 
+            href="/kontak" 
+            class="px-3 py-3 bg-white/5 text-white font-bold rounded-xl border border-white/10 hover:bg-white/10 transition-colors"
+          >
+            Hubungi Kami
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
