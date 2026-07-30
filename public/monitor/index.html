@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dashboard pemantauan sitemap dan artikel terbaru jaringan website Pireki.">
+  <meta name="theme-color" content="#111827">
+  <title>Pireki Monitor — Pemantauan Website Pireki</title>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="apple-touch-icon" href="../favicon.png">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Lewati ke konten</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./" aria-label="Pireki Monitor — halaman utama">
+        <span class="brand-mark" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="32" height="32">
+            <path fill="currentColor" d="M143.240,191.897 C143.240,191.897 167.080,174.962 186.762,165.990 C204.058,158.107 217.505,158.046 217.505,158.046 L195.052,249.927 C195.052,249.927 242.102,242.995 279.680,232.311 C312.201,223.065 335.983,209.858 335.983,209.858 C335.983,209.858 288.031,179.101 232.358,161.845 C170.250,142.595 99.717,136.630 99.717,136.630 C99.717,136.630 96.499,135.644 93.845,133.521 C91.321,131.502 89.354,128.340 89.354,128.340 C89.354,128.340 84.696,121.179 81.064,112.450 C75.343,98.699 69.665,81.017 69.665,81.017 C69.665,81.017 69.036,75.642 70.011,73.073 C70.935,70.637 73.465,71.000 73.465,71.000 C73.465,71.000 144.068,69.913 205.070,78.254 C272.579,87.484 331.147,109.342 331.147,109.342 C331.147,109.342 356.433,118.477 380.888,140.775 C416.423,173.176 453.839,224.018 439.609,266.162 C415.585,337.308 193.671,344.572 193.671,344.572 L180.199,331.791 L161.892,393.967 L179.509,408.129 L172.255,422.982 L111.461,440.598 C111.461,440.598 107.785,441.295 105.934,439.907 C104.352,438.720 104.553,435.417 104.553,435.417 C104.553,435.417 104.513,408.960 105.934,380.841 C107.602,347.864 110.770,312.448 110.770,312.448 C110.770,312.448 105.002,308.654 97.299,299.667 C89.459,290.521 79.683,276.179 79.683,276.179 C79.683,276.179 78.436,274.470 78.992,273.070 C79.848,270.912 82.446,270.652 82.446,270.652 L123.551,262.362 C123.551,262.362 127.277,245.046 132.186,227.475 C137.121,209.814 143.240,191.897 143.240,191.897 Z"/>
+          </svg>
+        </span>
+        <span>
+          <strong>Pireki Monitor</strong>
+          <small>Monitoring Sitemap &amp; Article Update</small>
+        </span>
+      </a>
+      <div class="header-actions">
+        <span id="freshnessBadge" class="freshness-badge neutral">
+          <span class="status-dot" aria-hidden="true"></span>
+          Menunggu data
+        </span>
+        <button id="refreshButton" class="button button-primary" type="button">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18">
+            <path d="M20 11a8.1 8.1 0 0 0-15.5-2M4 4v5h5M4 13a8.1 8.1 0 0 0 15.5 2M20 20v-5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Muat ulang data
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">PEMANTAUAN OTOMATIS HARIAN</p>
+          <h1>Satu dashboard untuk memantau website Pireki</h1>
+          <p class="hero-copy">
+            Lihat kesehatan sitemap, artikel terbaru, serta waktu pembaruan terakhir website Pireki kecuali pireki.id.
+          </p>
+        </div>
+        <div class="hero-meta" aria-live="polite">
+          <span>Pemeriksaan terakhir</span>
+          <strong id="lastGenerated">—</strong>
+          <small id="lastGeneratedRelative">Belum ada data</small>
+        </div>
+      </div>
+    </section>
+
+    <div class="container dashboard-shell">
+      <section id="setupNotice" class="notice notice-warning hidden" role="alert">
+        <div class="notice-icon" aria-hidden="true">!</div>
+        <div>
+          <strong>Endpoint Google Apps Script belum diatur</strong>
+          <p>
+            Buka <code>app.js</code>, lalu ganti nilai
+            <code>PASTE_APPS_SCRIPT_WEB_APP_URL_HERE</code> dengan URL deployment
+            Google Apps Script yang berakhiran <code>/exec</code>.
+          </p>
+        </div>
+      </section>
+
+      <section id="errorNotice" class="notice notice-error hidden" role="alert">
+        <div class="notice-icon" aria-hidden="true">!</div>
+        <div>
+          <strong>Data tidak dapat dimuat</strong>
+          <p id="errorMessage">Terjadi kesalahan yang tidak diketahui.</p>
+        </div>
+      </section>
+
+      <section id="backendWarning" class="notice notice-warning hidden" role="status">
+        <div class="notice-icon" aria-hidden="true">!</div>
+        <div>
+          <strong>Pemeriksaan terjadwal terakhir mengalami masalah</strong>
+          <p id="backendWarningMessage"></p>
+        </div>
+      </section>
+
+      <section class="summary-grid" aria-label="Ringkasan pemantauan">
+        <article class="summary-card total-card">
+          <div class="summary-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 9h16M8 13h3M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div><span>Total website</span><strong id="totalCount">—</strong></div>
+        </article>
+        <article class="summary-card ok-card">
+          <div class="summary-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div><span>Status normal</span><strong id="okCount">—</strong></div>
+        </article>
+        <article class="summary-card partial-card">
+          <div class="summary-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 8v5m0 3v.01M4 20h16L12 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div><span>Perlu perhatian</span><strong id="partialCount">—</strong></div>
+        </article>
+        <article class="summary-card failed-card">
+          <div class="summary-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m7 7 10 10M17 7 7 17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div><span>Gagal diperiksa</span><strong id="failedCount">—</strong></div>
+        </article>
+      </section>
+
+      <section class="monitor-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">DAFTAR PANTAU</p>
+            <h2>Website dan artikel terbaru</h2>
+            <p id="resultCount" class="muted">Memuat data…</p>
+          </div>
+          <a id="jsonEndpointLink" class="button button-secondary hidden" href="#" target="_blank" rel="noopener noreferrer">
+            Lihat endpoint JSON
+          </a>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-field">
+            <span class="sr-only">Cari website atau artikel</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <input id="searchInput" type="search" placeholder="Cari domain atau judul artikel…" autocomplete="off">
+          </label>
+
+          <label class="select-field">
+            <span>Status</span>
+            <select id="statusFilter">
+              <option value="all">Semua status</option>
+              <option value="ok">Normal</option>
+              <option value="parsial">Perlu perhatian</option>
+              <option value="gagal">Gagal</option>
+            </select>
+          </label>
+
+          <label class="select-field">
+            <span>Urutkan</span>
+            <select id="sortSelect">
+              <option value="newest">Artikel/update terbaru</option>
+              <option value="domain">Nama domain</option>
+              <option value="status">Status bermasalah</option>
+              <option value="oldest">Paling lama diperbarui</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="loadingState" class="loading-state" role="status">
+          <div class="spinner" aria-hidden="true"></div>
+          <strong>Mengambil data pemantauan…</strong>
+          <span>Mohon tunggu beberapa detik.</span>
+        </div>
+
+        <div id="emptyState" class="empty-state hidden">
+          <strong>Tidak ada data yang sesuai</strong>
+          <span>Coba ubah kata pencarian atau filter status.</span>
+        </div>
+
+        <div id="tableWrapper" class="table-wrapper hidden">
+          <table class="monitor-table">
+            <thead>
+              <tr>
+                <th>Website</th>
+                <th>Status</th>
+                <th>Artikel terbaru</th>
+                <th>Terbit</th>
+                <th>Update terakhir</th>
+                <th><span class="sr-only">Tindakan</span></th>
+              </tr>
+            </thead>
+            <tbody id="monitorTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong><a href="https://pireki.id/" alt="Partisi Ruangan Geser Pireki">Partisi Ruangan Pireki</a></strong>
+        <span>Monitoring sitemap dan update artikel website Pireki</span>
+      </div>
+      <span id="footerStatus">Menunggu koneksi endpoint…</span>
+    </div>
+  </footer>
+
+  <dialog id="detailDialog" class="detail-dialog">
+    <form method="dialog" class="dialog-header">
+      <div>
+        <p class="eyebrow">DETAIL WEBSITE</p>
+        <h2 id="dialogTitle">—</h2>
+      </div>
+      <button class="icon-button" type="submit" aria-label="Tutup detail">×</button>
+    </form>
+    <div id="dialogContent" class="dialog-content"></div>
+  </dialog>
+
+  <noscript>
+    <div class="noscript-message">Dashboard ini membutuhkan JavaScript untuk menampilkan data.</div>
+  </noscript>
+</body>
+</html>

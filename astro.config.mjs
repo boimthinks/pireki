@@ -11,6 +11,8 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   redirects: {
+    '/monitor': '/monitor/index.html',
+    '/monitor/': '/monitor/index.html',
     '/blog/20-kata-kata-promosi-jasa-bangunan': '/insights/20-kata-promosi-jasa-bangunan',
     '/blog/mengenal-partisi-gypsum': '/insights/partisi-gypsum-vs-partisi-geser',
     '/blog/u-shape-style': '/insights/u-shape-style',

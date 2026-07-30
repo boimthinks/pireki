@@ -89,3 +89,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://pireki.id/sitemap-index.xml
+
+LLM-Index: /llms.txt
