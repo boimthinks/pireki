@@ -67,6 +67,11 @@ Astro generates a static HTML file at the old path with meta refresh + JS fallba
 
 See `src/content/insights/aturan/AGENTS.md` — load the `menulis` skill, follow persona/ template, cross out used titles in `saran_judul_dari_gemini.md`.
 
+## LLM / GEO optimization
+
+- `public/llms.txt` — comprehensive site info for LLM consumption (products, prices, routes, contacts). Served at `https://pireki.id/llms.txt`
+- `public/robots.txt` — references `LLM-Index: /llms.txt` for compliant crawlers. Also blocks known content harvesters while allowing search engines + GPTBot, Claude-Web, PerplexityBot, Applebot
+
 ## Site URL
 
 `https://pireki.id` (not pireki.co.id)

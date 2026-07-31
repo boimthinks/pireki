@@ -92,7 +92,7 @@ Untuk memudahkan Anda, saya membaginya ke dalam beberapa kategori strategis:
 57. **Solusi Over-Budget:** Bagaimana Tim Sales Engineer Pireki Melakukan *Value Engineering* untuk Memotong Biaya Proyek Partisi Tanpa Mengorbankan Kualitas Roda.
 58. **Instalasi di Gedung Operasional:** Cara Memasang Partisi Geser Kantor di Malam Hari Tanpa Mengganggu Jam Kerja Aktif Karyawan di Siang Hari.
 59. ~~**Kebijakan Garansi Pireki:** Apa Saja yang Dicakup dalam Garansi 2 Tahun Komponen Roda dan Mekanik Pireki? (Dan Apa yang Menggugurkannya).~~ ✅ [`../2026-07-30.md`](../2026-07-30.md)
-60. **Pelajaran dari 15+ Tahun Pengalaman:** Evolusi Desain Partisi Pireki Sejak 2008: Mengapa Model Mekanik Terbaru Kami 3x Lebih Minim Perawatan.
+60. ~~**Pelajaran dari 15+ Tahun Pengalaman:** Evolusi Desain Partisi Pireki Sejak 2008: Mengapa Model Mekanik Terbaru Kami 3x Lebih Minim Perawatan.~~ ✅ [`../2026-07-31.md`](../2026-07-31.md)
 
 ---
 
