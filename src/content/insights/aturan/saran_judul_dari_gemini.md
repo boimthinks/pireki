@@ -15,7 +15,7 @@ Untuk memudahkan Anda, saya membaginya ke dalam beberapa kategori strategis:
 5. **Dilema Ruangan Kaca:** Solusi Menggabungkan Partisi Geser Kaca (*Movable Glass*) dengan Partisi Solid untuk Menjaga Privasi Sekaligus Pencahayaan Alami Kantor.
 6. **Otopsi Karet Peredam (*Damper*):** Apa yang Terjadi pada Mekanik Karet Atas-Bawah Partisi Ruang Rapat Jika Sering Dipaksa Mengunci Terlalu Keras.
 7. **Kenyamanan Operasional Karyawan Wanita:** Merancang Bobot Panel Partis Geser Kantor yang Kokoh tapi Cukup Ringan untuk Digeser Staf Administrasi.
-8. **Aspek Keamanan Kebakaran:** Menguji Ketahanan Api (*Fire Rating*) Material Rockwool dan Multiplek pada Partisi Ruangan Kantor B2B.
+8. ~~**Aspek Keamanan Kebakaran:** Menguji Ketahanan Api (*Fire Rating*) Material Rockwool dan Multiplek pada Partisi Ruangan Kantor B2B.~~ ✅ [`2026-08-02.md`](../2026-08-02.md)
 9. **Konektivitas Kabel:** Cara Memasang Stopkontak dan Jalur Kabel Data Tersembunyi di Dalam Panel Partisi Geser Ruang Rapat.
 10. **Aroma Ruangan Baru:** Mengapa Pireki Memilih Lem Spesifik Rendah Emisi (*Low VOC*) agar Ruang Rapat Bisa Langsung Digunakan Tanpa Bau Menyengat.
 
