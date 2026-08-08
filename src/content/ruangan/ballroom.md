@@ -2,7 +2,7 @@
 title: "Ruang Ballroom"
 judul_seo_h1: "Partisi Geser Ballroom: Solusi Fleksibel untuk Gedung Pertemuan Besar"
 description: "Optimalkan fungsi ballroom hotel atau gedung pertemuan Anda dengan partisi geser yang mampu membagi ruang besar menjadi area yang lebih fungsional dan privat."
-featured_image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiu51VpT49fhLa2H_fZLHRsfbcIX-11HdmrvwkMKeiTms2TGrqLEYiN7jp73vbmlGmvAOuOUA8SMNr6nSpHs9VK4QNUV3c1-nH3gmz1o0z5Jk_qd0Y8lLtbtVtafTEhjJD3K83LnIlKy1O5eJqqdfyV96YjIqsphJCw8ZCu29kezSQkhE-DE-VqRExfNeB-/s600/Gemini_Generated_Image_u3tdynu3tdynu3td.jpeg"
+featured_image: "/img/ruangan-ballroom.webp"
 pengantar: "Ballroom merupakan aset berharga bagi hotel dan gedung pertemuan. Namun, tanpa fleksibilitas ruang, potensi ballroom seringkali tidak maksimal. Partisi geser hadir sebagai solusi inovatif untuk mengubah ruang ballroom yang luas menjadi beberapa ruangan kecil yang dapat digunakan secara bersamaan untuk berbagai acara berbeda."
 baca_cepat: "Partisi geser ballroom memungkinkan pembagian ruang besar menjadi area yang lebih kecil dengan cepat, didukung teknologi peredam suara tinggi untuk menjaga privasi antar acara."
 kesimpulan: "Pemasangan partisi geser pada ballroom meningkatkan daya saing gedung pertemuan Anda dengan memberikan fleksibilitas yang dibutuhkan oleh penyelenggara acara modern."
