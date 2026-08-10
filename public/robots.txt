@@ -87,7 +87,8 @@ Disallow: /
 # Aturan default
 User-agent: *
 Allow: /
+Disallow: /monitor
 
 Sitemap: https://pireki.id/sitemap-index.xml
 
-LLM-Index: /llms.txt
+# LLM-Index: https://pireki.id/llms.txt (non-standar, didukung crawler via konvensi)

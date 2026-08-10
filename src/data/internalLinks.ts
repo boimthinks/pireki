@@ -25,5 +25,6 @@ export const internalLinksMap: Record<string, string> = {
   "Samowa": "https://pireki.id/tipe/samowa-lipat/",
   "Proyek": "https://pireki.id/proyek",
   "Pemasangan Partisi": "Proyek",
-  "Pireki": "https://pireki.id"
+  "Pireki": "https://pireki.id",
+  "Movable Wall Partition": "https://pireki.id/insights/movable-wall-partition"
 };

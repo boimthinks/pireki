@@ -2,6 +2,17 @@
 
 Astro 6 static site for CV Pireki Asia (partition wall manufacturer).
 
+## Aturan Komunikasi
+- **Bahasa**: Selalu gunakan Bahasa Indonesia dalam semua respon, pesan, dan percakapan tanpa terkecuali.
+
+## Akses Data
+- **SUMBER-PENGETAHUAN.md** (di root project) wajib dibaca untuk data brand, produk, portofolio, aturan penulisan, dan registry artikel.
+- **Data Proyek**: `src/data/proyek-pemasangan-partisi-pireki.yaml` — 46 proyek nyata untuk studi kasus.
+- **Knowledge graph**: `graphify-out/graph.json` untuk riset lintas-file.
+
+## Skill Penulisan
+- Gunakan skill **`penulis-ahli`** untuk menulis/mengedit artikel blog atau insight. Skill ini menangani humanisasi (hapus pola AI), SEO/GEO (Google AI 2026), dan konten non-komoditas dalam satu pass.
+
 ## Commands
 
 | Command | Action |
@@ -65,7 +76,19 @@ Astro generates a static HTML file at the old path with meta refresh + JS fallba
 
 ## Writing insights articles
 
-See `src/content/insights/aturan/AGENTS.md` — load the `menulis` skill, follow persona/ template, cross out used titles in `saran_judul_dari_gemini.md`.
+Saat diminta menulis atau memberi saran judul artikel insight:
+
+1. **Cek anti-duplikasi** WAJIB (lihat SUMBER-PENGETAHUAN.md §10):
+   - Baca judul yang dicoret `~~…~~` di daftar 60 ± daftar artikel terbit.
+   - Glob semua file di `src/content/insights/*.md` dan cek frontmatter (`judul_seo`, `slug`).
+2. Gunakan skill **`penulis-ahli`** yang akan otomatis:
+   - Membaca SUMBER-PENGETAHUAN.md (produk, portofolio, registry, aturan).
+   - Membaca `proyek-pemasangan-partisi-pireki.yaml` untuk studi kasus nyata.
+   - Menggunakan prinsip non-komoditas, E-E-A-T, dan SEO/GEO (Google AI 2026).
+   - Menghapus pola AI, em dash, bahasa robot, dan menghasilkan tulisan manusiawi.
+3. Setelah artikel selesai, **wajib** daftarkan di SUMBER-PENGETAHUAN.md §10:
+   - Tambah baris baru ke tabel "Daftar Artikel yang Sudah Ditulis".
+   - Coret judul sumber di daftar 60 dengan format `~~judul~~` jika asalnya dari sana.
 
 ## LLM / GEO optimization
 

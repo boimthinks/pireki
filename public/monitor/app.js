@@ -13,6 +13,8 @@ const DASHBOARD_CONFIG = Object.freeze({
   locale: 'id-ID',
 });
 
+const PASSWORD_HASH = 'c3b35e8395fd77ff7563a352095b8a2d2770dcf41edd28513012e060bc570c57';
+const UNLOCK_STORAGE_KEY = 'pirekiMonitorUnlocked';
 const state = {
   payload: null,
   sites: [],
@@ -30,6 +32,33 @@ function init() {
   cacheElements();
   bindEvents();
 
+  if (!isUnlocked()) {
+    showLoginScreen();
+    return;
+  }
+
+  unlockDashboard();
+}
+
+function isUnlocked() {
+  try {
+    return sessionStorage.getItem(UNLOCK_STORAGE_KEY) === '1';
+  } catch (error) {
+    return false;
+  }
+}
+
+function showLoginScreen() {
+  elements.loginScreen.classList.remove('hidden');
+  elements.passwordInput.focus();
+}
+
+function unlockDashboard() {
+  elements.loginScreen.classList.add('hidden');
+  setupDashboard();
+}
+
+function setupDashboard() {
   if (!isEndpointConfigured()) {
     elements.setupNotice.classList.remove('hidden');
     elements.loadingState.classList.add('hidden');
@@ -38,25 +67,25 @@ function init() {
     return;
   }
 
-  setJsonEndpointLink();
   loadMonitorData();
 }
 
 function cacheElements() {
   [
-    'refreshButton', 'freshnessBadge', 'lastGenerated', 'lastGeneratedRelative',
+    'refreshButton', 'lastGenerated', 'lastGeneratedRelative',
     'setupNotice', 'errorNotice', 'errorMessage', 'backendWarning',
-    'backendWarningMessage', 'totalCount', 'okCount', 'partialCount',
-    'failedCount', 'resultCount', 'jsonEndpointLink', 'searchInput',
+    'backendWarningMessage', 'resultCount', 'searchInput',
     'statusFilter', 'sortSelect', 'loadingState', 'emptyState',
     'tableWrapper', 'monitorTableBody', 'footerStatus', 'detailDialog',
-    'dialogTitle', 'dialogContent',
+    'dialogTitle', 'dialogContent', 'loginScreen', 'loginForm',
+    'passwordInput', 'loginError',
   ].forEach((id) => {
     elements[id] = document.getElementById(id);
   });
 }
 
 function bindEvents() {
+  elements.loginForm.addEventListener('submit', handleLoginSubmit);
   elements.refreshButton.addEventListener('click', () => loadMonitorData());
   elements.searchInput.addEventListener('input', (event) => {
     state.search = event.target.value.trim().toLowerCase();
@@ -78,15 +107,34 @@ function isEndpointConfigured() {
     .test(APPS_SCRIPT_ENDPOINT.trim());
 }
 
-function setJsonEndpointLink() {
-  try {
-    const url = new URL(APPS_SCRIPT_ENDPOINT);
-    url.searchParams.set('pretty', '1');
-    elements.jsonEndpointLink.href = url.toString();
-    elements.jsonEndpointLink.classList.remove('hidden');
-  } catch (error) {
-    elements.jsonEndpointLink.classList.add('hidden');
+async function handleLoginSubmit(event) {
+  event.preventDefault();
+  elements.loginError.classList.add('hidden');
+  const password = String(elements.passwordInput.value || '');
+  if (!password) return;
+
+  const hash = await sha256Hex(password);
+  if (hash !== PASSWORD_HASH) {
+    elements.passwordInput.value = '';
+    elements.passwordInput.focus();
+    elements.loginError.classList.remove('hidden');
+    return;
   }
+
+  try {
+    sessionStorage.setItem(UNLOCK_STORAGE_KEY, '1');
+  } catch (error) {
+    /* sessionStorage mungkin diblokir; dashboard tetap bisa dibuka untuk sesi ini */
+  }
+  unlockDashboard();
+}
+
+async function sha256Hex(text) {
+  const data = new TextEncoder().encode(text);
+  const digest = await crypto.subtle.digest('SHA-256', data);
+  return Array.from(new Uint8Array(digest))
+    .map((byte) => byte.toString(16).padStart(2, '0'))
+    .join('');
 }
 
 async function loadMonitorData() {
@@ -176,12 +224,6 @@ function loadWithJsonp(endpoint) {
 
 function renderDashboard() {
   const payload = state.payload;
-  const summary = normalizeSummary(payload);
-
-  elements.totalCount.textContent = formatNumber(summary.total);
-  elements.okCount.textContent = formatNumber(summary.ok);
-  elements.partialCount.textContent = formatNumber(summary.partial);
-  elements.failedCount.textContent = formatNumber(summary.failed);
 
   renderGeneratedTime(payload.generated_at);
   renderBackendWarning(payload.last_run_error);
@@ -210,25 +252,11 @@ function renderGeneratedTime(value) {
   if (!date) {
     elements.lastGenerated.textContent = 'Tidak diketahui';
     elements.lastGeneratedRelative.textContent = 'Timestamp tidak tersedia';
-    setFreshnessBadge('neutral', 'Waktu tidak diketahui');
     return;
   }
 
   elements.lastGenerated.textContent = formatDateTime(date);
   elements.lastGeneratedRelative.textContent = relativeTime(date);
-
-  const ageHours = (Date.now() - date.getTime()) / 3600000;
-  if (ageHours > DASHBOARD_CONFIG.staleAfterHours) {
-    setFreshnessBadge('warning', 'Data terlambat diperbarui');
-  } else {
-    setFreshnessBadge('ok', 'Data terbaru tersedia');
-  }
-}
-
-function setFreshnessBadge(type, text) {
-  elements.freshnessBadge.className = `freshness-badge ${type}`;
-  elements.freshnessBadge.innerHTML =
-    '<span class="status-dot" aria-hidden="true"></span>' + escapeHtml(text);
 }
 
 function renderBackendWarning(error) {
@@ -289,39 +317,25 @@ function renderSiteRow(site) {
   const articleTitle = site.artikel_terbaru_judul || '';
   const updateTitle = site.artikel_update_terakhir_judul || '';
   const hasArticle = Boolean(articleTitle && site.url_artikel_terbaru);
-  const status = statusMeta(site.status);
-  const published = site.tanggal_terbit ? formatDateTime(parseDate(site.tanggal_terbit), true) : '—';
   const updatedDate = site.tanggal_update_artikel || site.sitemap_lastmod_terbaru;
   const updated = updatedDate ? formatDateTime(parseDate(updatedDate), true) : '—';
   const latestTitle = articleTitle || updateTitle || 'Belum ada judul yang terverifikasi';
-  const latestUrl = hasArticle ? site.url_artikel_terbaru : site.url_update_artikel;
   const rowKey = encodeURIComponent(site.website || '');
 
   return `
     <tr>
       <td data-label="Website">
         <div class="site-cell">
-          <span class="site-avatar" aria-hidden="true">${escapeHtml(domain.charAt(0).toUpperCase())}</span>
           <div>
-            <a class="domain-link" href="${safeUrl(site.website)}" target="_blank" rel="noopener noreferrer">
-              ${escapeHtml(domain)}
-            </a>
+            <span class="domain-link">${escapeHtml(domain)}</span>
             <span class="source-label">${escapeHtml(methodLabel(site.metode))}</span>
           </div>
         </div>
       </td>
-      <td data-label="Status">
-        <span class="status-pill ${status.className}">
-          <span class="status-dot" aria-hidden="true"></span>${status.label}
-        </span>
-      </td>
       <td data-label="Artikel terbaru" class="article-cell">
-        ${latestUrl
-          ? `<a href="${safeUrl(latestUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(latestTitle)}</a>`
-          : `<span>${escapeHtml(latestTitle)}</span>`}
+        <span>${escapeHtml(latestTitle)}</span>
         ${!articleTitle ? '<small>Perubahan halaman/produk</small>' : ''}
       </td>
-      <td data-label="Terbit"><time>${escapeHtml(published)}</time></td>
       <td data-label="Update terakhir"><time>${escapeHtml(updated)}</time></td>
       <td class="actions-cell">
         <button class="detail-button" type="button" data-site-key="${rowKey}">Detail</button>
@@ -341,17 +355,15 @@ function openDetailDialog(site) {
   const status = statusMeta(site.status);
   elements.dialogTitle.textContent = domainFromUrl(site.website);
 
-  const fields = [
+const fields = [
     ['Status', `<span class="status-pill ${status.className}"><span class="status-dot"></span>${status.label}</span>`],
-    ['Website', linkHtml(site.website, site.website)],
-    ['Sitemap utama', linkHtml(site.sitemap, site.sitemap_status || site.sitemap)],
+    ['Website', escapeHtml(site.website)],
+    ['Sitemap utama', escapeHtml(site.sitemap_status || site.sitemap)],
     ['Sitemap konten', linkHtml(site.sitemap_artikel_konten, site.sitemap_artikel_konten)],
-    ['Artikel terbaru', linkHtml(site.url_artikel_terbaru, site.artikel_terbaru_judul || '—')],
-    ['Tanggal terbit', dateOrDash(site.tanggal_terbit)],
-    ['Artikel terakhir diubah', linkHtml(site.url_update_artikel, site.artikel_update_terakhir_judul || '—')],
-    ['Tanggal perubahan', dateOrDash(site.tanggal_update_artikel)],
+    ['Artikel terbaru', escapeHtml(site.artikel_terbaru_judul || '—')],
+    ['Artikel terakhir diubah', escapeHtml(site.artikel_update_terakhir_judul || '—')],
     ['Lastmod sitemap', dateOrDash(site.sitemap_lastmod_terbaru)],
-    ['URL lastmod', linkHtml(site.sitemap_lastmod_url, site.sitemap_lastmod_url || '—')],
+    ['URL lastmod', escapeHtml(site.sitemap_lastmod_url || '—')],
     ['Metode', escapeHtml(methodLabel(site.metode))],
     ['Catatan', escapeHtml(site.catatan || 'Tidak ada catatan.')],
   ];
@@ -401,9 +413,6 @@ function hideError() {
 }
 
 function renderEmptySummary() {
-  ['totalCount', 'okCount', 'partialCount', 'failedCount'].forEach((key) => {
-    elements[key].textContent = '—';
-  });
   elements.resultCount.textContent = 'Data belum tersedia';
 }
 
@@ -423,7 +432,7 @@ function methodLabel(method) {
 }
 
 function siteActivityTime(site) {
-  const value = site.tanggal_terbit || site.tanggal_update_artikel || site.sitemap_lastmod_terbaru;
+  const value = site.tanggal_update_artikel || site.sitemap_lastmod_terbaru;
   const date = parseDate(value);
   return date ? date.getTime() : 0;
 }

@@ -627,10 +627,8 @@ select:focus-visible {
 .domain-link {
   color: var(--ink);
   font-weight: 750;
-  text-decoration: none;
 }
 
-.domain-link:hover,
 .article-cell a:hover,
 .detail-dialog a:hover {
   color: var(--brand);
@@ -972,12 +970,12 @@ select:focus-visible {
     padding: 16px;
     border: 1px solid var(--line);
     border-radius: 14px;
-    background: #fff;
+    background: var(--surface-subtle);
     box-shadow: var(--shadow-sm);
   }
 
   .monitor-table tbody tr:hover {
-    background: #fff;
+    background: var(--surface-subtle);
   }
 
   .monitor-table td,
@@ -1130,4 +1128,77 @@ select:focus-visible {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.login-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    radial-gradient(900px 500px at 50% -10%, var(--brand-soft), transparent 70%),
+    var(--bg);
+}
+
+.login-card {
+  width: min(400px, 100%);
+  padding: 40px 32px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.login-lock {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+.login-card h2 {
+  margin: 8px 0 6px;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.login-copy {
+  margin: 0 0 24px;
+  color: var(--muted);
+}
+
+.login-form {
+  display: grid;
+  gap: 12px;
+}
+
+.login-form input {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-subtle);
+  color: var(--ink);
+  font: inherit;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: var(--brand);
+}
+
+.login-error {
+  margin: 14px 0 0;
+  color: var(--danger);
+  font-size: 0.9rem;
 }

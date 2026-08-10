@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Dashboard pemantauan sitemap dan artikel terbaru jaringan website Pireki.">
+  <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="theme-color" content="#111827">
   <title>Pireki Monitor — Pemantauan Website Pireki</title>
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
@@ -14,6 +15,26 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Lewati ke konten</a>
+
+  <div id="loginScreen" class="login-screen hidden" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+    <div class="login-card">
+      <span class="login-lock" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="40" height="40">
+          <rect x="4" y="10" width="16" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <p class="eyebrow">PIREKI MONITOR</p>
+      <h2 id="loginTitle">Dashboard terkunci</h2>
+      <p class="login-copy">Masukkan password untuk melihat data pemantauan.</p>
+      <form id="loginForm" class="login-form">
+        <label class="sr-only" for="passwordInput">Password</label>
+        <input id="passwordInput" type="password" placeholder="Password" autocomplete="current-password" required>
+        <button class="button button-primary" type="submit">Buka dashboard</button>
+      </form>
+      <p id="loginError" class="login-error hidden" role="alert">Password salah, coba lagi.</p>
+    </div>
+  </div>
 
   <header class="site-header">
     <div class="container header-inner">
@@ -29,10 +50,6 @@
         </span>
       </a>
       <div class="header-actions">
-        <span id="freshnessBadge" class="freshness-badge neutral">
-          <span class="status-dot" aria-hidden="true"></span>
-          Menunggu data
-        </span>
         <button id="refreshButton" class="button button-primary" type="button">
           <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18">
             <path d="M20 11a8.1 8.1 0 0 0-15.5-2M4 4v5h5M4 13a8.1 8.1 0 0 0 15.5 2M20 20v-5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -50,7 +67,7 @@
           <p class="eyebrow">PEMANTAUAN OTOMATIS HARIAN</p>
           <h1>Satu dashboard untuk memantau website Pireki</h1>
           <p class="hero-copy">
-            Lihat kesehatan sitemap, artikel terbaru, serta waktu pembaruan terakhir website Pireki kecuali pireki.id.
+            Lihat kesehatan sitemap, artikel terbaru, serta waktu pembaruan terakhir website Pireki.
           </p>
         </div>
         <div class="hero-meta" aria-live="polite">
@@ -90,33 +107,6 @@
         </div>
       </section>
 
-      <section class="summary-grid" aria-label="Ringkasan pemantauan">
-        <article class="summary-card total-card">
-          <div class="summary-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 9h16M8 13h3M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div><span>Total website</span><strong id="totalCount">—</strong></div>
-        </article>
-        <article class="summary-card ok-card">
-          <div class="summary-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div><span>Status normal</span><strong id="okCount">—</strong></div>
-        </article>
-        <article class="summary-card partial-card">
-          <div class="summary-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 8v5m0 3v.01M4 20h16L12 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div><span>Perlu perhatian</span><strong id="partialCount">—</strong></div>
-        </article>
-        <article class="summary-card failed-card">
-          <div class="summary-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="m7 7 10 10M17 7 7 17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <div><span>Gagal diperiksa</span><strong id="failedCount">—</strong></div>
-        </article>
-      </section>
-
       <section class="monitor-panel">
         <div class="panel-heading">
           <div>
@@ -124,9 +114,6 @@
             <h2>Website dan artikel terbaru</h2>
             <p id="resultCount" class="muted">Memuat data…</p>
           </div>
-          <a id="jsonEndpointLink" class="button button-secondary hidden" href="#" target="_blank" rel="noopener noreferrer">
-            Lihat endpoint JSON
-          </a>
         </div>
 
         <div class="toolbar">
@@ -173,9 +160,7 @@
             <thead>
               <tr>
                 <th>Website</th>
-                <th>Status</th>
                 <th>Artikel terbaru</th>
-                <th>Terbit</th>
                 <th>Update terakhir</th>
                 <th><span class="sr-only">Tindakan</span></th>
               </tr>
