@@ -284,6 +284,7 @@ kesimpulan: "satu paragraf kesimpulan + CTA ringan"
 | `2026-08-06.md` | Cara Pasang Stopkontak dan Jalur Kabel Data dalam Panel Partisi Geser | Konektivitas kabel (#9) |
 | `2026-08-08.md` | Mengapa Rangka Besi Hollow Partisi Wajib Las Penuh, Bukan Las Titik | Teknik pengelasan rangka (Las Penuh) |
 | `2026-08-10.md` | Movable Wall Partition untuk Ruang Multifungsi, Panduan dari Produsen | Panduan movable wall partition (jenis mekanisme, akustik STC/NIC/NRC, syarat struktur, finishing, perawatan) |
+| `2026-08-11.md` | Partisi Miring Sinking Otopsi Penyebab dan Cara Mencegahnya | Kerusakan & otopsi — sinking (poin 22) |
 
 ### 60 Sudut Pandang Topik (yang sudah dicoret `~~...~~` = sudah ditulis)
 
@@ -291,7 +292,7 @@ kesimpulan: "satu paragraf kesimpulan + CTA ringan"
 
 **Kategori 2 — Ballroom & Hotel:** 11. Masalah Lenturan Struktur (Defleksi) · 12. Simulasi Kecepatan Crew Quick-Lock · 13. Audit Keausan Roda Nylon Heavy Duty · 14. Tantangan Lantai Karpet Tebal · 15. Manajemen Pintu Darurat Pass Door · ~~16. Perawatan Rutin Komersial~~ · 17. Skema Warna Interior (Kain vs HPL) · 18. Pertemuan Sudut T-Section · 19. Kasus Suara Bass Tembus · ~~20. Investasi Jangka Panjang Hotel (ROI)~~
 
-**Kategori 3 — Kerusakan & Otopsi:** 21. Tragedi Rel Bengkok · 22. Penyebab Partisi Miring (Sinking) · 23. Sindrom Karet Getas · 24. Kasus Mekanik Macet (Jack Device) · 25. Kesalahan Konstruksi Sipil (Lantai Miring) · 26. Bahaya Jamur Dinding · 27. Karat di Area Pesisir · 28. Roda Keluar Jalur (Anjlok) · 29. Goncangan Gempa · 30. Review Komponen KW
+**Kategori 3 — Kerusakan & Otopsi:** 21. Tragedi Rel Bengkok · ~~22. Penyebab Partisi Miring (Sinking)~~ · 23. Sindrom Karet Getas · 24. Kasus Mekanik Macet (Jack Device) · 25. Kesalahan Konstruksi Sipil (Lantai Miring) · 26. Bahaya Jamur Dinding · 27. Karat di Area Pesisir · 28. Roda Keluar Jalur (Anjlok) · 29. Goncangan Gempa · 30. Review Komponen KW
 
 **Kategori 4 — Fabrikasi & Material:** 31. Rahasia Lab Akustik (Rockwool 60 vs 100) · 32. Ketebalan Rangka Aluminium Anodized · ~~33. Uji Kekuatan Tekan (Las Penuh)~~ · 34. Dilema Berat vs Fungsi (Sorepa 10cm) · 35. Proses Curing Lem 48 Jam · 36. Transparansi Komponen Internal · 37. Standar Pengiriman Luar Pulau (IKN) · ~~38. Sertifikasi Material~~ · 39. Pilihan Ketebalan Multiplek vs MDF · 40. Custom Finishing (Menyesuaikan Motif HPL)
 
