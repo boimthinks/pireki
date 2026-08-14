@@ -48,13 +48,18 @@ const navItems = [
 </header>
 
 <script>
-	const toggle = document.getElementById('menu-toggle');
-	const menu = document.getElementById('mobile-menu');
-	
-	toggle?.addEventListener('click', () => {
-		menu?.classList.toggle('hidden');
-		const isOpen = !menu?.classList.contains('hidden');
-		toggle.setAttribute('aria-expanded', String(isOpen));
-		toggle.setAttribute('aria-label', isOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi');
-	});
+	function initMobileMenu() {
+		const toggle = document.getElementById('menu-toggle');
+		const menu = document.getElementById('mobile-menu');
+		
+		toggle?.addEventListener('click', () => {
+			menu?.classList.toggle('hidden');
+			const isOpen = !menu?.classList.contains('hidden');
+			toggle.setAttribute('aria-expanded', String(isOpen));
+			toggle.setAttribute('aria-label', isOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi');
+		});
+	}
+
+	initMobileMenu();
+	document.addEventListener('astro:page-load', initMobileMenu);
 </script>

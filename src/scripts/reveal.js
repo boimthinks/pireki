@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initReveal() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     rootMargin: '0px 0px -80px 0px'
   });
 
-  document.querySelectorAll('.reveal, .reveal-fade').forEach((el) => {
+  document.querySelectorAll('.reveal:not(.visible), .reveal-fade:not(.visible)').forEach((el) => {
     const parent = el.closest('[data-reveal-container]');
     if (parent && !el.dataset.revealDelay) {
       const children = Array.from(parent.children).filter(c => c.classList.contains('reveal') || c.classList.contains('reveal-fade'));
@@ -36,4 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, { passive: true });
   }
-});
+}
+
+document.addEventListener('DOMContentLoaded', initReveal);
+document.addEventListener('astro:page-load', initReveal);

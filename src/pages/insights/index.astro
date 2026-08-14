@@ -48,28 +48,33 @@ const categories = ['Semua', ...new Set(insightsEntries.map(i => i.data.kategori
 </Layout>
 
 <script>
-  const buttons = document.querySelectorAll<HTMLButtonElement>('#filter-container button');
-  const items = document.querySelectorAll<HTMLElement>('.insight-item');
+  function initFilter() {
+    const buttons = document.querySelectorAll<HTMLButtonElement>('#filter-container button');
+    const items = document.querySelectorAll<HTMLElement>('.insight-item');
 
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      buttons.forEach(btn => {
-        btn.classList.remove('bg-[#c9a84c]', 'text-black', 'border-[#c9a84c]');
-        btn.classList.add('text-white/70');
-      });
-      button.classList.remove('text-white/70');
-      button.classList.add('bg-[#c9a84c]', 'text-black', 'border-[#c9a84c]');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(btn => {
+          btn.classList.remove('bg-[#c9a84c]', 'text-black', 'border-[#c9a84c]');
+          btn.classList.add('text-white/70');
+        });
+        button.classList.remove('text-white/70');
+        button.classList.add('bg-[#c9a84c]', 'text-black', 'border-[#c9a84c]');
 
-      const filter = button.getAttribute('data-category');
+        const filter = button.getAttribute('data-category');
 
-      items.forEach(item => {
-        const itemCat = item.getAttribute('data-category');
-        if (filter === 'Semua' || itemCat === filter) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
+        items.forEach(item => {
+          const itemCat = item.getAttribute('data-category');
+          if (filter === 'Semua' || itemCat === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
       });
     });
-  });
+  }
+
+  initFilter();
+  document.addEventListener('astro:page-load', initFilter);
 </script>

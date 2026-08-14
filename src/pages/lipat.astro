@@ -351,7 +351,7 @@ const faqData = [
 </Layout>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('astro:page-load', () => {
     document.querySelectorAll('.faq-item').forEach((item) => {
       const question = item.querySelector('.faq-question');
       const answer = item.querySelector('.faq-answer');

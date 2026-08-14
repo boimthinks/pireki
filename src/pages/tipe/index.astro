@@ -152,7 +152,7 @@ const lipatEntries = tipeEntries.filter(e => e.data.sistem === 'lipat');
 </Layout>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('astro:page-load', () => {
     const buttons = document.querySelectorAll('#filter-container button');
     const items = document.querySelectorAll('.tipe-item');
 

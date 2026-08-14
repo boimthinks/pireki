@@ -35,14 +35,45 @@ function overrideImageUrl(url: string): string {
   return url;
 }
 
+const REQUEST_TIMEOUT_MS = 20000;
+const MAX_RETRIES = 3;
+const RETRY_DELAY_MS = 3000;
+
+async function fetchWithRetry(url: string, retries = MAX_RETRIES): Promise<Response> {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+      try {
+        const response = await fetch(url, { signal: controller.signal });
+        if (response.ok) return response;
+        throw new Error(`HTTP ${response.status}`);
+      } finally {
+        clearTimeout(timeout);
+      }
+    } catch (error) {
+      if (attempt === retries) throw error;
+      console.warn(`API fetch attempt ${attempt}/${retries} failed, retrying...`, error);
+      await new Promise((resolve) => setTimeout(resolve, RETRY_DELAY_MS));
+    }
+  }
+  throw new Error("Unreachable");
+}
+
+let cachedApiData: { blog: BlogPost[]; proyek: Proyek[] } | null = null;
+
 export async function getApiData() {
+  if (cachedApiData) {
+    return cachedApiData;
+  }
   try {
-    const response = await fetch(API_URL);
+    const response = await fetchWithRetry(API_URL);
     const data = await response.json();
-    return {
+    cachedApiData = {
       blog: ((data.blog || []) as BlogPost[]).map(p => ({ ...p, image_url: overrideImageUrl(p.image_url) })),
       proyek: ((data.proyek || []) as Proyek[]).map(p => ({ ...p, image_url: overrideImageUrl(p.image_url) }))
     };
+    return cachedApiData;
   } catch (error) {
     console.error("Error fetching API data:", error);
     return { blog: [], proyek: [] };
