@@ -285,6 +285,7 @@ kesimpulan: "satu paragraf kesimpulan + CTA ringan"
 | `2026-08-08.md` | Mengapa Rangka Besi Hollow Partisi Wajib Las Penuh, Bukan Las Titik | Teknik pengelasan rangka (Las Penuh) |
 | `2026-08-10.md` | Movable Wall Partition untuk Ruang Multifungsi, Panduan dari Produsen | Panduan movable wall partition (jenis mekanisme, akustik STC/NIC/NRC, syarat struktur, finishing, perawatan) |
 | `2026-08-11.md` | Partisi Miring Sinking Otopsi Penyebab dan Cara Mencegahnya | Kerusakan & otopsi — sinking (poin 22) |
+| `2026-08-16.md` | Berapa Lama Produksi Partisi Geser Sampai Siap Pasang | Waktu produksi B2B (#56) |
 
 ### 60 Sudut Pandang Topik (yang sudah dicoret `~~...~~` = sudah ditulis)
 
@@ -298,7 +299,7 @@ kesimpulan: "satu paragraf kesimpulan + CTA ringan"
 
 **Kategori 5 — Kasus Desain Unik:** ~~41. Penyekat Ruang Kelas Kampus~~ · 42. Partisi Geser Masjid/Tempat Ibadah · 43. Penyekat Aula Sekolah · 44. Partisi Kaca Studio Siaran/Podcast · 45. Restoran & Ruang VIP · 46. Rumah Tinggal Minimalis · 47. Klinik & Rumah Sakit (Vinyl Anti-Bakteri) · 48. Gedung Pemerintahan/Aula Diklat (Reverb) · 49. Co-Working Space · 50. Showroom Otomotif/Galeri Seni (Frameless Glass)
 
-**Kategori 6 — Panduan Pembelian:** ~~51. Anatomi Harga Per Meter~~ · 52. Jebakan Spesifikasi Murah (Tanpa Garansi Mekanik) · 53. Cara Mengukur Opening Pintu · ~~54. Evaluasi Vendor Partisi~~ · 55. Metode Pemasangan Struktur Atas (Unistrut) · 56. Waktu Produksi Proyek B2B (14-21 Hari) · 57. Solusi Over-Budget (Value Engineering) · 58. Instalasi di Gedung Operasional (Malam Hari) · ~~59. Kebijakan Garansi Pireki~~ · ~~60. Pelajaran dari 15+ Tahun Pengalaman~~
+**Kategori 6 — Panduan Pembelian:** ~~51. Anatomi Harga Per Meter~~ · 52. Jebakan Spesifikasi Murah (Tanpa Garansi Mekanik) · 53. Cara Mengukur Opening Pintu · ~~54. Evaluasi Vendor Partisi~~ · 55. Metode Pemasangan Struktur Atas (Unistrut) · ~~56. Waktu Produksi Proyek B2B (14-21 Hari)~~ · 57. Solusi Over-Budget (Value Engineering) · 58. Instalasi di Gedung Operasional (Malam Hari) · ~~59. Kebijakan Garansi Pireki~~ · ~~60. Pelajaran dari 15+ Tahun Pengalaman~~
 
 ---
 
