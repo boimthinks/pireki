@@ -1,4 +1,6 @@
 ---
+import { u } from '../lib/utils';
+
 interface Props {
   title: string;
   description: string;
@@ -8,9 +10,10 @@ interface Props {
 }
 
 const { title, description, image, slug, badge } = Astro.props;
+const href = u(`/layanan/${slug}`);
 ---
 
-<a href={`/layanan/${slug}`} class="reveal group relative block overflow-hidden rounded-3xl bg-white/5 border border-white/10 hover:border-[#c9a84c]/50 transition-all duration-500">
+<a href={href} class="reveal group relative block overflow-hidden rounded-3xl bg-white/5 border border-white/10 hover:border-[#c9a84c]/50 transition-all duration-500">
   <div class="aspect-[16/10] overflow-hidden">
     <img 
       src={image} 

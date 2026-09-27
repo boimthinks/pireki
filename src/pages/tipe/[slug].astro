@@ -1,4 +1,5 @@
 ---
+import { u } from '../../lib/utils';
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import CTA from '../../components/CTA.astro';
@@ -31,7 +32,7 @@ const seoH1 = `${systemName} Tipe ${entry.data.title}`;
   <Schema type="Breadcrumb" data={[
     { name: 'Beranda', url: '/' },
     { name: 'Tipe Partisi', url: '/tipe' },
-    { name: entry.data.title, url: `/tipe/${entry.data.slug}` }
+    { name: entry.data.title, url: u(`/tipe/${entry.data.slug}`) }
   ]} />
   <Schema type="WebSite" />
   <Schema type="ImageObject" data={{ contentUrl: entry.data.featured_image }} />
@@ -47,7 +48,7 @@ const seoH1 = `${systemName} Tipe ${entry.data.title}`;
         <nav class="flex flex-wrap items-center gap-2 text-xs md:text-sm text-white/40 mb-12 overflow-hidden">
           <a href="/" class="hover:text-[#c9a84c] transition-colors whitespace-nowrap">Beranda</a>
           <span class="flex-shrink-0">/</span>
-          <a href="/tipe" class="hover:text-[#c9a84c] transition-colors whitespace-nowrap">Tipe Partisi</a>
+          <a href={u("/tipe")} class="hover:text-[#c9a84c] transition-colors whitespace-nowrap">Tipe Partisi</a>
           <span class="flex-shrink-0">/</span>
           <span class="text-[#c9a84c] font-medium truncate max-w-[150px] md:max-w-none">{entry.data.title}</span>
         </nav>

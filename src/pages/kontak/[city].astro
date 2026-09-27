@@ -1,4 +1,5 @@
 ---
+import { u } from '../../lib/utils';
 import Layout from '../../layouts/Layout.astro';
 import { cities } from '../../data/cities';
 import CTA from '../../components/CTA.astro';
@@ -20,7 +21,7 @@ const metaDesc = `Pireki Asia melayani jasa pemasangan partisi geser, dinding li
   <Schema type="Breadcrumb" data={[
     { name: 'Beranda', url: '/' },
     { name: 'Kontak', url: '/kontak' },
-    { name: city.name, url: `/kontak/${city.slug}` }
+    { name: city.name, url: u(`/kontak/${city.slug}`) }
   ]} />
   <Schema type="WebSite" />
   <Schema type="Organization" />

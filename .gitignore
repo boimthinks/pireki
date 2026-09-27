@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# data exports (bukan kode sumber)
+*.csv
+!src/data/**/*.csv

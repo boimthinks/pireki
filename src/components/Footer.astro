@@ -1,4 +1,6 @@
 ---
+import { u } from '../lib/utils';
+
 const currentYear = new Date().getFullYear();
 ---
 
@@ -13,26 +15,26 @@ const currentYear = new Date().getFullYear();
 					Spesialis Penyekat Ruangan No. 1 di Indonesia. Menghadirkan solusi partisi geser, pintu lipat, dan movable wall berkualitas tinggi untuk berbagai kebutuhan ruangan Anda.
 				</p>
 				<p>
-					<a href="/tentang" class="text-[#c9a84c]">Tentang Pireki</a>
+					<a href={u("/tentang")} class="text-[#c9a84c]">Tentang Pireki</a>
 				</p>
 				
 			</div>
 			<div>
 				<h4 class="text-lg font-bold mb-6 text-[#c9a84c]">Tautan Cepat</h4>
 				<ul class="space-y-3 text-sm text-white/40">
-					<li><a href="/tipe" class="hover:text-[#c9a84c] transition-colors">Tipe Partisi</a></li>
-					<li><a href="/ruangan" class="hover:text-[#c9a84c] transition-colors">Aplikasi Ruangan</a></li>
-					<li><a href="/proyek" class="hover:text-[#c9a84c] transition-colors">Proyek Terbaru</a></li>
-					<li><a href="/blog" class="hover:text-[#c9a84c] transition-colors">Blog & Artikel</a></li>
-				<li><a href="/insights" class="hover:text-[#c9a84c] transition-colors">Insights</a></li>
+					<li><a href={u("/tipe")} class="hover:text-[#c9a84c] transition-colors">Tipe Partisi</a></li>
+					<li><a href={u("/ruangan")} class="hover:text-[#c9a84c] transition-colors">Aplikasi Ruangan</a></li>
+					<li><a href={u("/proyek")} class="hover:text-[#c9a84c] transition-colors">Proyek Terbaru</a></li>
+					<li><a href={u("/blog")} class="hover:text-[#c9a84c] transition-colors">Blog & Artikel</a></li>
+				<li><a href={u("/insights")} class="hover:text-[#c9a84c] transition-colors">Insights</a></li>
 				</ul>
 			</div>
 			<div>
 				<h4 class="text-lg font-bold mb-6 text-[#c9a84c]">Layanan</h4>
 				<ul class="space-y-3 text-sm text-white/40">
-					<li><a href="/layanan/maintenance-service" class="hover:text-[#c9a84c] transition-colors">Maintenance Service</a></li>
-					<li><a href="/layanan/konsultasi-gratis" class="hover:text-[#c9a84c] transition-colors">Konsultasi Gratis</a></li>
-					<li><a href="/layanan/pemasangan-baru" class="hover:text-[#c9a84c] transition-colors">Pemasangan Baru</a></li>
+					<li><a href={u("/layanan/maintenance-service")} class="hover:text-[#c9a84c] transition-colors">Maintenance Service</a></li>
+					<li><a href={u("/layanan/konsultasi-gratis")} class="hover:text-[#c9a84c] transition-colors">Konsultasi Gratis</a></li>
+					<li><a href={u("/layanan/pemasangan-baru")} class="hover:text-[#c9a84c] transition-colors">Pemasangan Baru</a></li>
 				</ul>
 			</div>
 			<div>
@@ -63,8 +65,8 @@ const currentYear = new Date().getFullYear();
 		<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs uppercase tracking-widest text-white/30">
 			<span>&copy; {currentYear} CV. Pireki Asia. All rights reserved.</span>
 			<div class="flex space-x-6 mt-6 md:mt-0">
-				<a href="/terms-of-use" class="hover:text-white transition-colors">Terms of Use</a>
-				<a href="/privacy-cookie-policy" class="hover:text-white transition-colors">Privacy Policy</a>
+				<a href={u("/terms-of-use")} class="hover:text-white transition-colors">Terms of Use</a>
+				<a href={u("/privacy-cookie-policy")} class="hover:text-white transition-colors">Privacy Policy</a>
 			</div>
 		</div>
 	</div>

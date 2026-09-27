@@ -57,6 +57,10 @@ const buildTime = new Date().toISOString();
 // https://astro.build/config
 export default defineConfig({
   site: SITE,
+  // Canonical seluruh halaman selalu berakhir dengan trailing slash karena
+  // BaseHead.astro memakai Astro.url.pathname dan build format 'directory'.
+  // Opsi ini memastikan dev server konsisten dengan bentuk canonical produksi.
+  trailingSlash: 'always',
   integrations: [sitemap({
     serialize(item) {
       const key = item.url.replace(/\/$/, '');
@@ -71,11 +75,5 @@ export default defineConfig({
   },
   redirects: {
     '/monitor': '/monitor/index.html',
-    '/blog/20-kata-kata-promosi-jasa-bangunan': '/insights/20-kata-promosi-jasa-bangunan',
-    '/blog/mengenal-partisi-gypsum': '/insights/partisi-gypsum-vs-partisi-geser',
-    '/blog/u-shape-style': '/insights/u-shape-style',
-    '/blog/standar-ergonomi-ruang-rapat': '/insights/ergonomi-ruang-rapat-partisi-geser',
-    '/blog/buat-rab-dengan-chatgpt': '/insights/buat-rab-dengan-ai',
-    '/blog/tata-ruang-rapat-untuk-kelompok-kecil': '/insights/tata-ruang-rapat-kelompok-kecil',
   }
 });

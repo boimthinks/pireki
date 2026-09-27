@@ -1,4 +1,5 @@
 ---
+import { u } from '../lib/utils';
 interface Props {
   type: 'Product' | 'Article' | 'Organization' | 'Breadcrumb' | 'WebSite' | 'ImageObject' | 'LocalBusiness' | 'FAQPage';
   data?: any;
@@ -61,7 +62,7 @@ switch (type) {
         "@type": "ListItem",
         "position": index + 1,
         "name": item.name,
-        "item": `https://pireki.id${item.url}`
+        "item": u(`https://pireki.id${item.url}`)
       }))
     };
     break;
@@ -109,7 +110,7 @@ switch (type) {
       "@type": "LocalBusiness",
       "name": `CV. Pireki Asia ${data.city.name}`,
       "image": "https://pireki.id/favicon.svg",
-      "url": `https://pireki.id/kontak/${data.city.slug}`,
+      "url": u(`https://pireki.id/kontak/${data.city.slug}`),
       "telephone": "0823-7673-7701",
       "address": {
         "@type": "PostalAddress",

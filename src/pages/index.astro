@@ -1,4 +1,5 @@
 ---
+import { u } from '../lib/utils';
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
@@ -8,12 +9,11 @@ import ProyekCard from '../components/ProyekCard.astro';
 import TipePartisiCard from '../components/TipePartisiCard.astro';
 import RuanganCard from '../components/RuanganCard.astro';
 import Schema from '../components/Schema.astro';
-import { getApiData } from '../lib/api';
 
 const tipeEntries = await getCollection('tipe');
 const ruanganEntries = await getCollection('ruangan');
 const insights = await getCollection('insights');
-const { proyek } = await getApiData();
+const proyekEntries = await getCollection('proyek');
 
 const stats = [
   { label: 'Berdiri Sejak', value: '2008' },
@@ -145,7 +145,7 @@ const stats = [
               Kami menyediakan berbagai pilihan tipe partisi geser dengan spesifikasi yang dapat disesuaikan untuk memenuhi kebutuhan fungsional dan estetika ruangan Anda.
             </p>
           </div>
-          <a href="/tipe" class="text-[#c9a84c] font-bold flex items-center gap-2 hover:gap-3 transition-all">
+          <a href={u("/tipe")} class="text-[#c9a84c] font-bold flex items-center gap-2 hover:gap-3 transition-all">
             Lihat Semua Tipe
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -177,7 +177,7 @@ const stats = [
               Partisi geser Pireki dapat diaplikasikan pada berbagai jenis ruangan untuk memaksimalkan fleksibilitas dan fungsi tanpa mengorbankan estetika.
             </p>
           </div>
-          <a href="/ruangan" class="text-[#c9a84c] font-bold flex items-center gap-2 hover:gap-3 transition-all">
+          <a href={u("/ruangan")} class="text-[#c9a84c] font-bold flex items-center gap-2 hover:gap-3 transition-all">
             Lihat Semua Aplikasi
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -309,14 +309,14 @@ const stats = [
       <div class="max-w-7xl mx-auto px-6">
         <h2 class="text-3xl md:text-5xl font-display font-bold mb-6 reveal">Proyek Pemasangan Terbaru</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 my-8 gap-8" data-reveal-container>
-          {[...proyek].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 6).map(p => (
+          {[...proyekEntries].sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 6).map(p => (
             <ProyekCard 
-              title={p.title} 
-              description={p.pengantar} 
-              image={p.image_url} 
-              slug={p.slug}
-              kategori={p.kategori}
-              location={(p as any).location || 'Indonesia'}
+              title={p.data.title} 
+              description={p.data.pengantar} 
+              image={p.data.image_url} 
+              slug={p.data.slug}
+              kategori={p.data.kategori}
+              location="Indonesia"
             />
           ))}
         </div>

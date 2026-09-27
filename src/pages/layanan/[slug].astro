@@ -1,4 +1,5 @@
 ---
+import { u } from '../../lib/utils';
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import CTA from '../../components/CTA.astro';
@@ -21,7 +22,7 @@ const { Content } = await render(entry);
       <nav class="flex items-center gap-2 text-sm text-white/40 mb-12">
         <a href="/" class="hover:text-[#c9a84c] transition-colors">Beranda</a>
         <span>/</span>
-        <a href="/layanan" class="hover:text-[#c9a84c] transition-colors">Layanan</a>
+        <a href={u("/layanan")} class="hover:text-[#c9a84c] transition-colors">Layanan</a>
         <span>/</span>
         <span class="text-[#c9a84c] font-medium">{entry.data.title}</span>
       </nav>

@@ -1,6 +1,7 @@
 ---
+import { u } from '../../lib/utils';
 import Layout from '../../layouts/Layout.astro';
-import { getApiData } from '../../lib/api';
+import { getCollection } from 'astro:content';
 import { marked } from 'marked';
 import { applyInternalLinks } from '../../lib/utils';
 import CTA from '../../components/CTA.astro';
@@ -10,10 +11,10 @@ import BlogCard from '../../components/BlogCard.astro';
 import AboutAuthor from '../../components/AboutAuthor.astro';
 
 export async function getStaticPaths() {
-  const { blog } = await getApiData();
-  return blog.map(post => ({
-    params: { slug: post.slug },
-    props: { post, allPosts: blog },
+  const blogEntries = await getCollection('blog');
+  return blogEntries.map(entry => ({
+    params: { slug: entry.data.slug },
+    props: { post: entry, allPosts: blogEntries },
   }));
 }
 
@@ -21,23 +22,28 @@ const { post, allPosts } = Astro.props;
 
 // Apply Internal Links before parsing Markdown (1 link per page)
 const usedLinks = new Set<string>();
-const pengantarHtml = marked.parse(post.pengantar); // No internal links here
-const contentHtml = marked.parse(applyInternalLinks(post.content, usedLinks));
-const kesimpulanHtml = marked.parse(post.kesimpulan); // No internal links here
+const pengantarHtml = marked.parse(post.data.pengantar); // No internal links here
+const contentHtml = marked.parse(applyInternalLinks(post.body ?? '', usedLinks));
+const kesimpulanHtml = marked.parse(post.data.kesimpulan); // No internal links here
 
 // Filter related posts: same category, different slug, max 6
 const relatedPosts = allPosts
-  .filter(p => p.kategori === post.kategori && p.slug !== post.slug)
+  .filter(p => p.data.kategori === post.data.kategori && p.data.slug !== post.data.slug)
   .slice(0, 6);
 ---
 
-<Layout title={`${post.judul_seo} - PIREKI`} description={post.pengantar} image={post.image_url}>
-  <Schema type="Article" data={post} />
+<Layout title={`${post.data.judul_seo} - PIREKI`} description={post.data.pengantar} image={post.data.image_url}>
+  <Schema type="Article" data={{
+    title: post.data.title,
+    image_url: post.data.image_url,
+    date: post.data.date,
+    pengantar: post.data.pengantar,
+  }} />
   <Schema type="Breadcrumb" data={[
     { name: 'Beranda', url: '/' },
     { name: 'Blog', url: '/blog' },
-    { name: post.kategori, url: `/blog?cat=${post.kategori}` },
-    { name: post.title, url: `/blog/${post.slug}` }
+    { name: post.data.kategori, url: u('/blog/') },
+    { name: post.data.title, url: u(`/blog/${post.data.slug}`) }
   ]} />
   <main class="py-20 bg-black text-white">
     <article class="max-w-7xl mx-auto px-6 my-10">
@@ -45,18 +51,18 @@ const relatedPosts = allPosts
       <nav class="flex flex-wrap items-center gap-2 text-xs md:text-sm text-white/40 mb-12 overflow-hidden">
         <a href="/" class="hover:text-[#c9a84c] transition-colors whitespace-nowrap">Beranda</a>
         <span class="flex-shrink-0">/</span>
-        <a href="/blog" class="hover:text-[#c9a84c] transition-colors whitespace-nowrap">Blog</a>
+        <a href={u("/blog")} class="hover:text-[#c9a84c] transition-colors whitespace-nowrap">Blog</a>
         <span class="flex-shrink-0">/</span>
-        <span class="text-white/40 whitespace-nowrap">{post.kategori}</span>
+        <span class="text-white/40 whitespace-nowrap">{post.data.kategori}</span>
         <span class="flex-shrink-0">/</span>
-        <span class="text-[#c9a84c] font-medium truncate max-w-[150px] md:max-w-none">{post.title}</span>
+        <span class="text-[#c9a84c] font-medium truncate max-w-[150px] md:max-w-none">{post.data.title}</span>
       </nav>
       
       {/* SEO Title & Image */}
       <header class="max-w-4xl mx-auto text-center mb-16">
-        <h1 class="text-4xl md:text-6xl font-bold mb-8 text-white">{post.judul_seo}</h1>
+        <h1 class="text-4xl md:text-6xl font-bold mb-8 text-white">{post.data.judul_seo}</h1>
         <div class="aspect-video rounded-3xl overflow-hidden mb-12 border border-white/10 shadow-2xl">
-          <img src={post.image_url} alt={post.title} class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+          <img src={post.data.image_url} alt={post.data.title} class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
         </div>
       </header>
 
@@ -64,12 +70,12 @@ const relatedPosts = allPosts
         <div class="lg:col-span-8">
           <div class="flex items-center gap-4 mb-6">
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#c9a84c]/30 bg-[#c9a84c]/10 backdrop-blur-sm">
-              <span class="text-[#c9a84c] text-xs font-bold tracking-widest uppercase">{post.kategori}</span>
+              <span class="text-[#c9a84c] text-xs font-bold tracking-widest uppercase">{post.data.kategori}</span>
             </div>
-            <span class="text-white/40 text-sm">{post.date.substring(0, 10)}</span>
+            <span class="text-white/40 text-sm">{post.data.date.substring(0, 10)}</span>
           </div>
           <h1 class="text-4xl md:text-7xl font-bold mb-8 text-white leading-[1.1]">
-            {post.title}
+            {post.data.title}
           </h1>
           <div class="text-lg text-white/60 leading-relaxed mb-10 italic border-l-4 border-[#c9a84c] pl-6 py-2 prose-gold" set:html={pengantarHtml} />
           
@@ -95,11 +101,11 @@ const relatedPosts = allPosts
               <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {relatedPosts.map(rp => (
                   <BlogCard 
-                    title={rp.title} 
-                    description={rp.pengantar} 
-                    image={rp.image_url} 
-                    slug={rp.slug} 
-                    kategori={rp.kategori} 
+                    title={rp.data.title} 
+                    description={rp.data.pengantar} 
+                    image={rp.data.image_url} 
+                    slug={rp.data.slug} 
+                    kategori={rp.data.kategori} 
                   />
                 ))}
               </div>

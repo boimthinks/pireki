@@ -92,7 +92,7 @@ File ini adalah **sumber kebenaran tunggal** untuk semua informasi faktual tenta
 - Posisi: produk unggulan/flagship, peredaman suara terbaik.
 - Sistem: geser (sliding) per-panel.
 - Peredaman suara: hingga **60 dB**.
-- Frame hollow besi 5x5 · Rockwool 60kg/m³ · Jack mekanik atas-bawah (penguat/pencengkeram) · Multiplek/MDF 12mm · Aluminium profil (anodize natural) · Rubber seal · Rel & roda hanya di atas (tanpa rel bawah → rapi & elegan) · Cotton sheet finishing.
+- Frame hollow besi 5x5 · Rockwool **80 kg/m³** (konsisten dengan `src/content/tipe/sorepa-pro.md` & `src/content/proyek/ayola-signature-ocarina-batam.md`) · Jack mekanik atas-bawah (penguat/pencengkeram) · Multiplek/MDF 12mm · Sheet foam 3mm · Aluminium profil (anodize natural) · Rubber seal · Rel & roda hanya di atas (tanpa rel bawah → rapi & elegan) · Cotton sheet finishing.
 - Cocok untuk: ballroom hotel, ruang meeting korporat, studio, konferensi, aula besar, tempat ibadah.
 
 #### SOREPA PRIMA / ST-100 — PREMIUM PERSECTION
@@ -131,6 +131,19 @@ File ini adalah **sumber kebenaran tunggal** untuk semua informasi faktual tenta
 | Redam Suara | ★★★★★ (60 dB) | ★★★★★ (60 dB) | ★★★☆☆ | ★★★☆☆ (Semi) | ★★☆☆☆ | ★☆☆☆☆ |
 | Jack Mekanik | ✅ Penuh | ✅ Penuh | ✅ Panel terakhir | ❌ | ❌ | ❌ |
 | Harga | Premium | Premium | Mid-High | Mid | Ekonomis | Budget |
+
+### Densitas Material Peredam (acuan tunggal — jangan menebak)
+
+| Produk | Material inti | Densitas | Panel | Sumber |
+|---|---|---|---|---|
+| Sorepa Pro | Rockwool | **80 kg/m³** | Multiplek/MDF 12 mm + sheet foam 3 mm | `tipe/sorepa-pro.md`, `proyek/ayola-signature-ocarina-batam.md` |
+| Sorepa | Rockwool | 60 kg/m³ | Multiplek/MDF 9 / 12 mm | `tipe/sorepa.md` |
+| Sorepa Prima / ST-100 | Rockwool | 60 kg/m³ | Multiplek/MDF 9 / 12 mm + sheet foam 3 mm | `tipe/sorepa-prima.md` |
+| Samowa Persection | Rockwool | 30 kg/m³ | Multiplek/MDF 8 mm + cotton seat | `tipe/samowa-persection.md` |
+| Samowa Lipat | Glasswool | 30 kg/m³ | Multiplek/MDF 8 mm | `tipe/samowa-lipat.md` |
+| Nice Partition | **Tidak ada** peredam (meranti + rongga) | — | Mdf / Multiplek | `tipe/nice-partition.md` |
+
+> Densitas tertinggi di lini produksi adalah **80 kg/m³**. Klaim "rockwool 100 kg/m³" atau "STC 40–50 per varian" **tidak boleh** dipakai (§9.7). Angka akustik yang boleh dikutip hanya **"hingga 60 dB"** untuk Sorepa Pro & Sorepa Prima/ST-100. Untuk Samowa dan tipe lipat: **jangan menyebut angka dB**, hanya ★★★☆☆ "semi redam".
 
 ---
 
@@ -261,7 +274,7 @@ kesimpulan: "satu paragraf kesimpulan + CTA ringan"
 
 | File | `judul_seo` | Topik |
 |---|---|---|
-| `2024-02-29.md` | Kelebihan dan Kekurangan Tata Ruang Rapat U-Shape Style | Layout ruang rapat (U-Shape) |
+| `2024-02-29.md` | Kelebihan dan Kekurangan Tata Ruang Rapat U-Shape Style: Apa Artinya dan Solusi Sekat Portable | Layout ruang rapat (U-Shape) |
 | `2025-03-26.md` | Partisi Gypsum vs Partisi Geser | Perbandingan material penyekat |
 | `2025-04-21.md` | Panduan Ergonomi Ruang Rapat untuk Pemasangan Partisi Geser | Desain/ergonomi ruang rapat |
 | `2026-05-22.md` | Panduan Membuat RAB Konstruksi dengan AI untuk Kontraktor | Admin/perencanaan biaya proyek |
@@ -286,6 +299,15 @@ kesimpulan: "satu paragraf kesimpulan + CTA ringan"
 | `2026-08-10.md` | Movable Wall Partition untuk Ruang Multifungsi, Panduan dari Produsen | Panduan movable wall partition (jenis mekanisme, akustik STC/NIC/NRC, syarat struktur, finishing, perawatan) |
 | `2026-08-11.md` | Partisi Miring Sinking Otopsi Penyebab dan Cara Mencegahnya | Kerusakan & otopsi — sinking (poin 22) |
 | `2026-08-16.md` | Berapa Lama Produksi Partisi Geser Sampai Siap Pasang | Waktu produksi B2B (#56) |
+| `2026-08-18-layout-u-shape-hollow-square.md` | Panduan Memilih Layout U-Shape atau Hollow Square untuk Ruang Rapat | Layout ruang rapat (U-Shape, Hollow Square) |
+| `2026-08-18-fungsi-dan-bahaya-glasswool.md` | Fungsi Glasswool dan Apakah Glasswool Berbahaya bagi Kesehatan | Material partisi & akustik (Glasswool, Rockwool) |
+| `2026-08-18-estimasi-biaya-renovasi-kantor.md` | Estimasi Biaya Renovasi Kantor per m2 untuk Partisi dan Interior | Biaya renovasi kantor & partisi per m2 |
+| `2026-08-18-perbedaan-kontraktor-konstruksi-developer.md` | Perbedaan Kontraktor, Konstruksi, dan Developer Proyek Bangunan | Kontraktor, konstruksi, developer & proyek |
+| `2026-08-19-pemasangan-partisi-rel-atas-upn-veteran-jatim.md` | Pemasangan Partisi Rel Atas di Universitas Surabaya | Teknis pemasangan rel atas; studi kasus UPN Veteran Jatim (Fakultas Pertanian) |
+| `src/content/blog/partisi-ideal-ballroom-hotel.md` | Spesifikasi Ideal Partisi Ballroom Hotel untuk Kontraktor | Perbaikan artikel blog lama: spesifikasi teknis ballroom hotel (beban rel gantung, 60 dB, stacking pocket); studi kasus FUGO Samarinda, The Rich Jogja, Ayola Batam, Furaya Pekanbaru |
+| `2026-08-21-penyekat-ruangan-movable-wall.md` | Penyekat Ruangan Movable Wall Panduan Lengkap Tipe dan Spesifikasi | Penyekat ruangan movable wall (mekanisme geser persection vs lipat folding, klasifikasi tipe, studi kasus, perawatan) |
+| `panduan-pasang-struktur-unistrut-h-beam-partisi-geser.md` | Metode Pemasangan Struktur Unistrut dan H-Beam untuk Rel Partisi Atas | Struktur penggantung rel atas: unistrut vs H-beam, standar pemasangan, kolaborasi kontraktor sipil (#55) |
+| `2026-09-27-partisi-geser-top-hung-pesisir.md` | Panduan Partisi Geser Top-Hung di Wilayah Pesisir | Mode kegagalan top hung di iklim pesisir: poros roda, braket rel, multiplek mengembang; material dan spesifikasi density per tipe; checklist serah terima pesisir; studi kasus Ayola Batam, MTsN 1 Mentawai, FUGO Samarinda, Hunian IKN, Bank Eka Lampung (#27) |
 
 ### 60 Sudut Pandang Topik (yang sudah dicoret `~~...~~` = sudah ditulis)
 
@@ -293,13 +315,13 @@ kesimpulan: "satu paragraf kesimpulan + CTA ringan"
 
 **Kategori 2 — Ballroom & Hotel:** 11. Masalah Lenturan Struktur (Defleksi) · 12. Simulasi Kecepatan Crew Quick-Lock · 13. Audit Keausan Roda Nylon Heavy Duty · 14. Tantangan Lantai Karpet Tebal · 15. Manajemen Pintu Darurat Pass Door · ~~16. Perawatan Rutin Komersial~~ · 17. Skema Warna Interior (Kain vs HPL) · 18. Pertemuan Sudut T-Section · 19. Kasus Suara Bass Tembus · ~~20. Investasi Jangka Panjang Hotel (ROI)~~
 
-**Kategori 3 — Kerusakan & Otopsi:** 21. Tragedi Rel Bengkok · ~~22. Penyebab Partisi Miring (Sinking)~~ · 23. Sindrom Karet Getas · 24. Kasus Mekanik Macet (Jack Device) · 25. Kesalahan Konstruksi Sipil (Lantai Miring) · 26. Bahaya Jamur Dinding · 27. Karat di Area Pesisir · 28. Roda Keluar Jalur (Anjlok) · 29. Goncangan Gempa · 30. Review Komponen KW
+**Kategori 3 — Kerusakan & Otopsi:** 21. Tragedi Rel Bengkok · ~~22. Penyebab Partisi Miring (Sinking)~~ · 23. Sindrom Karet Getas · 24. Kasus Mekanik Macet (Jack Device) · 25. Kesalahan Konstruksi Sipil (Lantai Miring) · 26. Bahaya Jamur Dinding · ~~27. Karat di Area Pesisir~~ · 28. Roda Keluar Jalur (Anjlok) · 29. Goncangan Gempa · 30. Review Komponen KW
 
 **Kategori 4 — Fabrikasi & Material:** 31. Rahasia Lab Akustik (Rockwool 60 vs 100) · 32. Ketebalan Rangka Aluminium Anodized · ~~33. Uji Kekuatan Tekan (Las Penuh)~~ · 34. Dilema Berat vs Fungsi (Sorepa 10cm) · 35. Proses Curing Lem 48 Jam · 36. Transparansi Komponen Internal · 37. Standar Pengiriman Luar Pulau (IKN) · ~~38. Sertifikasi Material~~ · 39. Pilihan Ketebalan Multiplek vs MDF · 40. Custom Finishing (Menyesuaikan Motif HPL)
 
 **Kategori 5 — Kasus Desain Unik:** ~~41. Penyekat Ruang Kelas Kampus~~ · 42. Partisi Geser Masjid/Tempat Ibadah · 43. Penyekat Aula Sekolah · 44. Partisi Kaca Studio Siaran/Podcast · 45. Restoran & Ruang VIP · 46. Rumah Tinggal Minimalis · 47. Klinik & Rumah Sakit (Vinyl Anti-Bakteri) · 48. Gedung Pemerintahan/Aula Diklat (Reverb) · 49. Co-Working Space · 50. Showroom Otomotif/Galeri Seni (Frameless Glass)
 
-**Kategori 6 — Panduan Pembelian:** ~~51. Anatomi Harga Per Meter~~ · 52. Jebakan Spesifikasi Murah (Tanpa Garansi Mekanik) · 53. Cara Mengukur Opening Pintu · ~~54. Evaluasi Vendor Partisi~~ · 55. Metode Pemasangan Struktur Atas (Unistrut) · ~~56. Waktu Produksi Proyek B2B (14-21 Hari)~~ · 57. Solusi Over-Budget (Value Engineering) · 58. Instalasi di Gedung Operasional (Malam Hari) · ~~59. Kebijakan Garansi Pireki~~ · ~~60. Pelajaran dari 15+ Tahun Pengalaman~~
+**Kategori 6 — Panduan Pembelian:** ~~51. Anatomi Harga Per Meter~~ · 52. Jebakan Spesifikasi Murah (Tanpa Garansi Mekanik) · 53. Cara Mengukur Opening Pintu · ~~54. Evaluasi Vendor Partisi~~ · ~~55. Metode Pemasangan Struktur Atas (Unistrut)~~ · ~~56. Waktu Produksi Proyek B2B (14-21 Hari)~~ · 57. Solusi Over-Budget (Value Engineering) · 58. Instalasi di Gedung Operasional (Malam Hari) · ~~59. Kebijakan Garansi Pireki~~ · ~~60. Pelajaran dari 15+ Tahun Pengalaman~~
 
 ---
 

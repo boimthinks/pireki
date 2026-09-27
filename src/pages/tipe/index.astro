@@ -1,4 +1,5 @@
 ---
+import { u } from '../../lib/utils';
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import TipePartisiCard from '../../components/TipePartisiCard.astro';
@@ -44,7 +45,7 @@ const lipatEntries = tipeEntries.filter(e => e.data.sistem === 'lipat');
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <a href="/geser" class="reveal group relative overflow-hidden rounded-2xl h-[28rem] block">
+        <a href={u("/geser")} class="reveal group relative overflow-hidden rounded-2xl h-[28rem] block">
           <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnD4ZJUCc6ImCDtFC5bS2kuhf-KUtcSgkOUp3ib95pZO2tuD2YRYDwWZf1rlqfvTH55FPA7rzP0QPKtYdXaB7pXOYfgwkeY_60zzr5qa11_H4ohLWb4fAM99IYE2ZkMRf5lsorwPYzIIRqu9iKW46LvhiMfOE3y-Ikr6J5HHGYm-ToekX0e24JnVE04MCH/s800/dinding_partisi_pireki_tipe_sorepa_stacking_st_100.jpg" alt="Partisi Geser" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20"></div>
           <div class="absolute inset-0 p-8 md:p-10 flex flex-col justify-end">
@@ -71,7 +72,7 @@ const lipatEntries = tipeEntries.filter(e => e.data.sistem === 'lipat');
           </div>
         </a>
 
-        <a href="/lipat" class="reveal group relative overflow-hidden rounded-2xl h-[28rem] block">
+        <a href={u("/lipat")} class="reveal group relative overflow-hidden rounded-2xl h-[28rem] block">
           <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgSlK4hZJ4NHJ4VqNQxYk43sO2rasIEiuStYRkwfBR65oZ3MbS02NIRx54-f_LcAhzPVCCGJqwfvrZtfK6aVxF5kVtjEAtQxM6tiASuAXMnpPHrUvwC-FTNlD_XtKI8H_Fn1L5i3iuAqBlVJZ5csJx-GrwGDJDC0XiFQuv_wAeHXOv8UYpYqDRmXtqDcH_K/s800/samowa_lipat.jpg" alt="Partisi Lipat" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20"></div>
           <div class="absolute inset-0 p-8 md:p-10 flex flex-col justify-end">

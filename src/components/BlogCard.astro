@@ -1,4 +1,6 @@
 ---
+import { u } from '../lib/utils';
+
 interface Props {
   title: string;
   description: string;
@@ -9,9 +11,10 @@ interface Props {
 }
 
 const { title, description, image, slug, kategori, basePath = '/blog' } = Astro.props;
+const href = u(`${basePath}/${slug}`);
 ---
 
-<a href={`${basePath}/${slug}`} class="reveal group block bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-[#c9a84c]/50 transition-all duration-300">
+<a href={href} class="reveal group block bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-[#c9a84c]/50 transition-all duration-300">
   <div class="h-48 overflow-hidden relative">
     <img src={image} alt={title} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" />
     <div class="absolute top-4 left-4 bg-[#c9a84c] text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
