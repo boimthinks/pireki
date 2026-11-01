@@ -1,0 +1,38 @@
+---
+title: "UINSU Medan"
+judul_seo: "Pemasangan Partisi Sorepa Pireki di UINSU Medan untuk Ruang Akustik"
+slug: "partisi-sorepa-pireki-uinsu-medan"
+image_url: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGURyYWU5X7FZHHnafiPqiaS-8LKT1kvdSrlfWFvkL6ptqZt2LwYtT5lZYh4QDvuqrxY4Ta68R2KOSukFDgjCpR2gSlnB3wfbN3TrVR01ZiMCnWDQEUdjJAJ6ncEMUv7oTkQh_q2QmGanr2rsjMWcxc96KG8EPZar6J-CtDjSLwtMZgtteQtRCTJ-a0cTn/s800/Pemasangan%20Partisi%20Sorepa%20Pireki%20di%20UINSU%20Medan%20untuk%20Ruang%20Akustik.webp"
+date: "2026-01-30"
+kategori: "Universitas"
+pengantar: |-
+  Partisi Sorepa Pireki menjadi pilihan utama dalam proyek pengembangan ruang di Universitas Islam Negeri Sumatera Utara (UINSU) Medan karena spesifikasinya yang mumpuni. Implementasi penyekat ruangan Medan pada institusi pendidikan tinggi seperti UINSU memerlukan ketelitian ekstra, mengingat intensitas penggunaan ruangan yang sangat dinamis untuk seminar, rapat senat, hingga perkuliahan paralel. Penggunaan tipe Sorepa yang dikenal sebagai varian "Sorepa Merah" memberikan jaminan isolasi akustik tingkat tinggi, sehingga fungsi aula besar dapat dipecah menjadi beberapa ruang kecil tanpa adanya gangguan kebocoran suara yang mengganggu konsentrasi mahasiswa.
+kesimpulan: |-
+  Keberhasilan proyek pemasangan Partisi Sorepa Pireki di UINSU Medan membuktikan bahwa kebutuhan akan ruang multifungsi tidak harus mengorbankan privasi suara. Dengan teknologi isolasi akustik yang mutakhir, universitas kini memiliki fasilitas yang adaptif untuk berbagai skala kegiatan akademik tanpa terkendala masalah kebisingan antarruang. Penggunaan material kelas industri seperti rockwool density tinggi dan struktur frame aluminium mm yang presisi menjadikan investasi ini sebagai solusi jangka panjang bagi manajemen aset kampus. Partisi ini bukan sekadar dinding pembatas, melainkan elemen strategis dalam menciptakan ekosistem belajar yang kondusif dan efisien di Sumatera Utara.
+
+
+  Bagi Anda kontraktor, arsitek, atau pengelola instansi yang sedang merencanakan pembangunan ruang serbaguna, ballroom, maupun ruang kelas modular, Pireki hadir memberikan solusi teknis terbaik. Kami melayani pengadaan hingga instalasi profesional di seluruh wilayah Medan dan sekitarnya dengan jaminan kualitas pengerjaan yang akurat. Jangan biarkan potensi ruang Anda terbuang percuma karena tata letak yang kaku. Segera konsultasikan kebutuhan penyekat ruangan Anda, dapatkan layanan survei lokasi, serta informasi detail mengenai simulasi biaya pemasangan melalui sales resmi kami di nomor 0823-7673-7701.
+---
+
+## Pendekatan Strategis Pemasangan Partisi Sorepa Pireki di Kampus UINSU
+
+Kebutuhan akan fleksibilitas ruang di kampus yang berlokasi di Jl. William Iskandar ini menuntut sistem yang tidak hanya kuat secara struktur, tetapi juga estetis secara visual. Dengan mengaplikasikan sistem geser (sliding), pihak universitas kini memiliki kendali penuh terhadap manajemen kapasitas area publik mereka. Pemasangan ini melibatkan integrasi antara material peredam internal yang masif dengan desain eksterior panel yang dapat disesuaikan dengan interior gedung. Hal ini membuktikan bahwa fungsionalitas partisi kedap suara universitas dapat berjalan selaras dengan keindahan arsitektur modern kampus masa kini.
+## Keunggulan Teknis Sistem Akustik Sorepa untuk Skala Universitas
+
+Eksistensi Partisi Sorepa Pireki sebagai pemimpin pasar penyekat ruangan Medan didasarkan pada komponen teknis yang sangat spesifik dan berkualitas tinggi. Keunggulan utamanya terletak pada kemampuan meredam frekuensi suara tinggi maupun rendah, sebuah kebutuhan krusial bagi lingkungan kampus yang padat aktivitas.
+### Material Peredam Berkualitas Tinggi
+
+Setiap panel Sorepa dirancang dengan struktur berlapis yang sangat kompleks untuk mencapai efisiensi isolasi akustik maksimal. Bagian inti panel diisi menggunakan rockwool density 80 kg/m³ hingga 100 kg/m³, yang berfungsi menyerap gelombang energi suara agar tidak merambat ke ruang sebelah. Material ini kemudian dikombinasikan dengan lapisan multiplek tebal dan cotton sheet sebagai penyaring akustik tambahan. Teknologi mechanical contact pada bagian atas dan bawah panel memastikan rubber seal menekan dengan presisi ke lantai serta plafon, sehingga menutup celah suara (sound leakage) secara total.
+### Mekanisme Rel dan Roda yang Presisi
+
+Keandalan operasional partisi ini bertumpu pada sistem ril/rel yang menggunakan frame aluminium mm dengan ketebalan dinding profil yang kokoh untuk menahan beban panel masif. Sistem ini menggunakan roda nilon berkualitas tinggi yang tahan gesekan, memastikan pergerakan panel tetap halus tanpa suara berisik (silent movement). Setiap grendel/engsel dan komponen mekanik internal dibuat dari baja antikarat, sehingga mekanisme penguncian tetap stabil meskipun digunakan berkali-kali setiap hari dalam jangka waktu yang sangat lama di lingkungan universitas yang sibuk.
+## Proses Instalasi Profesional oleh Tim Pireki di Medan
+
+Proses pemasangan Partisi Sorepa Pireki di kampus UINSU Medan, yang beralamat di Jl. William Iskandar, dilakukan melalui tahapan teknis yang sangat terukur. Langkah awal dimulai dengan survei lokasi secara mendalam untuk memastikan struktur balok gantung mampu menahan beban statis dari panel Sorepa yang memiliki massa cukup berat. Presisi adalah kunci utama, di mana tim teknisi melakukan pengukuran level lantai dan plafon menggunakan laser guna menjamin sistem ril/rel terpasang lurus sempurna. Hal ini sangat penting agar tidak ada celah udara sekecil apa pun yang dapat menurunkan performa isolasi akustik pada ruangan aula universitas tersebut.
+
+Integrasi komponen mekanik menjadi fokus utama saat perakitan di lapangan. Setiap panel dipasang dengan grendel/engsel yang telah melalui uji beban, memastikan sinkronisasi antara satu panel dengan panel lainnya saat posisi tertutup. Penggunaan frame aluminium mm berkualitas tinggi pada setiap tepian panel memberikan perlindungan ganda terhadap benturan sekaligus menjadi tempat dudukan bagi side rubber yang berfungsi meredam getaran suara. Dengan koordinasi tim yang berpengalaman dalam menangani proyek penyekat ruangan Medan, instalasi di UINSU dapat diselesaikan tepat waktu tanpa mengganggu jadwal akademik mahasiswa, menghasilkan dinding bergerak yang kokoh, kedap suara, dan mudah dioperasikan oleh staf kampus.
+## Dampak Positif Ruang Multifungsi bagi Civitas Akademika UINSU
+
+Kehadiran Partisi Sorepa Pireki memberikan transformasi signifikan terhadap efisiensi penggunaan gedung di lingkungan universitas. Dengan adanya partisi kedap suara universitas ini, pihak pengelola gedung kini memiliki fleksibilitas operasional yang jauh lebih tinggi dibandingkan menggunakan dinding permanen konvensional. Satu area aula yang sangat luas di UINSU Medan kini dapat segera diubah menjadi tiga ruang kelas kecil atau dua ruang seminar menengah hanya dalam hitungan menit. Fleksibilitas ini sangat krusial dalam mendukung jadwal kegiatan akademik yang padat, mulai dari ujian skripsi, rapat koordinasi dosen, hingga acara organisasi mahasiswa yang sering kali berlangsung secara simultan.
+
+Selain faktor efisiensi, kenyamanan akustik menjadi keunggulan utama yang dirasakan langsung oleh civitas akademika. Berkat nilai STC (Sound Transmission Class) yang tinggi, aktivitas di satu sisi ruangan tidak akan terdistraksi oleh kebisingan dari sisi ruangan lainnya. Mahasiswa dapat mengikuti proses pembelajaran dengan fokus maksimal tanpa gangguan suara dari acara seremonial di sebelah sekat. Implementasi penyekat ruangan Medan ini juga meningkatkan nilai estetika interior kampus, menciptakan kesan profesional dan modern yang memperkuat citra UINSU sebagai institusi pendidikan unggulan di Sumatera Utara.

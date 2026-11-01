@@ -22,9 +22,10 @@ const { post, allPosts } = Astro.props;
 
 // Apply Internal Links before parsing Markdown (1 link per page)
 const usedLinks = new Set<string>();
-const pengantarHtml = marked.parse(post.data.pengantar); // No internal links here
-const contentHtml = marked.parse(applyInternalLinks(post.body ?? '', usedLinks));
-const kesimpulanHtml = marked.parse(post.data.kesimpulan); // No internal links here
+const pengantarHtml = await marked.parse(post.data.pengantar); // No internal links here
+const rawContentHtml = await marked.parse(applyInternalLinks(post.body ?? '', usedLinks));
+const contentHtml = rawContentHtml.replace(/<table\b([^>]*)>([\s\S]*?)<\/table>/gi, '<div class="table-wrapper"><table$1>$2</table></div>');
+const kesimpulanHtml = await marked.parse(post.data.kesimpulan); // No internal links here
 
 // Filter related posts: same category, different slug, max 6
 const relatedPosts = allPosts
@@ -67,7 +68,7 @@ const relatedPosts = allPosts
       </header>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
-        <div class="lg:col-span-8">
+        <div class="lg:col-span-8 min-w-0">
           <div class="flex items-center gap-4 mb-6">
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#c9a84c]/30 bg-[#c9a84c]/10 backdrop-blur-sm">
               <span class="text-[#c9a84c] text-xs font-bold tracking-widest uppercase">{post.data.kategori}</span>

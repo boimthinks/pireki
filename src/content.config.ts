@@ -52,9 +52,39 @@ const insights = defineCollection({
   }),
 });
 
+const blog = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/blog' }),
+  schema: z.object({
+    title: z.string(),
+    judul_seo: z.string(),
+    slug: z.string(),
+    image_url: z.string(),
+    date: z.string(),
+    kategori: z.string(),
+    pengantar: z.string(),
+    kesimpulan: z.string(),
+  }),
+});
+
+const proyek = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/proyek' }),
+  schema: z.object({
+    title: z.string(),
+    judul_seo: z.string(),
+    slug: z.string(),
+    image_url: z.string(),
+    date: z.string(),
+    kategori: z.string(),
+    pengantar: z.string(),
+    kesimpulan: z.string(),
+  }),
+});
+
 export const collections = {
   tipe,
   ruangan,
   layanan,
   insights,
+  blog,
+  proyek,
 };

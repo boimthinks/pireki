@@ -53,6 +53,9 @@ if (tocItems.length > 0) {
   });
 }
 
+// Wrap tables for responsive horizontal scrolling
+contentHtml = contentHtml.replace(/<table\b([^>]*)>([\s\S]*?)<\/table>/gi, '<div class="table-wrapper"><table$1>$2</table></div>');
+
 const relatedPosts = allEntries
   .filter(e => e.data.kategori === entry.data.kategori && e.data.slug !== entry.data.slug)
   .slice(0, 6);
@@ -95,7 +98,7 @@ const relatedPosts = allEntries
       </header>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
-        <div class="lg:col-span-8">
+        <div class="lg:col-span-8 min-w-0">
           <div class="flex items-center gap-4 mb-6">
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#c9a84c]/30 bg-[#c9a84c]/10 backdrop-blur-sm">
               <span class="text-[#c9a84c] text-xs font-bold tracking-widest uppercase">{entry.data.kategori}</span>

@@ -1,18 +1,15 @@
-# Pemasangan Partisi Sorepa — Seulawah Resort & Cafe, Batu
-
-| Item | Detail |
-|---|---|
-| **Klien** | Seulawah Resort & Cafe |
-| **Lokasi** | Jl. Mawar No.8, Songgokerto, Kec. Batu, Kota Batu, Jawa Timur 65316 |
-| **Tanggal Pemasangan** | 20 Mei 2015 |
-| **Produk** | Sorepa (Partisi Geser Akustik Premium) |
-| **Kategori** | Hotel / Resort |
-
 ---
-
-## Latar Belakang
-
-Seulawah Resort & Cafe berlokasi di kawasan wisata Batu, Jawa Timur — salah satu destinasi wisata paling populer di Jawa Timur. Sebagai resort yang melayani tamu dari berbagai segmen (wisatawan keluarga, rombongan outing korporat, hingga acara pernikahan), manajemen resort membutuhkan ballroom yang bisa beradaptasi dengan cepat.
+title: "Seulawah Resort & Cafe"
+judul_seo: "Pemasangan Partisi Sorepa di Seulawah Resort & Cafe, Batu"
+slug: "seulawah-resort-cafe"
+image_url: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQgNn0fM_6bhBYIvSMdaTbotj8b4UW08SoNn3KbY4RCz9VcwIBqzkoyr6Ees0jzIQLC-vsZZq1wd90TItMMl_h2cdzz9yne51vEC9X46_bRD-asgHNkJrP9q_-pFL7fe5ZTIjV0W0uV4oLObm1dg-0v3Ochvo2iQoD4NJv6wU7G0A9Z_nZESCanpuFS-1q/s800/Seulawah%20Resort%20Cafe.webp"
+date: "2015-05-20"
+kategori: "Hotel"
+pengantar: |-
+  Seulawah Resort & Cafe berlokasi di kawasan wisata Batu, Jawa Timur — salah satu destinasi wisata paling populer di Jawa Timur. Sebagai resort yang melayani tamu dari berbagai segmen (wisatawan keluarga, rombongan outing korporat, hingga acara pernikahan), manajemen resort membutuhkan ballroom yang bisa beradaptasi dengan cepat.
+kesimpulan: |-
+  Proyek Seulawah Resort & Cafe ini dikerjakan bersamaan periode dengan proyek Global Hotel Banjarmasin (Mei 2015). Keduanya menjadi bukti bahwa Sorepa sudah menjadi pilihan utama untuk sektor perhotelan sejak awal perjalanan Pireki di industri partisi geser. Hingga saat ini, total proyek di sektor hotel dan resort yang pernah ditangani Pireki sudah mencapai puluhan properti di seluruh Indonesia.
+---
 
 Permasalahan utama yang mereka hadapi sebelum menggunakan partisi geser:
 
@@ -88,13 +85,3 @@ Pemasangan partisi Sorepa di Seulawah Resort & Cafe memberikan dampak operasiona
 | **Tenaga kerja setup** | 3-4 orang | 1-2 orang |
 | **Pendapatan ruangan** | Terbatas | Meningkat karena multi-event capability |
 | **Kepuasan tamu** | Sering ada penolakan reservasi | Semua permintaan bisa diakomodasi |
-
----
-
-## Catatan
-
-Proyek Seulawah Resort & Cafe ini dikerjakan bersamaan periode dengan proyek Global Hotel Banjarmasin (Mei 2015). Keduanya menjadi bukti bahwa Sorepa sudah menjadi pilihan utama untuk sektor perhotelan sejak awal perjalanan Pireki di industri partisi geser. Hingga saat ini, total proyek di sektor hotel dan resort yang pernah ditangani Pireki sudah mencapai puluhan properti di seluruh Indonesia.
-
----
-
-*Dokumen ini dibuat sebagai arsip portofolio internal CV Pireki Asia.*

@@ -1,19 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import BlogCard from '../../components/BlogCard.astro';
-import { getApiData } from '../../lib/api';
+import { getCollection } from 'astro:content';
 
-const { blog } = await getApiData();
-const sortedBlog = [...blog].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+const blogEntries = await getCollection('blog');
+const sortedBlog = [...blogEntries].sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
 // Get unique categories
-const categories = ['Semua', ...new Set(blog.map(b => b.kategori).filter(Boolean))];
+const categories = ['Semua', ...new Set(blogEntries.map(b => b.data.kategori).filter(Boolean))];
 ---
 
 <Layout 
   title="Blog & Informasi - PIREKI" 
   description="Dapatkan informasi terbaru, tips desain, dan panduan praktis seputar partisi geser, penyekat ruangan, dan movable wall dari tim ahli Pireki."
-  image={sortedBlog[0]?.image_url}
+  image={sortedBlog[0]?.data.image_url}
 >
   <main class="py-20 bg-black text-white">
     <div class="max-w-7xl mx-auto px-6 my-10">
@@ -34,13 +34,13 @@ const categories = ['Semua', ...new Set(blog.map(b => b.kategori).filter(Boolean
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="blog-grid">
         {sortedBlog.map(post => (
-          <div class="blog-item" data-category={post.kategori}>
+          <div class="blog-item" data-category={post.data.kategori}>
             <BlogCard 
-              title={post.title} 
-              description={post.pengantar} 
-              image={post.image_url} 
-              slug={post.slug}
-              kategori={post.kategori}
+              title={post.data.title} 
+              description={post.data.pengantar} 
+              image={post.data.image_url} 
+              slug={post.data.slug}
+              kategori={post.data.kategori}
             />
           </div>
         ))}

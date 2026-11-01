@@ -1,21 +1,16 @@
-# Pemasangan Partisi Sorepa — Global Hotel Banjarmasin
-
-| Item | Detail |
-|---|---|
-| **Klien** | Global Hotel Banjarmasin |
-| **Lokasi** | Km. 4.5 Jl. Ahmad Yani No. 448, Banjarmasin 70129, Kalimantan Selatan |
-| **Tanggal Pemasangan** | 15 Mei 2015 |
-| **Produk** | Sorepa (Partisi Geser Akustik Premium) |
-| **Kategori** | Hotel |
-
 ---
+title: "Global Hotel Banjarmasin"
+judul_seo: "Pemasangan Partisi Sorepa di Global Hotel Banjarmasin"
+slug: "global-hotel-banjarmasin"
+image_url: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5s9Twx86EGt2o0RaAAg06VoC7fap3iV0wObgOrtCTNquGvAFUuFjSyiym_nIgBQjzMIXrqzNCJF_fG-Acup629HXbXFzhPUiZr1vFk6zxUHSI9ygtD8lJeYxoHehX9x-uqwZ3CaAtD4GXSiz_9mWKRdXCY-DaNdLpZ7ZXDFofpbR7nhSz15VxkBlgqVJw/s800/Global_Hotel_Banjarmasin.webp"
+date: "2015-05-15"
+kategori: "Hotel"
+pengantar: |-
+  Global Hotel Banjarmasin, yang berlokasi di Jl. Ahmad Yani Km. 4.5, merupakan salah satu hotel berbintang di Banjarmasin yang membutuhkan solusi partisi fleksibel untuk ballroom mereka. Ballroom hotel ini sering digunakan untuk berbagai acara mulai dari resepsi pernikahan, seminar, pameran, hingga jamuan makan malam — yang masing-masing membutuhkan konfigurasi ruangan berbeda.
+kesimpulan: |-
+  Proyek ini merupakan salah satu proyek awal Pireki di Pulau Kalimantan. Sejak saat itu, Pireki telah menyelesaikan puluhan proyek lain di Kalimantan termasuk Samarinda (FUGO Hotel, Unika Widya Karya, Kantor Camat Sungai Pinang), Pontianak (Universitas Tanjungpura), dan berbagai proyek BUMN di Ibu Kota Nusantara.
 
-## Latar Belakang
-
-Global Hotel Banjarmasin, yang berlokasi di Jl. Ahmad Yani Km. 4.5, merupakan salah satu hotel berbintang di Banjarmasin yang membutuhkan solusi partisi fleksibel untuk ballroom mereka. Ballroom hotel ini sering digunakan untuk berbagai acara mulai dari resepsi pernikahan, seminar, pameran, hingga jamuan makan malam — yang masing-masing membutuhkan konfigurasi ruangan berbeda.
-
-Sebelum menggunakan partisi geser, pihak hotel mengandalkan sekat portable dan panel kayu manual yang memakan waktu setup hingga 2-3 jam serta membutuhkan banyak tenaga kerja. Efisiensi operasional menjadi alasan utama mengapa mereka beralih ke sistem partisi geser Sorepa buatan Pireki.
-
+  Global Hotel Banjarmasin tetap menjadi klien Pireki hingga saat ini dengan pemeliharaan berkala yang dilakukan setiap tahun.
 ---
 
 ## Produk yang Digunakan
@@ -78,15 +73,3 @@ Pemasangan partisi Sorepa di Global Hotel Banjarmasin memberikan beberapa manfaa
 | **Fleksibilitas ruangan** | Ballroom dapat diubah menjadi 3-4 ruang meeting dalam hitungan menit |
 | **Peningkatan pendapatan** | Hotel bisa menerima multiple event dalam waktu bersamaan |
 | **Estetika premium** | Finishing fabric memberikan kesan mewah dan profesional |
-
----
-
-## Catatan
-
-Proyek ini merupakan salah satu proyek awal Pireki di Pulau Kalimantan. Sejak saat itu, Pireki telah menyelesaikan puluhan proyek lain di Kalimantan termasuk Samarinda (FUGO Hotel, Unika Widya Karya, Kantor Camat Sungai Pinang), Pontianak (Universitas Tanjungpura), dan berbagai proyek BUMN di Ibu Kota Nusantara.
-
-Global Hotel Banjarmasin tetap menjadi klien Pireki hingga saat ini dengan pemeliharaan berkala yang dilakukan setiap tahun.
-
----
-
-*Dokumen ini dibuat sebagai arsip portofolio internal CV Pireki Asia.*

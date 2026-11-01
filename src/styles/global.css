@@ -54,15 +54,40 @@
   .prose-gold hr { border: 0; border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 3.5rem 0; }
   .prose-gold blockquote { border-left: 1px solid #c9a84c; padding-left: 1.5rem; font-style: italic; color: rgba(255, 255, 255, 0.8); margin: 2rem 0; background: rgba(201, 168, 76, 0.05); padding: 1.5rem; border-radius: 0 1rem 1rem 0; }
   
-  .prose-gold table { width: 100%; border-collapse: collapse; margin-bottom: 2.5rem; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 0.75rem; overflow: hidden; }
+  .prose-gold .table-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+  }
+  .prose-gold .table-wrapper table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    margin-bottom: 0;
+    border: none;
+    border-radius: 0;
+    display: table;
+  }
+
+  .prose-gold table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
   .prose-gold th { background-color: rgba(201, 168, 76, 0.1); color: #c9a84c; font-weight: 700; text-align: left; padding: 1rem 1.25rem; border: 1px solid rgba(255, 255, 255, 0.1); white-space: nowrap; }
   .prose-gold td { color: rgba(255, 255, 255, 0.7); padding: 1rem 1.25rem; border: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.9375rem; line-height: 1.5; }
   .prose-gold tr:nth-child(even) td { background-color: rgba(255, 255, 255, 0.02); }
   .prose-gold tr:hover td { background-color: rgba(201, 168, 76, 0.05); }
-
-  @media (max-width: 767px) {
-    .prose-gold table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  }
 }
 
 /* ======= LUXURY MOTION SYSTEM ======= */

@@ -46,7 +46,21 @@ proyek:
     produk: "Samowa Lipat"
     highlight: "Proyek Januari 2015 — aula besar disulap jadi beberapa ruang kuliah dan training dalam hitungan menit."
 
+  - nama: "Fakultas Pertanian UPN Veteran Jatim"
+    kategori: Universitas
+    institusi: "UPN Veteran Jawa Timur (Fakultas Pertanian)"
+    lokasi: "Surabaya, Jawa Timur"
+    produk: "Partisi Geser Rel Atas"
+    highlight: "Jl. Rungkut Madya No.1 Surabaya — ruang kuliah fleksibel untuk seminar dan kelas diskusi; pemasangan rel atas presisi di plafon."
+
   # === HOTEL ===
+  - nama: "Hotel Alana Surabaya"
+    kategori: Hotel
+    institusi: "The Alana Hotel Surabaya"
+    lokasi: "Surabaya, Jawa Timur"
+    produk: "Sorepa"
+    highlight: "Jl. Ketintang Baru I No.10-12 Surabaya — ruang meeting fleksibel kedap suara dengan sistem top-hung rel atas dan insulasi rockwool 80 kg/m3 untuk agenda MICE."
+
   - nama: "Ayola Signature Ocarina Batam"
     kategori: Hotel
     institusi: "Ayola Signature Ocarina"
@@ -297,6 +311,13 @@ proyek:
     highlight: "Perusahaan pulp & paper; ruang pelatihan dan rapat berskala besar yang beradaptasi cepat di lingkungan industri padat modal."
 
   # === BANK / KEUANGAN ===
+  - nama: "Bank EKA Bandar Lampung"
+    kategori: Bank
+    institusi: "PT BPR Eka Bumi Artha (Bank EKA)"
+    lokasi: "Bandar Lampung, Lampung"
+    produk: "Sorepa"
+    highlight: "Instalasi partisi geser Sorepa untuk ruang serbaguna, rapat, dan aula training. Dual tone finishing kain kuning cerah dan merah korporat."
+
   - nama: "Bank Eka Lampung"
     kategori: Bank
     institusi: "Bank Eka"
@@ -328,15 +349,15 @@ proyek:
 
 # === RINGKASAN UNTUK REFERENSI CEPAT ===
 ringkasan:
-  total_proyek: 46
+  total_proyek: 48
   total_terpasang: "1.000+ proyek di seluruh Indonesia"
   tahun_berdiri: 2008
   tahun_produksi_sendiri: 2011
 
   kategori:
     - nama: Universitas
-      jumlah: 6
-      produk_umum: "Sorepa, Samowa Lipat"
+      jumlah: 7
+      produk_umum: "Sorepa, Samowa Lipat, Partisi Geser"
     - nama: Hotel
       jumlah: 8
       produk_umum: "Sorepa Pro, Sorepa Stacking"
@@ -353,7 +374,7 @@ ringkasan:
       jumlah: 1
       produk_umum: "Sorepa"
     - nama: Bank
-      jumlah: 3
+      jumlah: 4
       produk_umum: "Sorepa, Sorepa Stacking, Partisi Geser"
     - nama: Lounge
       jumlah: 1
