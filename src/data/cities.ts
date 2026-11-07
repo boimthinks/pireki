@@ -14,7 +14,7 @@ export const cities = [
   { slug: 'gresik', name: 'Gresik', address: 'Jl. Bangkingan Gadung No. 168, Lakarsantri Surabaya' },
   { slug: 'mojokerto', name: 'Mojokerto', address: 'Jl. Bangkingan Gadung No. 168, Lakarsantri Surabaya' },
   { slug: 'malang', name: 'Malang', address: 'Jl. Bangkingan Gadung No. 168, Lakarsantri Surabaya' },
-  { slug: 'solo', name: 'Solo', address: 'Jl. Bangkingan Gadung No. 168, Lakarsantri Surabaya' },
-  { slug: 'yogyakarta', name: 'Yogyakarta', address: 'Jl. Bangkingan Gadung No. 168, Lakarsantri Surabaya' },
+  { slug: 'solo', name: 'Solo', address: 'Jl. Ratu Ratih IV No 30 Tlogosari, Semarang (Wilayah Layanan Solo Raya)' },
+  { slug: 'yogyakarta', name: 'Yogyakarta', address: 'Jl. Mangga No. 34 Sambilegi Kidul, RT.02/56 Maguwoharjo, Depok, Sleman, Yogyakarta' },
   { slug: 'pontianak', name: 'Pontianak', address: 'Jl. Bangkingan Gadung No. 168, Lakarsantri Surabaya' }
 ];

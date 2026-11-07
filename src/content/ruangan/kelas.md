@@ -59,11 +59,20 @@ Partisi ruang kelas Pireki dirancang kokoh dan mudah dirawat:
 
 Keberhasilan implementasi partisi geser kelas Pireki tersebar di berbagai jenjang institusi pendidikan di Indonesia:
 
-Di perguruan tinggi negeri terkemuka, **Fakultas Pertanian UPN Veteran Jawa Timur** di Surabaya memasang partisi geser rel atas presisi pada ruang kuliah fleksibel untuk mengakomodasi kuliah bersama hingga seminar kelompok kecil. Di almamater legendaris **Universitas Airlangga (Unair)** Surabaya, proyek partisi tipe Samowa Lipat berhasil menyulap aula besar menjadi beberapa ruang perkuliahan dan pelatihan interaktif dalam hitungan menit.
+- **Perguruan Tinggi Negeri:** Di **Fakultas Pertanian UPN Veteran Jawa Timur** (Surabaya), partisi geser rel atas presisi dipasang pada ruang kuliah fleksibel untuk mengakomodasi kuliah bersama hingga seminar kelompok kecil. Di almamater legendaris **Universitas Airlangga (Unair)** Surabaya, proyek partisi tipe Samowa Lipat berhasil menyulap aula besar menjadi beberapa ruang perkuliahan dan pelatihan interaktif dalam hitungan menit. Di Makassar, **Fakultas Kedokteran Universitas Muslim Indonesia (UMI)** memanfaatkan sistem geser Sorepa untuk mengubah ruang konvensional menjadi ruang diskusi akademik multifungsi.
+- **Sekolah Internasional & Terpadu:** Di jenjang sekolah internasional ibu kota, **New Zealand School Jakarta (NZ School)** di Jakarta Selatan memasang partisi Samowa Lipat untuk menciptakan ruang kelas modern yang dinamis. Prestasi ini disusul oleh sekolah Islam terpadu unggulan **SMP IT ALAMY Subang** di Jawa Barat, **SD/SMP Al Irsyad Banyuwangi** yang mengaplikasikan Samowa Persection, serta **Royal Islamic School Palembang** yang memasang lima unit partisi Sorepa untuk optimalisasi ruang belajar siswa.
+- **Pendidikan di Wilayah Kepulauan:** Bahkan di wilayah kepulauan terluar, **MTsN 1 Kepulauan Mentawai** di Sumatera Barat membuktikan daya tahan partisi geser Pireki dalam menyulap bangunan terbatas menjadi unit-unit kelas mandiri yang tenang bagi para pelajar pulau.
 
-Di jenjang sekolah internasional ibu kota, **New Zealand School Jakarta (NZ School)** di Jakarta Selatan memasang partisi Samowa Lipat untuk menciptakan ruang kelas modern yang dinamis. Prestasi ini disusul oleh sekolah Islam terpadu unggulan **SMP IT ALAMY Subang** di Jawa Barat dan **Royal Islamic School Palembang** yang memasang lima unit partisi Sorepa untuk optimalisasi ruang belajar siswa.
+## Pertanyaan Umum Seputar Partisi Ruang Kelas
 
-Bahkan di wilayah kepulauan terluar, **MTsN 1 Kepulauan Mentawai** di Sumatera Barat membuktikan daya tahan partisi geser Pireki dalam menyulap bangunan terbatas menjadi unit-unit kelas mandiri yang tenang bagi para pelajar pulau.
+Berapa biaya pemasangan partisi ruang kelas per meter persegi?
+Biaya partisi ruang kelas bervariasi bergantung tipe yang dipilih. Untuk tipe semi-redam suara populer seperti Samowa Lipat berada di kisaran estimasi Rp 1.758.000 per meter persegi, sedangkan tipe ekonomis Nice Partition berada di kisaran Rp 1.378.000 per meter persegi. Tipe Sorepa kelas kedap suara tinggi dihitung berdasarkan dimensi opening dan spesifikasi rockwool.
+
+Apakah partisi geser ruang kelas aman untuk murid sekolah dasar?
+Sangat aman. Partisi ruang kelas Pireki menggunakan sistem rel gantung atas murni tanpa rel tanam di lantai. Ketiadaan tonjolan atau parit di lantai menghilangkan risiko siswa tersandung saat berlari dan memudahkan pembersihan ruang kelas setiap hari.
+
+Bagaimana partisi geser mencegah suara guru dari kelas sebelah bocor?
+Tipe Samowa dan Sorepa dilengkapi lapisan peredam suara padat di rongga dalam panel, profil lis aluminium dengan bantalan karet akustik di sisi vertikal, serta mekanisme pengunci rapat yang menutup celah udara atas dan bawah sehingga kebocoran suara vokal dapat dicegah optimal.
 
 ## Layanan Konsultasi dan Prosedur Pengadaan Sekolah
 

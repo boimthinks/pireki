@@ -75,5 +75,22 @@ export default defineConfig({
   },
   redirects: {
     '/monitor': '/monitor/index.html',
+    '/blog/harga-partisi-pvc-per-meter': '/insights/harga-sekat-ruangan-buka-tutup-pvc',
+    '/blog/buat-rab-dengan-chatgpt': '/insights/buat-rab-dengan-ai',
+    '/blog/u-shape-style': '/insights/layout-u-shape-vs-hollow-square',
+    '/blog/hollow-square-style': '/insights/layout-u-shape-vs-hollow-square',
+    '/blog/20-kata-kata-promosi-jasa-bangunan': '/insights/20-kata-promosi-jasa-bangunan',
+    '/blog/perbedaan-konstruksi-kontraktor-dan-pemborong': '/insights/perbedaan-kontraktor-konstruksi-developer',
+    '/blog/mengenal-partisi-gypsum': '/insights/partisi-gypsum-vs-partisi-geser',
+    '/blog/standar-ergonomi-ruang-rapat': '/insights/ergonomi-ruang-rapat-partisi-geser',
+    '/blog/kontraktor-vs-developer': '/insights/perbedaan-kontraktor-konstruksi-developer',
+    '/blog/kapasitas-tamu-ballroom': '/insights/roi-partisi-geser-ballroom-hotel',
+    '/blog/partisi-ruang-kelas': '/insights/partisi-kelas-kampus-atasi-kebisingan',
+    '/blog/membuat-ruang-kelas-modern': '/insights/partisi-kelas-kampus-atasi-kebisingan',
+    '/blog/menghitung-biaya-konstruksi': '/insights/estimasi-biaya-renovasi-kantor-per-m2',
+    '/blog/biaya-renovasi-ruang-konferensi': '/insights/estimasi-biaya-renovasi-kantor-per-m2',
+    '/blog/cara-menghitung-kebutuhan-dinding-partisi': '/insights/anatomi-harga-partisi-per-meter',
+    '/blog/smart-partisi-geser': '/insights/sekat-ruangan-geser-kantor',
+    '/blog/mengenal-plywood': '/insights/ketahanan-api-partisi-ruang-kantor',
   }
 });

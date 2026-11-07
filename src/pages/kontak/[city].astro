@@ -13,11 +13,12 @@ export async function getStaticPaths() {
 }
 
 const { city } = Astro.props;
-const h1Title = `Pireki ${city.name} - Partisi Lipat Sliding ${city.name}. Produsen Penyekat Ruangan Geser #1 ${city.name}`;
-const metaDesc = `Pireki Asia melayani jasa pemasangan partisi geser, dinding lipat, dan movable wall profesional di ${city.name}. Solusi sekat ruangan berkualitas dengan harga terbaik.`;
+const pageTitle = `Partisi Geser & Pintu Lipat ${city.name} - CV Pireki Asia`;
+const h1Title = `Produsen Partisi Geser dan Pintu Lipat di ${city.name}`;
+const metaDesc = `Pabrik resmi partisi geser, sekat ruangan, dan dinding lipat kedap suara di ${city.name}. Konsultasi gratis, survei lokasi, dan garansi resmi CV Pireki Asia.`;
 ---
 
-<Layout title={h1Title} description={metaDesc}>
+<Layout title={pageTitle} description={metaDesc}>
   <Schema type="Breadcrumb" data={[
     { name: 'Beranda', url: '/' },
     { name: 'Kontak', url: '/kontak' },

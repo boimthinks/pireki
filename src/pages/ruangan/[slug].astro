@@ -15,7 +15,7 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<Layout title={`${entry.data.title} - PIREKI`} description={entry.data.description} image={entry.data.featured_image}>
+<Layout title={`${entry.data.judul_seo_h1 || entry.data.title} - PIREKI`} description={entry.data.description} image={entry.data.featured_image}>
   <main class="py-20 bg-black">
     <article class="max-w-7xl mx-auto px-6 my-10">
       {/* Breadcrumb */}
